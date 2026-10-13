@@ -1,0 +1,551 @@
+/* ==========================================================================
+   PREMIUM EDITORIAL REFINEMENT — SPACING, ALIGNMENT & QUIET LUXURY
+   ========================================================================== */
+:root {
+  --layout-max: 1280px;
+  --layout-gutter: clamp(22px, 4.2vw, 68px);
+  --section-space: clamp(92px, 10vw, 156px);
+  --section-space-compact: clamp(70px, 7.5vw, 112px);
+  --editorial-rule: rgba(36, 34, 31, 0.11);
+}
+
+.container,
+.commercial-minimal-container,
+.residential-minimal-container,
+.profile-bespoke-container {
+  max-width: var(--layout-max);
+  padding-left: var(--layout-gutter);
+  padding-right: var(--layout-gutter);
+}
+
+/* Cleaner typographic measure and vertical rhythm */
+:where(.hero-editorial-headline, .vastu-hero-heading, .numerology-hero-heading,
+  .astro-vastu-heading, .contact-exact-hero-title) {
+  text-wrap: balance;
+  letter-spacing: -0.035em;
+}
+
+:where(.about-energy-heading, .showcase-title, .cosmos-headline,
+  .faq-main-heading, .quiet-cta-heading, .commercial-section-title,
+  .residential-section-title, .disciplines-title, .protocol-title) {
+  text-wrap: balance;
+  letter-spacing: -0.025em;
+}
+
+:where(.hero-editorial-desc, .about-energy-desc, .showcase-desc,
+  .commercial-lead, .residential-lead, .quiet-cta-subheading) {
+  max-width: 64ch;
+}
+
+/* Homepage: more air, stronger alignment, calmer transitions */
+.section-about,
+.section-showcase,
+.section-astro-cosmos,
+.section-faq-wisdom,
+.section-quiet-cta {
+  padding-top: var(--section-space);
+  padding-bottom: var(--section-space);
+}
+
+.about-energy-grid {
+  gap: clamp(54px, 8vw, 120px);
+  align-items: center;
+}
+
+.about-energy-text-col {
+  padding-right: clamp(0px, 3vw, 48px);
+}
+
+.about-energy-heading {
+  margin-bottom: clamp(24px, 3vw, 38px);
+}
+
+.about-energy-desc {
+  line-height: 1.85;
+}
+
+.about-energy-img-frame,
+.faq-preview-card,
+.sector-img-frame,
+.domain-img-frame,
+.room-img-frame {
+  border-radius: 3px;
+  box-shadow: 0 24px 70px rgba(35, 29, 19, 0.08);
+}
+
+.showcase-layout {
+  grid-template-columns: minmax(260px, .72fr) minmax(0, 2.28fr);
+  gap: clamp(56px, 8vw, 124px);
+  align-items: center;
+}
+
+.showcase-divider-line {
+  margin: clamp(28px, 4vw, 46px) 0;
+  opacity: .7;
+}
+
+.showcase-desc {
+  line-height: 1.8;
+}
+
+.astro-cosmos-layout,
+.faq-layout-grid {
+  gap: clamp(64px, 9vw, 136px);
+}
+
+.cosmos-steps-list {
+  margin-top: clamp(38px, 5vw, 62px);
+}
+
+.cosmos-step-row,
+.accordion-item {
+  border-color: var(--editorial-rule);
+}
+
+.faq-main-heading {
+  max-width: 12ch;
+}
+
+.accordion-header {
+  padding-top: 27px;
+  padding-bottom: 27px;
+}
+
+.section-spaces-intention {
+  padding: clamp(18px, 2vw, 30px);
+  display: grid;
+  gap: clamp(18px, 2vw, 30px);
+  background: var(--color-bg-cream);
+}
+
+.space-intention-banner {
+  min-height: clamp(540px, 68vh, 760px);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.space-intention-content {
+  padding: clamp(38px, 6vw, 88px);
+}
+
+.quiet-cta-content {
+  max-width: 860px;
+  margin-inline: auto;
+}
+
+.quiet-cta-heading {
+  font-size: clamp(3rem, 6vw, 6rem);
+  line-height: 1.02;
+}
+
+/* Inner pages: consistent breathing room and editorial rules */
+.commercial-minimal-page,
+.residential-minimal-page {
+  padding-top: clamp(128px, 14vh, 170px);
+}
+
+.commercial-hero,
+.residential-hero {
+  padding-bottom: var(--section-space-compact);
+  margin-bottom: var(--section-space-compact);
+}
+
+.commercial-pillars-section,
+.residential-pillars-section,
+.commercial-sectors-section,
+.residential-suite-section,
+.residential-mandala-section,
+.residential-rooms-section,
+.residential-audit-section {
+  padding-bottom: var(--section-space-compact);
+  margin-bottom: var(--section-space-compact);
+}
+
+.commercial-pillars-grid,
+.residential-pillars-grid,
+.commercial-sectors-grid {
+  gap: clamp(28px, 4vw, 52px);
+}
+
+.commercial-pillar-item,
+.residential-pillar-item,
+.audit-step-card,
+.protocol-step-item {
+  padding-top: 28px;
+}
+
+.pillar-heading,
+.sector-title,
+.domain-title,
+.room-heading,
+.discipline-heading,
+.step-heading {
+  text-wrap: balance;
+}
+
+.pillar-text,
+.sector-desc,
+.domain-desc,
+.room-desc,
+.discipline-description,
+.step-description {
+  line-height: 1.8;
+}
+
+.residential-room-editorial-row {
+  gap: clamp(48px, 7vw, 92px);
+  padding-bottom: clamp(54px, 7vw, 84px);
+}
+
+.mandala-detail-pane {
+  padding: clamp(38px, 5vw, 62px);
+  box-shadow: 0 24px 70px rgba(35, 29, 19, 0.06);
+}
+
+/* Profile and contact alignment */
+.profile-bespoke-page,
+.contact-exact-page {
+  padding-top: clamp(126px, 14vh, 168px);
+}
+
+.profile-bespoke-essay-grid,
+.contact-exact-grid {
+  gap: clamp(56px, 9vw, 132px);
+}
+
+.contact-exact-hero {
+  padding-bottom: clamp(64px, 8vw, 108px);
+  margin-bottom: clamp(64px, 8vw, 108px);
+}
+
+.contact-line-field {
+  margin-bottom: 30px;
+}
+
+/* Refined interaction — movement stays subtle */
+:where(.btn-pill-solid, .btn-quiet-pill, .commercial-cta-btn,
+  .residential-cta-btn, .profile-bespoke-cta-btn, .nav-consult-cta-btn,
+  .relocation-primary-cta) {
+  transition: transform .35s cubic-bezier(.16, 1, .3, 1),
+    box-shadow .35s cubic-bezier(.16, 1, .3, 1),
+    background-color .35s ease, gap .35s cubic-bezier(.16, 1, .3, 1);
+}
+
+:where(.btn-pill-solid, .btn-quiet-pill, .commercial-cta-btn,
+  .residential-cta-btn, .profile-bespoke-cta-btn,
+  .relocation-primary-cta):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(26, 24, 21, .14);
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --section-space: clamp(78px, 11vw, 112px);
+    --section-space-compact: clamp(62px, 9vw, 92px);
+  }
+
+  .showcase-layout,
+  .astro-cosmos-layout,
+  .faq-layout-grid {
+    gap: clamp(46px, 7vw, 72px);
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --layout-gutter: 20px;
+    --section-space: 76px;
+    --section-space-compact: 64px;
+  }
+
+  .section-about,
+  .section-showcase,
+  .section-astro-cosmos,
+  .section-faq-wisdom,
+  .section-quiet-cta {
+    padding-top: var(--section-space);
+    padding-bottom: var(--section-space);
+  }
+
+  .about-energy-grid,
+  .astro-cosmos-layout,
+  .faq-layout-grid,
+  .profile-bespoke-essay-grid,
+  .contact-exact-grid {
+    gap: 44px;
+  }
+
+  .showcase-layout,
+  .home-layered-showcase {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 28px !important;
+    width: 100% !important;
+  }
+
+  .showcase-text-col {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .showcase-images-wrapper {
+    width: 100% !important;
+    height: 330px !important;
+    min-height: 300px !important;
+    border-radius: 14px !important;
+  }
+
+  .showcase-slide-card.card-pos-1 {
+    flex: 0 0 84% !important;
+    width: 84% !important;
+  }
+
+  .showcase-slide-card.card-pos-2 {
+    flex: 0 0 54% !important;
+    width: 54% !important;
+  }
+
+  .showcase-slide-card.card-pos-3 {
+    flex: 0 0 28% !important;
+    width: 28% !important;
+  }
+
+  .section-spaces-intention {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .space-intention-banner {
+    min-height: 620px;
+  }
+
+  .space-intention-content {
+    padding: 34px 24px;
+  }
+
+  .faq-main-heading {
+    max-width: 16ch;
+  }
+
+  .commercial-minimal-page,
+  .residential-minimal-page,
+  .profile-bespoke-page,
+  .contact-exact-page {
+    padding-top: 112px;
+  }
+}
+
+/* Final cascade overrides for the rotating Astro Numerology feature. */
+.page-home {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-home>#home {
+  order: 0;
+}
+
+.page-home>#astro-cosmos {
+  order: 1;
+}
+
+.page-home>#about {
+  order: 2;
+}
+
+.page-home>#showcase {
+  order: 3;
+}
+
+.page-home>#faq {
+  order: 4;
+}
+
+.page-home>#intentions {
+  order: 5;
+}
+
+.page-home>#contact {
+  order: 6;
+}
+
+/* Keep the mandala as the centered visual pause immediately after the hero. */
+.section-astro-cosmos .astro-cosmos-layout {
+  grid-template-columns: minmax(0, 1fr) !important;
+  justify-items: center;
+  gap: clamp(28px, 4vw, 52px) !important;
+  text-align: center;
+}
+
+.section-astro-cosmos .cosmos-orbital-stage {
+  width: min(100%, 470px) !important;
+  margin-inline: auto;
+}
+
+.section-astro-cosmos .cosmos-editorial-col {
+  width: 100%;
+  max-width: 760px;
+  padding: 0;
+}
+
+.section-astro-cosmos .cosmos-headline {
+  max-width: 17ch;
+  margin: 0 auto clamp(28px, 4vw, 42px);
+}
+
+.section-astro-cosmos .cosmos-steps-list {
+  margin-inline: auto;
+}
+
+.section-astro-cosmos .cosmos-step-row {
+  justify-content: center;
+}
+
+.section-astro-cosmos .cosmos-link-cta {
+  justify-content: center;
+}
+
+@media (max-width: 760px) {
+  .hero-bg-image {
+    object-position: 67% center;
+  }
+}
+
+.section-astro-cosmos {
+  padding-block: clamp(112px, 12vw, 176px) !important;
+  background: radial-gradient(ellipse at 24% 48%, rgba(249, 241, 216, .68), transparent 39%), var(--color-bg-cream) !important;
+}
+
+.section-astro-cosmos .astro-cosmos-layout {
+  grid-template-columns: minmax(0, 1fr) !important;
+  justify-items: center;
+  gap: clamp(28px, 4vw, 52px) !important;
+  align-items: center;
+  text-align: center;
+}
+
+.section-astro-cosmos .cosmos-orbital-stage {
+  width: min(100%, 470px) !important;
+  max-width: 470px !important;
+  margin-inline: auto;
+  min-height: 0 !important;
+  aspect-ratio: 1;
+  isolation: isolate;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, .72) 0 34%, rgba(249, 241, 216, .46) 56%, transparent 73%);
+}
+
+.section-astro-cosmos .mandala-svg-wrapper,
+.section-astro-cosmos .mandala-svg-wrapper>svg {
+  width: 100%;
+  max-width: 620px;
+  height: auto;
+}
+
+.section-astro-cosmos .mandala-svg-wrapper>svg {
+  display: block;
+  overflow: visible;
+  filter: drop-shadow(0 18px 28px rgba(166, 134, 50, .14));
+}
+
+.section-astro-cosmos .mandala-canvas-bg {
+  opacity: .5;
+}
+
+.section-astro-cosmos .anim-rotate-cw-fast {
+  animation-duration: 32s;
+}
+
+.section-astro-cosmos .anim-rotate-cw-mid,
+.section-astro-cosmos .anim-rotate-ccw-mid {
+  animation-duration: 58s;
+}
+
+.section-astro-cosmos .anim-breathe {
+  animation-duration: 8s;
+}
+
+.section-astro-cosmos .cosmos-editorial-col {
+  width: 100%;
+  max-width: 760px;
+  padding: 0;
+}
+
+.section-astro-cosmos .cosmos-headline {
+  max-width: 17ch;
+  margin: 0 auto clamp(28px, 4vw, 42px);
+  font-size: clamp(2.65rem, 4.25vw, 4.25rem);
+  line-height: 1.06;
+  letter-spacing: -.035em;
+  text-wrap: balance;
+}
+
+.section-astro-cosmos .cosmos-steps-list {
+  gap: 14px;
+  margin: 0 auto 32px;
+}
+
+.section-astro-cosmos .cosmos-step-row {
+  min-height: 48px;
+  gap: 22px;
+  justify-content: center;
+}
+
+.section-astro-cosmos .cosmos-step-name {
+  font-size: clamp(1.2rem, 1.7vw, 1.5rem);
+}
+
+@media (max-width: 900px) {
+  .section-astro-cosmos .astro-cosmos-layout {
+    grid-template-columns: 1fr !important;
+    gap: 44px !important;
+  }
+
+  .section-astro-cosmos .cosmos-orbital-stage {
+    width: min(100%, 460px) !important;
+    margin-inline: auto;
+  }
+
+  .section-astro-cosmos .cosmos-editorial-col {
+    max-width: 680px;
+    margin-inline: auto;
+    padding: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-astro-cosmos {
+    padding-block: 76px !important;
+  }
+
+  .section-astro-cosmos .astro-cosmos-layout {
+    gap: 28px !important;
+  }
+
+  .section-astro-cosmos .cosmos-orbital-stage {
+    width: min(100%, 340px) !important;
+  }
+
+  .section-astro-cosmos .cosmos-headline {
+    max-width: 14ch;
+    margin-bottom: 28px;
+    font-size: clamp(2.3rem, 10vw, 3.2rem);
+  }
+
+  .section-astro-cosmos .cosmos-step-name {
+    font-size: 1.18rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .section-astro-cosmos .anim-rotate-cw-slow,
+  .section-astro-cosmos .anim-rotate-cw-mid,
+  .section-astro-cosmos .anim-rotate-cw-fast,
+  .section-astro-cosmos .anim-rotate-ccw-slow,
+  .section-astro-cosmos .anim-rotate-ccw-mid,
+  .section-astro-cosmos .anim-breathe,
+  .section-astro-cosmos .anim-twinkle {
+    animation: none !important;
+  }
+}

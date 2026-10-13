@@ -1,0 +1,926 @@
+/* ==========================================================================
+   FIXED FULL-WIDTH HEADER / NAVBAR (WHITE BACKGROUND)
+   ========================================================================== */
+.header-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100vw;
+  z-index: 1100;
+  padding: 14px clamp(16px, 3vw, 40px);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(200, 169, 81, 0.24);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  transition: padding 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    background 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.header-wrapper.scrolled {
+  padding: 10px clamp(16px, 3vw, 40px);
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid rgba(200, 169, 81, 0.32);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(200, 169, 81, 0.15);
+}
+
+.nav-bar {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(14px, 2vw, 28px);
+  padding: 0;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  border-radius: 0;
+}
+
+.brand-sunandha-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #1A1815;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.brand-logo-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid var(--color-gold);
+  box-shadow: 0 2px 8px rgba(200, 169, 81, 0.25);
+  display: block;
+  flex-shrink: 0;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.brand-sunandha-block:hover .brand-logo-img {
+  transform: scale(1.05);
+  border-color: var(--color-gold-deep);
+}
+
+.brand-sunandha-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-sunandha-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: 0.5px;
+  color: #1A1815;
+  transition: color 0.3s ease;
+}
+
+.brand-sunandha-sub {
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: var(--color-gold-deep);
+  margin-top: 2px;
+  transition: color 0.3s ease;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 1.8vw, 32px);
+  list-style: none;
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 1025px) {
+  #primary-navigation {
+    position: relative;
+    left: 232px;
+  }
+}
+
+.nav-item {
+  position: relative;
+  list-style: none;
+}
+
+/* Top-level Nav Links */
+.nav-menu>.nav-item>a,
+.nav-menu>.nav-item>button {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #24221F;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+.nav-menu>.nav-item>a:hover,
+.nav-menu>.nav-item>button:hover {
+  background: transparent;
+  color: var(--color-gold-deep);
+  border: none;
+}
+
+.nav-menu>.nav-item.active>a {
+  background: transparent;
+  color: #1A1815;
+  font-weight: 700;
+  border: none;
+}
+
+/* Caret */
+.dropdown-caret {
+  display: inline-block;
+  font-size: 0.62rem;
+  margin-left: 6px;
+  opacity: 0.75;
+  color: #24221F;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-item.dropdown:hover .dropdown-caret,
+.nav-item.dropdown:focus-within .dropdown-caret,
+.nav-item.dropdown.open .dropdown-caret {
+  transform: rotate(180deg) translateY(1px);
+  color: var(--color-gold-deep);
+  opacity: 1;
+}
+
+/* Scrolled overrides */
+.header-wrapper.scrolled .brand-sunandha-title {
+  color: #1A1815;
+}
+
+.header-wrapper.scrolled .brand-sunandha-sub {
+  color: var(--color-gold-deep);
+}
+
+.header-wrapper.scrolled .nav-menu>.nav-item>a,
+.header-wrapper.scrolled .nav-menu>.nav-item>button {
+  color: #24221F;
+}
+
+.header-wrapper.scrolled .nav-menu>.nav-item>a:hover,
+.header-wrapper.scrolled .nav-menu>.nav-item>button:hover {
+  color: var(--color-gold-deep);
+}
+
+.header-wrapper.scrolled .nav-menu>.nav-item.active>a {
+  color: #1A1815;
+  font-weight: 700;
+}
+
+/* Right-side action cluster */
+.nav-header-action-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.nav-social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #24221F;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: color 0.25s ease, background 0.25s ease;
+}
+
+.nav-social-icon:hover {
+  color: var(--color-gold-deep);
+  background: rgba(200, 169, 81, 0.12);
+}
+
+.nav-consult-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  background: linear-gradient(135deg, #C8A951 0%, #B8963D 60%, #A68632 100%);
+  color: #FFFFFF !important;
+  width: 187.6px;
+  padding: 9px 20px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.2px;
+  box-shadow: 0 4px 16px rgba(200, 169, 81, 0.32);
+  border: none;
+  white-space: nowrap;
+  transition: var(--transition-base);
+}
+
+.nav-consult-cta-btn:hover {
+  background: linear-gradient(135deg, #D4B660 0%, #C8A951 60%, #B8963D 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 22px rgba(200, 169, 81, 0.48);
+  color: #FFFFFF !important;
+}
+
+/* Scrolled overrides for right-side actions */
+.header-wrapper.scrolled .nav-social-icon {
+  color: #24221F;
+  opacity: 0.85;
+}
+
+.header-wrapper.scrolled .nav-social-icon:hover {
+  color: var(--color-gold-deep);
+  opacity: 1;
+  background: rgba(200, 169, 81, 0.1);
+}
+
+.header-wrapper.scrolled .nav-consult-cta-btn {
+  width: 187.6px;
+  box-shadow: 0 4px 16px rgba(200, 169, 81, 0.25);
+}
+
+/* ==========================================================================
+   DESKTOP DROPDOWN MENU (CLEAN, NO FLICKER, ZERO JITTER)
+   ========================================================================== */
+.nav-item.dropdown {
+  position: relative !important;
+}
+
+.nav-dropdown-menu {
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  min-width: 220px !important;
+  width: max-content !important;
+  background: #FFFFFF !important;
+  border: 1px solid rgba(200, 169, 81, 0.22) !important;
+  border-radius: 6px !important;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+  padding: 8px 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1px !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: none !important;
+  transition: opacity 0.16s ease, visibility 0.16s ease !important;
+  z-index: 1200 !important;
+}
+
+/* Seamless cursor bridge spanning between nav-item and menu to prevent hover loss */
+.nav-dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: -8px;
+  right: -8px;
+  height: 18px;
+  background: transparent;
+  pointer-events: auto;
+}
+
+.nav-item.dropdown:hover .nav-dropdown-menu,
+.nav-item.dropdown:focus-within .nav-dropdown-menu,
+.nav-item.dropdown.open .nav-dropdown-menu {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  pointer-events: auto !important;
+}
+
+/* Clean dropdown items - only the clean title, no arrows, no headers */
+.nav-dropdown-card {
+  padding: 10px 18px !important;
+  border-radius: 0 !important;
+  text-decoration: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  position: relative !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  transform: none !important;
+  transition: background 0.15s ease, padding-left 0.15s ease !important;
+}
+
+.nav-dropdown-card::after {
+  display: none !important;
+  content: none !important;
+}
+
+.nav-dropdown-card:hover {
+  background: #FAF6EB !important;
+  padding-left: 22px !important;
+  transform: none !important;
+}
+
+.nav-dropdown-card.active {
+  background: #FAF4E3 !important;
+  transform: none !important;
+}
+
+.nav-dropdown-title {
+  font-family: var(--font-sans) !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  color: #1A1815 !important;
+  white-space: nowrap !important;
+  line-height: 1.35 !important;
+  transition: color 0.15s ease !important;
+}
+
+.nav-dropdown-card:hover .nav-dropdown-title {
+  color: var(--color-gold-deep) !important;
+}
+
+.nav-dropdown-card.active .nav-dropdown-title {
+  color: var(--color-gold-deep) !important;
+  font-weight: 600 !important;
+}
+.nav-dropdown-sub {
+  display: none !important;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: rgba(200, 169, 81, 0.12);
+  border: 1px solid rgba(200, 169, 81, 0.35);
+  color: #1A1815;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 10201;
+}
+
+.mobile-menu-btn:hover,
+.mobile-menu-btn:active {
+  background: rgba(200, 169, 81, 0.22);
+  color: var(--color-gold-deep);
+  transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+  .header-wrapper {
+    padding: 18px 20px;
+  }
+
+  .header-wrapper.scrolled {
+    padding: 12px 20px;
+  }
+
+  .brand-logo-img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .brand-sunandha-title {
+    font-size: 1.25rem;
+  }
+
+  .brand-sunandha-sub {
+    font-size: 0.58rem;
+    letter-spacing: 1.8px;
+  }
+
+  .nav-header-action-right {
+    gap: 10px;
+  }
+
+  .nav-consult-cta-btn {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  /* Right-Side Off-Canvas Drawer with Clean White Background */
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(320px, 85vw);
+    height: 100vh;
+    background: #FFFFFF;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    padding: 95px 24px 40px;
+    border-radius: 0;
+    border: none;
+    border-left: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.12);
+    gap: 8px;
+    z-index: 10200;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+      visibility 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    overflow-y: auto;
+  }
+
+  .nav-menu.mobile-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .nav-item.dropdown {
+    width: 100%;
+    position: static !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .nav-item>a,
+  .nav-item>button {
+    width: 100%;
+    font-size: 1.02rem;
+    font-weight: 500;
+    padding: 12px 14px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #1A1815;
+    background: transparent;
+    border: none;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .nav-item>a:hover,
+  .nav-item>button:hover,
+  .nav-item.active>a {
+    background: #FAF6EB;
+    color: var(--color-gold-deep);
+  }
+
+  .dropdown-caret {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    font-size: 0.75rem;
+    color: var(--color-gold-deep);
+  }
+
+  .nav-item.dropdown.open .dropdown-caret {
+    transform: rotate(180deg);
+  }
+
+  /* Reset all desktop dropdown positioning and transforms for clean mobile alignment */
+  .nav-item.dropdown .nav-dropdown-menu,
+  .nav-dropdown-menu.nav-mega-fullwidth,
+  .nav-mega-fullwidth {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 4px 0 6px 0 !important;
+    padding: 4px 0 4px 12px !important;
+    border: none !important;
+    border-left: 2px solid rgba(200, 169, 81, 0.35) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    display: none !important;
+    flex-direction: column !important;
+    gap: 3px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  .nav-item.dropdown.open .nav-dropdown-menu,
+  .nav-item.dropdown.open .nav-mega-fullwidth {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+
+  /* Clear desktop pseudo-element arrows and cursor bridges */
+  .nav-dropdown-menu::before,
+  .nav-dropdown-menu::after,
+  .nav-mega-fullwidth::before,
+  .nav-mega-fullwidth::after,
+  .nav-dropdown-card::after,
+  .mega-link-item::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  .nav-mega-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 3px !important;
+  }
+
+  .nav-mega-left {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 3px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .nav-mega-header,
+  .nav-mega-right,
+  .mega-link-arrow,
+  .mega-card-arrow {
+    display: none !important;
+  }
+
+  .nav-mega-links-list {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    align-items: stretch !important;
+  }
+
+  .nav-dropdown-card,
+  .mega-link-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    width: 100% !important;
+    padding: 8px 10px !important;
+    border: none !important;
+    border-radius: 6px !important;
+    background: transparent !important;
+    color: #24221F !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+    transition: background 0.15s ease, color 0.15s ease !important;
+  }
+
+  .nav-dropdown-card:hover,
+  .nav-dropdown-card.active,
+  .mega-link-item:hover,
+  .mega-link-item.active {
+    background: #FAF6EB !important;
+    color: var(--color-gold-deep) !important;
+    transform: none !important;
+    padding-left: 10px !important;
+  }
+
+  .mega-link-content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 2px !important;
+    width: 100% !important;
+    text-align: left !important;
+  }
+
+  .mega-link-item .nav-dropdown-title,
+  .nav-dropdown-card .nav-dropdown-title {
+    font-size: 0.94rem !important;
+    font-weight: 600 !important;
+    color: #1A1815 !important;
+    text-align: left !important;
+    text-decoration: none !important;
+  }
+
+  .mega-link-item:hover .nav-dropdown-title,
+  .mega-link-item.active .nav-dropdown-title,
+  .nav-dropdown-card:hover .nav-dropdown-title,
+  .nav-dropdown-card.active .nav-dropdown-title {
+    color: var(--color-gold-deep) !important;
+    text-decoration: none !important;
+  }
+
+  .mega-link-desc {
+    font-size: 0.74rem !important;
+    line-height: 1.3 !important;
+    color: #767066 !important;
+    text-align: left !important;
+    margin: 0 !important;
+    display: block !important;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+}
+
+/* Astro Numerology feature: keep the rotating mandala prominent on the left. */
+.section-astro-cosmos {
+  padding-block: clamp(112px, 12vw, 176px);
+  background:
+    radial-gradient(ellipse at 24% 48%, rgba(249, 241, 216, .68), transparent 39%),
+    var(--color-bg-cream);
+}
+
+.section-astro-cosmos .astro-cosmos-layout {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.02fr);
+  gap: clamp(64px, 8vw, 120px);
+  align-items: center;
+}
+
+.section-astro-cosmos .cosmos-orbital-stage {
+  width: min(100%, 620px);
+  max-width: 620px;
+  min-height: 0;
+  aspect-ratio: 1;
+  isolation: isolate;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, .72) 0 34%, rgba(249, 241, 216, .46) 56%, transparent 73%);
+}
+
+.section-astro-cosmos .mandala-svg-wrapper {
+  width: 100%;
+  max-width: 620px;
+}
+
+.section-astro-cosmos .mandala-svg-wrapper>svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  filter: drop-shadow(0 18px 28px rgba(166, 134, 50, .14));
+}
+
+.section-astro-cosmos .mandala-canvas-bg {
+  opacity: .5;
+}
+
+.section-astro-cosmos .anim-rotate-cw-fast {
+  animation-duration: 32s;
+}
+
+.section-astro-cosmos .anim-rotate-cw-mid,
+.section-astro-cosmos .anim-rotate-ccw-mid {
+  animation-duration: 58s;
+}
+
+.section-astro-cosmos .anim-breathe {
+  animation-duration: 8s;
+}
+
+.section-astro-cosmos .cosmos-editorial-col {
+  max-width: 620px;
+  padding: 24px 0 24px clamp(0px, 1.6vw, 24px);
+}
+
+.section-astro-cosmos .cosmos-headline {
+  max-width: 12ch;
+  margin-bottom: clamp(34px, 4vw, 54px);
+  font-size: clamp(2.65rem, 4.25vw, 4.25rem);
+  line-height: 1.06;
+  letter-spacing: -.035em;
+  text-wrap: balance;
+}
+
+.section-astro-cosmos .cosmos-steps-list {
+  gap: 14px;
+  margin-top: 0;
+  margin-bottom: 32px;
+}
+
+.section-astro-cosmos .cosmos-step-row {
+  min-height: 48px;
+  gap: 22px;
+}
+
+.section-astro-cosmos .cosmos-step-name {
+  font-size: clamp(1.2rem, 1.7vw, 1.5rem);
+}
+
+@media (max-width: 900px) {
+  .section-astro-cosmos .astro-cosmos-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 44px;
+  }
+
+  .section-astro-cosmos .cosmos-orbital-stage {
+    width: min(100%, 460px);
+    margin-inline: auto;
+  }
+
+  .section-astro-cosmos .cosmos-editorial-col {
+    max-width: 680px;
+    margin-inline: auto;
+    padding: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-astro-cosmos {
+    padding-block: 76px;
+  }
+
+  .section-astro-cosmos .astro-cosmos-layout {
+    gap: 28px;
+  }
+
+  .section-astro-cosmos .cosmos-orbital-stage {
+    width: min(100%, 340px);
+  }
+
+  .section-astro-cosmos .cosmos-headline {
+    max-width: 14ch;
+    margin-bottom: 28px;
+    font-size: clamp(2.3rem, 10vw, 3.2rem);
+  }
+
+  .section-astro-cosmos .cosmos-step-name {
+    font-size: 1.18rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .section-astro-cosmos .anim-rotate-cw-slow,
+  .section-astro-cosmos .anim-rotate-cw-mid,
+  .section-astro-cosmos .anim-rotate-cw-fast,
+  .section-astro-cosmos .anim-rotate-ccw-slow,
+  .section-astro-cosmos .anim-rotate-ccw-mid,
+  .section-astro-cosmos .anim-breathe,
+  .section-astro-cosmos .anim-twinkle {
+    animation: none !important;
+  }
+}
+
+/* Global depth motion -------------------------------------------------------
+   `translate` is intentionally separate from `transform`, allowing this layer
+   to coexist with the site's reveals, hover zooms, and rotating artwork. */
+main .parallax-media {
+  --parallax-y: 0px;
+  translate: 0 var(--parallax-y);
+  will-change: translate;
+}
+
+main img.parallax-media {
+  scale: 1.045;
+}
+
+main .parallax-content {
+  --parallax-y: 0px;
+  translate: 0 var(--parallax-y);
+  will-change: translate;
+}
+
+@media (max-width: 760px) {
+  main img.parallax-media {
+    scale: 1.025;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main .parallax-media,
+  main .parallax-content {
+    translate: none !important;
+    scale: none !important;
+  }
+}
+
+/* Reference-inspired closing footer: oversized invitation, contact rail,
+   then restrained navigation and legal details. */
+.site-footer {
+  padding: clamp(48px, 6vw, 78px) 0 26px;
+  background: #171716;
+}
+.footer-closing-cta {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(220px, .55fr);
+  gap: 48px;
+  align-items: end;
+  padding-bottom: clamp(42px, 5vw, 68px);
+  opacity: 1;
+  transform: none;
+}
+.footer-closing-cta.reveal-on-scroll { opacity: 1; transform: none; }
+.footer-closing-cta .footer-col-title { margin-bottom: 24px; color: #c5a45d; }
+.footer-closing-cta .footer-statement-headline {
+  margin: 0;
+  max-width: 13ch;
+  font-size: clamp(3.1rem, 6.2vw, 6.7rem);
+  line-height: .95;
+  letter-spacing: -.045em;
+}
+.footer-closing-cta .footer-statement-headline em { color: #d7b76c; font-style: italic; }
+.footer-cta-action { max-width: 270px; padding-bottom: 6px; }
+.footer-cta-action p { margin: 0 0 25px; color: rgba(255,255,255,.58); font-size: .88rem; line-height: 1.7; }
+.footer-cta-action .btn-pill-solid { background: #d2ad5b; color: #171716; }
+.footer-contact-strip {
+  display: grid;
+  grid-template-columns: 1.3fr repeat(3, 1fr);
+  gap: 28px;
+  align-items: end;
+  padding: 29px 0 34px;
+  border-top: 1px solid rgba(255,255,255,.19);
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+.footer-contact-block { display: flex; flex-direction: column; gap: 8px; color: rgba(255,255,255,.72); font-size: .84rem; }
+.footer-contact-block .footer-col-title { margin: 0; font-size: .62rem; color: rgba(255,255,255,.42); }
+.footer-contact-block a { color: rgba(255,255,255,.8); }
+.footer-link-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 28px; padding: 40px 0 48px; }
+.footer-link-grid .footer-col-title { margin-bottom: 18px; }
+.footer-link-grid .footer-links-list { gap: 11px; }
+.footer-link-grid .footer-links-list li,
+.footer-link-grid .footer-links-list li a { font-size: .82rem; color: rgba(255,255,255,.61); }
+.footer-link-grid .footer-links-list li a:hover { color: #d7b76c; }
+.footer-minimal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  padding: 0 0 42px;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+  font-size: .78rem;
+  color: rgba(255,255,255,.58);
+}
+.footer-minimal-links a { color: inherit; transition: color .25s ease; }
+.footer-minimal-links a:hover { color: #d7b76c; }
+@media (max-width: 760px) {
+  .footer-closing-cta { grid-template-columns: 1fr; gap: 34px; }
+  .footer-cta-action { max-width: 340px; }
+  .footer-contact-strip { grid-template-columns: 1fr 1fr; row-gap: 30px; }
+  .footer-contact-strip .footer-brand-names { grid-column: 1 / -1; }
+  .footer-link-grid { grid-template-columns: 1fr 1fr; row-gap: 38px; }
+}
+@media (max-width: 480px) {
+  .footer-contact-strip, .footer-link-grid { grid-template-columns: 1fr; }
+  .footer-contact-strip .footer-brand-names { grid-column: auto; }
+  .footer-closing-cta .footer-statement-headline { font-size: clamp(2.9rem, 13vw, 4rem); }
+}
+
+@media (max-width: 540px) {
+  .header-wrapper {
+    padding: 14px 16px;
+  }
+
+  .brand-sunandha-title {
+    font-size: 1.15rem;
+  }
+
+  .brand-sunandha-sub {
+    font-size: 0.52rem;
+    letter-spacing: 1.5px;
+  }
+
+  .nav-consult-cta-btn span:first-child {
+    display: none;
+  }
+
+  .nav-consult-cta-btn {
+    padding: 6px 10px;
+  }
+
+  .nav-consult-cta-btn::before {
+    content: "Book";
+    font-size: 0.8rem;
+  }
+}

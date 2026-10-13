@@ -1,0 +1,881 @@
+/* ==========================================================================
+   BESPOKE VASTU DESIGN SYSTEM — EDITORIAL ARCHITECTURAL SECTIONS
+   ========================================================================== */
+
+/* 1. ARCHITECTURAL SPATIAL IMAGE CAROUSEL (FULL-BLEED 20%-60%-20% VIEWPORT) */
+.section-vastu-typologies {
+  background-color: #FAF8F5;
+  padding: 110px 0 100px;
+  border-top: 1px solid rgba(22, 21, 19, 0.08);
+  overflow: hidden;
+  width: 100%;
+}
+
+.vastu-typologies-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+
+.vastu-typologies-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #161513;
+  letter-spacing: -0.01em;
+}
+
+.typologies-header-right {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.typologies-header-desc {
+  max-width: 360px;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  color: #6E685F;
+  line-height: 1.65;
+}
+
+.typologies-nav-arrows {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.typologies-nav-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(22, 21, 19, 0.18);
+  background: #FFFFFF;
+  color: #161513;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.typologies-nav-btn:hover {
+  background: #161513;
+  color: #FAF8F5;
+  border-color: #161513;
+}
+
+/* Edge-to-Edge Carousel Wrapper */
+.typologies-carousel-wrapper {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+}
+
+.typologies-carousel-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.typologies-carousel-slide {
+  flex: 0 0 60vw;
+  width: 60vw;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.65;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  user-select: none;
+}
+
+.typologies-carousel-slide.is-active-slide {
+  opacity: 1;
+}
+
+.typologies-slide-img-box {
+  position: relative;
+  width: 100%;
+  height: clamp(380px, 48vh, 560px);
+  overflow: hidden;
+  border-radius: 2px;
+  background-color: #EBE7DE;
+  border: 1px solid rgba(22, 21, 19, 0.08);
+}
+
+.typologies-slide-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.typologies-carousel-slide:hover .typologies-slide-img-box img {
+  transform: scale(1.03);
+}
+
+.typologies-slide-tag {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(22, 21, 19, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #FAF8F5;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  padding: 6px 14px;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+
+.typologies-slide-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 0 4px;
+}
+
+.typologies-slide-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #161513;
+  letter-spacing: -0.01em;
+}
+
+.typologies-slide-category {
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: #B58D4B;
+  white-space: nowrap;
+}
+
+/* 2. ASTRO-VASTU SYNTHESIS BANNER */
+.section-vastu-astro-bridge {
+  background-color: #FAF8F5;
+  padding: 90px 0;
+}
+
+.vastu-astro-bridge-card {
+  background: #161513;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  padding: 64px 56px;
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.bridge-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: #C5A880;
+  margin-bottom: 16px;
+}
+
+.bridge-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 3.2vw, 2.9rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #FFFFFF;
+  margin-bottom: 18px;
+  letter-spacing: -0.01em;
+}
+
+.bridge-desc {
+  font-family: var(--font-sans);
+  font-size: 0.94rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.bridge-cta-wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* 3. REFINED EDITORIAL FAQ ACCORDION */
+.section-vastu-faq {
+  background-color: #FFFFFF;
+  padding: 110px 0 100px;
+}
+
+.vastu-faq-layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 72px;
+  align-items: flex-start;
+}
+
+.vastu-faq-sticky {
+  position: sticky;
+  top: 120px;
+}
+
+.vastu-faq-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 3vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #161513;
+  margin-bottom: 16px;
+}
+
+.vastu-faq-desc {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: #6E685F;
+}
+
+.vastu-faq-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.vastu-faq-row {
+  border-bottom: 1px solid rgba(22, 21, 19, 0.1);
+  padding: 28px 0;
+}
+
+.vastu-faq-row:first-child {
+  padding-top: 0;
+}
+
+.vastu-faq-trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: 20px;
+}
+
+.vastu-faq-q-left {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+}
+
+.vastu-faq-index {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #B58D4B;
+  min-width: 24px;
+}
+
+.vastu-faq-question {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 400;
+  color: #161513;
+  line-height: 1.3;
+}
+
+.vastu-faq-icon {
+  font-family: var(--font-sans);
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: #161513;
+  transition: transform 0.25s ease;
+}
+
+.vastu-faq-answer {
+  display: none;
+  padding: 16px 0 0 44px;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: #6E685F;
+}
+
+.vastu-faq-row.active .vastu-faq-answer {
+  display: block;
+}
+
+.vastu-faq-row.active .vastu-faq-icon {
+  transform: rotate(45deg);
+  color: #B58D4B;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .vastu-typologies-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .typologies-header-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .typologies-carousel-slide {
+    flex: 0 0 76vw;
+    width: 76vw;
+    min-width: 280px;
+  }
+
+  .typologies-slide-img-box {
+    height: 380px;
+  }
+
+  .vastu-astro-bridge-card {
+    grid-template-columns: 1fr;
+    padding: 44px 32px;
+  }
+
+  .bridge-cta-wrap {
+    justify-content: flex-start;
+  }
+
+  .vastu-faq-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .vastu-faq-sticky {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .typologies-carousel-slide {
+    flex: 0 0 85vw;
+    width: 85vw;
+  }
+
+  .typologies-slide-img-box {
+    height: 300px;
+  }
+}
+
+/* ==========================================================================
+   ASTRO NUMEROLOGY: A LAYERED INTERPRETATION (DARK EDITORIAL WITH SCROLL PARALLAX)
+   ========================================================================== */
+.section-layered-interpretation {
+  background-color: #161412;
+  color: #FAF8F5;
+  padding: 130px 0 120px;
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.layered-interpretation-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 64px;
+  align-items: stretch;
+  position: relative;
+  min-height: 600px;
+}
+
+.layered-left-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.layered-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  color: #C5A880;
+  margin-bottom: 20px;
+}
+
+.layered-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 4.4vw, 3.8rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+  margin-bottom: 56px;
+}
+
+.layered-steps-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  margin-bottom: 60px;
+}
+
+.layered-step-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.layered-step-index {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #C5A880;
+  line-height: 1;
+}
+
+.layered-step-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.2vw, 2rem);
+  font-weight: 400;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.layered-bottom-note {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #C5A880;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.layered-right-col {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  height: 100%;
+}
+
+.layered-right-text-box {
+  max-width: 440px;
+  position: relative;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+.layered-right-desc {
+  font-family: var(--font-sans);
+  font-size: clamp(0.95rem, 1.15vw, 1.05rem);
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.76);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .section-layered-interpretation {
+    padding: 90px 0 80px;
+  }
+
+  .layered-interpretation-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    min-height: auto;
+  }
+
+  .layered-headline {
+    margin-bottom: 36px;
+  }
+
+  .layered-steps-stack {
+    gap: 28px;
+    margin-bottom: 40px;
+  }
+
+  .layered-right-col {
+    justify-content: flex-start;
+    padding-top: 0;
+  }
+}
+
+/* ==========================================================================
+   ASTRO VASTU HERO SECTION (EDITORIAL REFERENCE DESIGN)
+   ========================================================================== */
+.astro-vastu-hero-section {
+  position: relative;
+  background-color: #141311;
+  color: #FFFFFF;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 130px 0 70px;
+  overflow: hidden;
+}
+
+.astro-vastu-hero-container {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.astro-vastu-hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  align-items: center;
+  gap: 50px;
+}
+
+.astro-vastu-hero-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 680px;
+}
+
+.astro-vastu-breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 32px;
+}
+
+.astro-vastu-breadcrumb a {
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.2s ease;
+}
+
+.astro-vastu-breadcrumb a:hover {
+  color: #FFFFFF;
+}
+
+.astro-vastu-breadcrumb .sep {
+  color: #C5A880;
+  opacity: 0.8;
+}
+
+.astro-vastu-breadcrumb .current {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.astro-vastu-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #C5A880;
+  margin-bottom: 22px;
+}
+
+.astro-vastu-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 5.2vw, 60px);
+  font-weight: 500;
+  line-height: clamp(3rem, 5.6vw, 64px);
+  color: #FFFFFF;
+  margin: 0 0 26px 0;
+  letter-spacing: 8.4px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6),
+    0 6px 20px rgba(0, 0, 0, 0.75),
+    0 12px 35px rgba(0, 0, 0, 0.55);
+}
+
+.astro-vastu-desc {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.92);
+  margin: 0 0 36px 0;
+  max-width: 520px;
+  font-weight: 400;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8),
+    0 4px 16px rgba(0, 0, 0, 0.6);
+}
+
+.btn-astro-vastu-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 28px;
+  background: linear-gradient(135deg, #C8A951 0%, #B8963D 50%, #A68632 100%);
+  color: #FFFFFF;
+  border-radius: 9999px;
+  font-family: var(--font-sans);
+  font-size: 13.23px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 8px 25px rgba(200, 169, 81, 0.35);
+}
+
+.btn-astro-vastu-pill .arrow {
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+.btn-astro-vastu-pill:hover {
+  background: linear-gradient(135deg, #D4B660 0%, #C8A951 50%, #B8963D 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(200, 169, 81, 0.5);
+  color: #FFFFFF;
+}
+
+.btn-astro-vastu-pill:hover .arrow {
+  transform: translateX(4px);
+}
+
+.astro-vastu-bottom-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 56px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.astro-vastu-bottom-meta .meta-dot {
+  color: #C5A880;
+  font-size: 0.55rem;
+  display: inline-block;
+}
+
+.astro-vastu-bottom-meta .meta-coords {
+  color: rgba(255, 255, 255, 0.35);
+  font-variant-numeric: tabular-nums;
+}
+
+.astro-vastu-hero-right {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.astro-vastu-hero-img-frame {
+  position: relative;
+  width: 100%;
+  max-width: 610px;
+  aspect-ratio: 1.06 / 1;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: none;
+  background: #1B1A17;
+}
+
+.astro-vastu-hero-img-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.astro-vastu-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, transparent 40%, rgba(16, 15, 13, 0.3) 100%);
+  pointer-events: none;
+}
+
+/* 4-Quadrant Wireframe Grid Overlay */
+.astro-vastu-wireframe-grid {
+  position: absolute;
+  inset: 12%;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.astro-vastu-wireframe-grid::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.22);
+  transform: translateX(-50%);
+}
+
+.astro-vastu-wireframe-grid::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.22);
+  transform: translateY(-50%);
+}
+
+@media (max-width: 1024px) {
+  .astro-vastu-hero-section {
+    padding: 120px 0 60px;
+    min-height: auto;
+  }
+
+  .astro-vastu-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .astro-vastu-hero-left {
+    max-width: 100%;
+  }
+
+  .astro-vastu-hero-right {
+    justify-content: center;
+  }
+
+  .astro-vastu-hero-img-frame {
+    max-width: 520px;
+    border-radius: 2px;
+  }
+}
+
+@media (max-width: 640px) {
+  .astro-vastu-hero-container {
+    padding: 0 20px;
+  }
+
+  .astro-vastu-hero-section {
+    padding: 105px 0 50px;
+  }
+
+  .astro-vastu-heading {
+    font-size: 2.35rem;
+  }
+
+  .astro-vastu-hero-img-frame {
+    border-radius: 2px;
+  }
+}
+
+/* ==========================================================================
+   ASTRO VASTU: SPATIAL REALMS (MINIMAL 3-COLUMN EDITORIAL)
+   ========================================================================== */
+.section-astro-spatial-realms {
+  background-color: #161412;
+  color: #FFFFFF;
+  padding: 140px 0 130px;
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.astro-realms-header {
+  max-width: 800px;
+  margin-bottom: 72px;
+}
+
+.astro-realms-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: #C5A880;
+  margin-bottom: 20px;
+}
+
+.astro-realms-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+}
+
+.astro-realms-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+}
+
+.astro-realm-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.astro-realm-img-frame {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 2px;
+  background: #1F1D1A;
+  margin-bottom: 28px;
+}
+
+.astro-realm-img-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.astro-realm-num {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #C5A880;
+  margin-bottom: 8px;
+}
+
+.astro-realm-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 1.8vw, 1.75rem);
+  font-weight: 400;
+  color: #FFFFFF;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.astro-realm-desc {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .section-astro-spatial-realms {
+    padding: 100px 0 90px;
+  }
+
+  .astro-realms-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}

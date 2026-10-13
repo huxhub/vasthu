@@ -2,13 +2,13 @@ import ServiceEditorial, { type ServiceStory } from "../components/ServiceEditor
 
 const story: ServiceStory = {
   layout: "landscape",
-  "label": "Vastu",
+  "label": "Vastu Shastra",
   "title": "Traditional wisdom. Thoughtful spaces.",
   "lead": "Consider direction, light, and layout in the way you live and work.",
   "hero": "/images/vasthu hero.jpg",
-  "heroAlt": "Vastu architectural setting",
+  "heroAlt": "Vastu Shastra architectural setting",
   "image": "/images/vasthu about.jpg",
-  "imageAlt": "Vastu consultation setting",
+  "imageAlt": "Vastu Shastra consultation setting",
   "heading": "Balance begins with your space.",
   "description": "Review the property as a whole, with recommendations shaped around its layout and use.",
   "points": [

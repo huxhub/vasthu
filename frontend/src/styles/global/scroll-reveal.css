@@ -1,0 +1,41 @@
+/* ==========================================================================
+   DEFINITIVE UNIVERSAL SCROLL-TRIGGERED IMAGE REVEAL (ALL PAGES)
+   Guaranteed precedence across all page components & sections
+   ========================================================================== */
+
+main img.reveal-image {
+  opacity: 0 !important;
+  transform: scale(1.05) translateY(20px) !important;
+  filter: blur(5px) contrast(0.95) !important;
+  transition: opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1.75s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 1.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: opacity, transform, filter;
+}
+
+main img.reveal-image.is-revealed {
+  opacity: 1 !important;
+  transform: scale(1) translateY(0) !important;
+  filter: blur(0px) contrast(1) !important;
+}
+
+/* Exemptions for carousel images and manual no-reveal tags */
+main img.no-reveal,
+main img.no-reveal.reveal-image,
+.showcase-slide-card img,
+.showcase-slide-card img.reveal-image {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+  clip-path: none !important;
+  transition: transform 0.5s ease !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main img.reveal-image {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,994 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+/* ==========================================================================
+   Vastushlokaa VASTU & ASTRO NUMEROLOGY — LUXURY DESIGN SYSTEM (HAVEN STYLE)
+   ========================================================================== */
+
+:root {
+  /* Pale Yellow / Golden Warmth */
+  --color-gold: #C8A951;
+  --color-gold-deep: #A68632;
+  --color-gold-light: #F9F1D8;
+  --color-gold-bg: #FAF6EB;
+  --color-gold-tint: rgba(200, 169, 81, 0.12);
+
+  /* Light Blue */
+  --color-blue: #6BA8C7;
+  --color-blue-deep: #3A789A;
+  --color-blue-light: #EBF4F9;
+  --color-blue-bg: #F1F7FB;
+
+  /* Light Pink */
+  --color-pink: #D988A8;
+  --color-pink-deep: #B55B80;
+  --color-pink-light: #FDF0F5;
+  --color-pink-bg: #FBF2F6;
+
+  /* Dark Luxury Tones */
+  --color-dark: #1A1815;
+  --color-dark-surface: #24211D;
+  --color-dark-card: #2C2823;
+
+  /* Backgrounds */
+  --color-bg-cream: #FAF7F2;
+  --color-bg-sand: #EBE7DE;
+  --color-bg-warm: #FCFAF6;
+  --color-white: #FFFFFF;
+
+  /* Typography Colors */
+  --color-text-main: #24221F;
+  --color-text-muted: #6E685F;
+  --color-text-light: #9B948A;
+  --color-text-on-dark: #F5F2EB;
+  --color-text-muted-dark: #AAA396;
+
+  /* Borders */
+  --color-border-light: rgba(36, 34, 31, 0.08);
+  --color-border-dark: rgba(255, 255, 255, 0.12);
+
+  /* Fonts: Cormorant Garamond, Playfair Display (Display / Serif) & Plus Jakarta Sans (UI / Body) */
+  --font-display: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-serif-quote: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 9999px;
+
+  /* Transitions & Shadows */
+  --transition-base: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 16px 40px rgba(0, 0, 0, 0.06);
+  --shadow-dark: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+/* Reset & Basics */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-bg-cream);
+  color: var(--color-text-main);
+  overflow-x: clip;
+}
+
+/* Quiet, high-contrast keyboard focus that matches the gold system. */
+:where(a, button, input, select, textarea):focus-visible {
+  outline: 2px solid var(--color-gold-deep);
+  outline-offset: 4px;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-white);
+}
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  overflow-x: clip;
+  background-color: var(--color-bg-cream);
+}
+
+/* UAE relocation landing pages */
+.relocation-page {
+  background: var(--color-bg-cream);
+  color: var(--color-text-main);
+}
+
+.relocation-shell {
+  width: min(1180px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.relocation-hero {
+  position: relative;
+  min-height: 82vh;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  padding: 150px 0 90px;
+  background: linear-gradient(135deg, var(--color-gold-bg) 0 56%, var(--color-blue-bg) 56%);
+}
+
+.relocation-hero .relocation-shell {
+  position: relative;
+  z-index: 1;
+}
+
+.relocation-eyebrow,
+.relocation-section-label {
+  font: 700 .72rem/1.4 var(--font-sans);
+  letter-spacing: .18em;
+  color: var(--color-gold-deep);
+}
+
+.relocation-eyebrow span {
+  padding-inline: .65rem;
+}
+
+.relocation-hero h1 {
+  max-width: 850px;
+  margin: 24px 0;
+  font-size: clamp(3.4rem, 7.5vw, 7rem);
+  font-weight: 400;
+  line-height: .96;
+  letter-spacing: -.04em;
+}
+
+.relocation-hero h1 em,
+.relocation-closing h2 em {
+  color: var(--color-gold-deep);
+  font-family: var(--font-serif-quote);
+  font-weight: 400;
+}
+
+.relocation-lead {
+  max-width: 620px;
+  color: var(--color-text-muted);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+}
+
+.relocation-primary-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 34px;
+  padding: 15px 24px;
+  background: var(--color-dark);
+  color: var(--color-white);
+  font-size: .88rem;
+  font-weight: 600;
+}
+
+.relocation-primary-cta:hover {
+  gap: 26px;
+}
+
+.relocation-orbit {
+  position: absolute;
+  right: clamp(-100px, 3vw, 50px);
+  width: min(42vw, 560px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(166, 134, 50, .35);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.relocation-orbit::before,
+.relocation-orbit::after {
+  content: "";
+  position: absolute;
+  inset: 14%;
+  border: 1px solid rgba(107, 168, 199, .45);
+  border-radius: 50%;
+}
+
+.relocation-orbit::after {
+  inset: 31%;
+  border-color: rgba(217, 136, 168, .55);
+}
+
+.relocation-orbit span {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  color: var(--color-gold-deep);
+}
+
+.relocation-intro,
+.relocation-help,
+.relocation-closing {
+  padding-block: clamp(80px, 11vw, 145px);
+}
+
+.relocation-intro-grid,
+.relocation-help {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 8vw, 110px);
+}
+
+.relocation-intro h2,
+.relocation-checks h2,
+.relocation-help h2,
+.relocation-closing h2 {
+  font-size: clamp(2.3rem, 4.5vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -.03em;
+}
+
+.relocation-intro-grid {
+  margin-top: 28px;
+}
+
+.relocation-intro-grid p,
+.relocation-help-copy>p {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+.relocation-checks {
+  padding-block: clamp(75px, 9vw, 120px);
+  background: var(--color-white);
+}
+
+.relocation-checks h2 {
+  margin: 14px 0 46px;
+}
+
+.relocation-check-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.relocation-check-card {
+  min-height: 310px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  border-top: 2px solid currentColor;
+}
+
+.relocation-check-card.tone-1 {
+  background: var(--color-gold-light);
+  color: var(--color-gold-deep);
+}
+
+.relocation-check-card.tone-2 {
+  background: var(--color-blue-light);
+  color: var(--color-blue-deep);
+}
+
+.relocation-check-card.tone-3 {
+  background: var(--color-pink-light);
+  color: var(--color-pink-deep);
+}
+
+.relocation-check-card h3 {
+  margin-top: auto;
+  font: 500 clamp(1.5rem, 2.3vw, 2rem)/1.1 var(--font-display);
+  color: var(--color-text-main);
+}
+
+.relocation-check-card p {
+  margin-top: 14px;
+  color: var(--color-text-muted);
+}
+
+.relocation-help-copy ul {
+  margin-top: 28px;
+  list-style: none;
+}
+
+.relocation-help-copy li {
+  padding: 14px 0;
+  border-top: 1px solid var(--color-border-light);
+}
+
+.relocation-faq {
+  padding-block: clamp(70px, 9vw, 110px);
+  background: var(--color-blue-bg);
+}
+
+.relocation-faq details {
+  border-bottom: 1px solid rgba(58, 120, 154, .2);
+}
+
+.relocation-faq summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 0;
+  cursor: pointer;
+  font: 500 clamp(1.05rem, 2vw, 1.35rem) var(--font-display);
+  list-style: none;
+}
+
+.relocation-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.relocation-faq details p {
+  max-width: 720px;
+  padding: 0 0 26px;
+  color: var(--color-text-muted);
+}
+
+.relocation-closing {
+  text-align: center;
+}
+
+.relocation-closing h2 {
+  margin: 18px auto 0;
+}
+
+@media (max-width: 760px) {
+  .relocation-shell {
+    width: min(100% - 32px, 1180px);
+  }
+
+  .relocation-hero {
+    min-height: 720px;
+    padding-top: 130px;
+    background: linear-gradient(160deg, var(--color-gold-bg) 0 70%, var(--color-blue-bg) 70%);
+  }
+
+  .relocation-orbit {
+    right: -120px;
+    bottom: -50px;
+    width: 360px;
+    opacity: .7;
+  }
+
+  .relocation-intro-grid,
+  .relocation-help,
+  .relocation-check-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .relocation-check-card {
+    min-height: 240px;
+  }
+}
+
+/* UK → UAE hero: a single full-width banner with the copy anchored inside it. */
+.relocation-uk .relocation-new-hero {
+  min-height: clamp(680px, 82vh, 860px);
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
+.relocation-uk .relocation-new-hero-image {
+  position: absolute;
+  inset: 0;
+  min-height: 0;
+}
+
+.relocation-uk .relocation-new-hero-image::after {
+  background: linear-gradient(90deg, rgba(23, 20, 17, .78), rgba(23, 20, 17, .34) 55%, rgba(23, 20, 17, .08));
+}
+
+.relocation-uk .relocation-new-hero-image img {
+  object-position: center center;
+}
+
+.relocation-uk .relocation-new-hero-copy {
+  width: min(1180px, calc(100% - 48px));
+  margin-inline: auto;
+  padding: 180px 0 100px;
+}
+
+.relocation-uk .relocation-new-hero-copy h1 {
+  max-width: 720px;
+  margin-block: 18px 24px;
+}
+
+.relocation-uk .relocation-new-hero-copy>p:not(.relocation-eyebrow) {
+  max-width: 500px;
+}
+
+@media (max-width: 760px) {
+  .relocation-uk .relocation-new-hero {
+    min-height: 720px;
+  }
+
+  .relocation-uk .relocation-new-hero-copy {
+    width: calc(100% - 32px);
+    padding: 170px 0 72px;
+  }
+
+  .relocation-uk .relocation-new-hero-image::after {
+    background: linear-gradient(0deg, rgba(23, 20, 17, .84), rgba(23, 20, 17, .12) 78%);
+  }
+}
+
+/* Country pages: open editorial composition with images and a reading path. */
+.relocation-new-hero {
+  position: relative;
+  min-height: 760px;
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  background: var(--color-dark);
+  color: var(--color-white);
+}
+
+.relocation-new-hero-image {
+  position: absolute;
+  inset: 0;
+}
+
+.relocation-new-hero-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(25, 22, 18, .84), rgba(25, 22, 18, .42) 55%, rgba(25, 22, 18, .12));
+}
+
+.relocation-new-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: .86;
+}
+
+.relocation-new-hero-copy {
+  position: relative;
+  z-index: 1;
+  padding-top: 180px;
+  padding-bottom: 100px;
+}
+
+.relocation-new-hero-copy .relocation-eyebrow {
+  color: #f0d68f;
+}
+
+.relocation-new-hero-copy h1 {
+  max-width: 780px;
+  margin: 22px 0 26px;
+  font: 400 clamp(3.7rem, 8vw, 8rem)/.94 var(--font-display);
+  letter-spacing: -.055em;
+}
+
+.relocation-new-hero-copy h1 em {
+  color: #e9c873;
+  font-family: var(--font-serif-quote);
+  font-weight: 400;
+}
+
+.relocation-new-hero-copy>p:not(.relocation-eyebrow) {
+  max-width: 520px;
+  color: #eee6d9;
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+.relocation-new-intro {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 650px);
+  gap: clamp(32px, 8vw, 120px);
+  padding-block: clamp(96px, 13vw, 170px);
+}
+
+.relocation-new-intro-number {
+  padding-top: 6px;
+  color: var(--color-gold-deep);
+  font-size: .76rem;
+  letter-spacing: .16em;
+}
+
+.relocation-new-intro h2,
+.relocation-new-section-head h2,
+.relocation-new-faq h2,
+.relocation-new-closing h2 {
+  margin-top: 20px;
+  font: 400 clamp(2.4rem, 4.5vw, 5rem)/1.04 var(--font-display);
+  letter-spacing: -.04em;
+  text-wrap: balance;
+}
+
+.relocation-new-intro>div:last-child>p:last-child {
+  margin-top: 28px;
+  max-width: 54ch;
+  color: var(--color-text-muted);
+  font-size: 1.03rem;
+  line-height: 1.9;
+}
+
+.relocation-new-moments {
+  padding-block: clamp(90px, 12vw, 160px);
+  background: var(--color-blue-bg);
+}
+
+.relocation-new-section-head {
+  max-width: 670px;
+  margin-bottom: clamp(48px, 7vw, 88px);
+}
+
+.relocation-new-timeline {
+  border-top: 1px solid rgba(58, 120, 154, .3);
+}
+
+.relocation-new-moment {
+  display: grid;
+  grid-template-columns: 100px 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(58, 120, 154, .3);
+}
+
+.relocation-new-moment>span {
+  color: var(--color-blue-deep);
+  font-size: .75rem;
+  letter-spacing: .12em;
+}
+
+.relocation-new-moment h3 {
+  font: 400 clamp(1.5rem, 2.5vw, 2.5rem)/1.1 var(--font-display);
+}
+
+.relocation-new-moment p {
+  max-width: 40ch;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+.relocation-new-image-band {
+  min-height: 520px;
+  display: grid;
+  grid-template-columns: 1.35fr .65fr;
+  background: var(--color-pink-bg);
+}
+
+.relocation-new-image-band img {
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  object-fit: cover;
+  filter: saturate(.8);
+}
+
+.relocation-new-image-band>div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: clamp(32px, 6vw, 84px);
+}
+
+.relocation-new-image-band h2 {
+  margin-top: 22px;
+  font: 400 clamp(2rem, 3.8vw, 4rem)/1.05 var(--font-display);
+  letter-spacing: -.035em;
+}
+
+.relocation-new-faq {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: clamp(46px, 9vw, 140px);
+  padding-block: clamp(96px, 13vw, 170px);
+}
+
+.relocation-new-faq details {
+  border-top: 1px solid var(--editorial-rule);
+}
+
+.relocation-new-faq details:last-child {
+  border-bottom: 1px solid var(--editorial-rule);
+}
+
+.relocation-new-faq summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 0;
+  cursor: pointer;
+  font: 400 clamp(1.1rem, 1.8vw, 1.4rem) var(--font-display);
+  list-style: none;
+}
+
+.relocation-new-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.relocation-new-faq summary span {
+  color: var(--color-gold-deep);
+}
+
+.relocation-new-faq details[open] summary span {
+  transform: rotate(45deg);
+}
+
+.relocation-new-faq details p {
+  max-width: 620px;
+  padding: 0 30px 24px 0;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+.relocation-new-closing {
+  padding-block: clamp(100px, 14vw, 190px);
+  text-align: center;
+}
+
+.relocation-new-closing h2 {
+  margin-inline: auto;
+}
+
+.relocation-new-closing .relocation-primary-cta {
+  margin-top: 36px;
+}
+
+@media (max-width: 760px) {
+  .relocation-new-hero {
+    min-height: 720px;
+  }
+
+  .relocation-new-hero-copy {
+    padding-bottom: 76px;
+  }
+
+  .relocation-new-intro,
+  .relocation-new-faq {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .relocation-new-moment {
+    grid-template-columns: 48px 1fr;
+    gap: 12px 20px;
+  }
+
+  .relocation-new-moment p {
+    grid-column: 2;
+  }
+
+  .relocation-new-image-band {
+    grid-template-columns: 1fr;
+  }
+
+  .relocation-new-image-band img {
+    min-height: 330px;
+    max-height: 430px;
+  }
+}
+
+/* Germany page: measured architectural split layout. */
+.relocation-germany .relocation-new-hero {
+  min-height: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(420px, .92fr);
+  align-items: stretch;
+  background: var(--color-gold-bg);
+  color: var(--color-text-main);
+}
+
+.relocation-germany .relocation-new-hero-image {
+  position: relative;
+  inset: auto;
+  grid-column: 2;
+  grid-row: 1;
+  min-height: 760px;
+  order: 2;
+}
+
+.relocation-germany .relocation-new-hero-image::after {
+  background: linear-gradient(90deg, rgba(250, 246, 235, .12), transparent 30%);
+}
+
+.relocation-germany .relocation-new-hero-copy {
+  grid-column: 1;
+  grid-row: 1;
+  padding: 190px clamp(28px, 7vw, 110px) 110px max(24px, calc((100vw - 1180px) / 2));
+  order: 1;
+}
+
+.relocation-germany .relocation-new-hero-copy .relocation-eyebrow {
+  color: var(--color-gold-deep);
+}
+
+.relocation-germany .relocation-new-hero-copy h1 {
+  font-size: clamp(3.2rem, 6.2vw, 6.5rem);
+  color: var(--color-text-main);
+}
+
+.relocation-germany .relocation-new-hero-copy h1 em {
+  color: var(--color-gold-deep);
+}
+
+.relocation-germany .relocation-new-hero-copy>p:not(.relocation-eyebrow) {
+  color: var(--color-text-muted);
+}
+
+.relocation-germany .relocation-new-intro {
+  grid-template-columns: 180px minmax(0, 680px);
+}
+
+.relocation-germany .relocation-new-moments {
+  background: var(--color-white);
+}
+
+.relocation-germany .relocation-new-moment {
+  grid-template-columns: 90px 250px 1fr;
+}
+
+.relocation-germany .relocation-new-image-band {
+  grid-template-columns: .7fr 1.3fr;
+  background: var(--color-blue-bg);
+}
+
+.relocation-germany .relocation-new-image-band>div {
+  order: 1;
+}
+
+.relocation-germany .relocation-new-image-band img {
+  order: 2;
+}
+
+/* UK page: immersive image led composition with a soft pink transition. */
+.relocation-uk .relocation-new-hero {
+  min-height: 900px;
+}
+
+.relocation-uk .relocation-new-hero-image img {
+  object-position: 58% center;
+}
+
+.relocation-uk .relocation-new-hero-copy {
+  padding-top: 230px;
+  padding-bottom: 120px;
+}
+
+.relocation-uk .relocation-new-hero-copy h1 {
+  max-width: 760px;
+  font-size: clamp(4rem, 9vw, 9rem);
+}
+
+.relocation-uk .relocation-new-intro {
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr);
+  align-items: end;
+  padding-block: clamp(105px, 15vw, 210px);
+}
+
+.relocation-uk .relocation-new-intro-number {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: start;
+  color: var(--color-pink-deep);
+}
+
+.relocation-uk .relocation-new-intro>div:last-child {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.relocation-uk .relocation-new-moments {
+  background: var(--color-pink-bg);
+}
+
+.relocation-uk .relocation-new-moment {
+  grid-template-columns: 120px 1fr 1.1fr;
+  padding-block: 38px;
+  border-color: rgba(181, 91, 128, .25);
+}
+
+.relocation-uk .relocation-new-image-band {
+  grid-template-columns: 1fr;
+  min-height: 680px;
+  position: relative;
+}
+
+.relocation-uk .relocation-new-image-band img {
+  min-height: 680px;
+  opacity: .88;
+}
+
+.relocation-uk .relocation-new-image-band::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(26, 24, 21, .78), transparent 65%);
+  pointer-events: none;
+}
+
+.relocation-uk .relocation-new-image-band>div {
+  position: absolute;
+  z-index: 1;
+  left: max(24px, calc((100vw - 1180px) / 2));
+  bottom: 80px;
+  max-width: 600px;
+  color: var(--color-white);
+}
+
+.relocation-uk .relocation-new-image-band .relocation-section-label {
+  color: #f7d8e4;
+}
+
+.relocation-uk .relocation-new-faq {
+  background: var(--color-blue-bg);
+}
+
+@media (max-width: 760px) {
+  html,
+  body,
+  .relocation-page {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  .relocation-germany .relocation-new-hero {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .relocation-germany .relocation-new-hero-image {
+    min-height: 430px;
+    order: 1;
+  }
+
+  .relocation-germany .relocation-new-hero-copy {
+    order: 2;
+    padding: 76px 20px 84px;
+  }
+
+  .relocation-germany .relocation-new-intro,
+  .relocation-uk .relocation-new-intro {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    padding-block: 60px 48px !important;
+    align-items: start !important;
+    width: 100% !important;
+  }
+
+  .relocation-germany .relocation-new-moment,
+  .relocation-uk .relocation-new-moment {
+    grid-template-columns: 48px 1fr !important;
+    gap: 12px 16px !important;
+  }
+
+  .relocation-germany .relocation-new-image-band {
+    grid-template-columns: 1fr !important;
+  }
+
+  .relocation-uk .relocation-new-hero {
+    min-height: 640px;
+  }
+
+  .relocation-uk .relocation-new-hero-copy {
+    padding-top: 130px;
+    padding-bottom: 60px;
+  }
+
+  .relocation-uk .relocation-new-hero-copy h1 {
+    font-size: clamp(2.8rem, 11vw, 4.5rem);
+  }
+
+  .relocation-uk .relocation-new-intro-number,
+  .relocation-uk .relocation-new-intro>div:last-child {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+    width: 100% !important;
+  }
+
+  .relocation-uk .relocation-new-intro h2 {
+    font-size: clamp(2rem, 7.5vw, 3rem);
+    line-height: 1.15;
+    word-break: break-word;
+  }
+
+  .relocation-uk .relocation-new-image-band,
+  .relocation-uk .relocation-new-image-band img {
+    min-height: 480px;
+  }
+
+  .relocation-uk .relocation-new-image-band>div {
+    left: 20px;
+    right: 20px;
+    bottom: 36px;
+    max-width: calc(100% - 40px);
+  }
+}
+
+
+/* 1. Playfair Display — Display & Editorial Elements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.hero-title,
+.subpage-hero-title,
+.section-title,
+.about-lead-text,
+.showcase-title,
+.video-card-title,
+.editorial-heading,
+.contact-lead-title,
+.num-digit,
+.stat-number,
+.pillar-num,
+.trio-card-num,
+.quote-text,
+.testimonial-quote,
+.author-quote,
+.brand-logo span,
+.footer-brand-title {
+  font-family: var(--font-display);
+}
+
+/* 2. Plus Jakarta Sans — UI & Body Elements */
+p,
+input,
+select,
+textarea,
+button,
+label,
+.nav-menu,
+.nav-item,
+.nav-dropdown-card,
+.btn,
+.btn-hero-primary,
+.btn-form-submit,
+.btn-gallery-pill,
+.form-label,
+.accordion-header,
+.accordion-body,
+.showcase-desc,
+.editorial-lead,
+.pillar-desc,
+.num-traits,
+.section-eyebrow,
+.badge,
+.tag,
+.breadcrumb-nav {
+  font-family: var(--font-sans);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}

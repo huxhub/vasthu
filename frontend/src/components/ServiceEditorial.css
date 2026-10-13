@@ -13,7 +13,7 @@
 .service-cover-copy { position: relative; z-index: 1; width: min(1280px, calc(100% - clamp(40px, 10vw, 160px))); margin-inline: auto; padding: 150px 0 66px; color: #fff; }
 .service-cover-copy > p:not(.service-label) { max-width: 44ch; margin: 22px 0 28px; color: inherit; }
 .service-cover-copy .service-label { color: #e7d39f; }
-.service-link { display: inline-flex; align-items: center; justify-content: space-between; gap: 36px; border: 1px solid currentColor; padding: 16px 23px; text-transform: uppercase; font-size: .7rem; letter-spacing: .1em; transition: background .2s, color .2s; }
+.service-link { display: inline-flex; align-items: center; justify-content: space-between; gap: 28px; border: 1px solid currentColor; padding: 13px 22px; text-transform: uppercase; font-size: .7rem; letter-spacing: .1em; transition: background .2s, color .2s; align-self: start; }
 .service-link:hover { background: #b79550; color: #fff; }
 .service-story { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(36px, 7vw, 110px); align-items: center; padding-block: clamp(64px, 8vw, 112px); }
 .service-story-copy > p:not(.service-label) { max-width: 42ch; color: #66695f; margin-top: 24px; }

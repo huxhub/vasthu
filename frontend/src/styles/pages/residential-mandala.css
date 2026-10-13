@@ -1,0 +1,742 @@
+/* ==========================================================================
+   MINIMAL EDITORIAL COMMERCIAL & RESIDENTIAL VASTU SUITES
+   ========================================================================== */
+
+.commercial-minimal-page,
+.residential-minimal-page {
+  background-color: #FAF8F5;
+  color: #1A1917;
+  min-height: 100vh;
+  padding-top: clamp(100px, 12vh, 140px);
+}
+
+.commercial-minimal-container,
+.residential-minimal-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 4vw, 56px);
+}
+
+/* Hero */
+.commercial-hero,
+.residential-hero {
+  padding-bottom: clamp(60px, 8vh, 90px);
+  border-bottom: 1px solid rgba(26, 25, 23, 0.1);
+  margin-bottom: clamp(60px, 8vh, 90px);
+}
+
+.commercial-eyebrow,
+.residential-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #8C7355;
+  margin-bottom: 24px;
+}
+
+.commercial-eyebrow .sep,
+.residential-eyebrow .sep {
+  color: rgba(26, 25, 23, 0.25);
+}
+
+.commercial-title,
+.residential-title {
+  font-family: var(--font-sans);
+  font-size: clamp(3.2rem, 6.2vw, 5.6rem);
+  font-weight: 400;
+  line-height: 1.05;
+  color: #1A1917;
+  letter-spacing: -0.025em;
+  margin-bottom: 24px;
+  max-width: 960px;
+}
+
+.commercial-title-italic,
+.residential-title-italic {
+  font-family: 'Cormorant Garamond', var(--font-display), serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #8C6D3B;
+  letter-spacing: -0.01em;
+}
+
+.commercial-lead,
+.residential-lead {
+  font-family: var(--font-sans);
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  line-height: 1.65;
+  color: rgba(26, 25, 23, 0.7);
+  max-width: 700px;
+  margin-bottom: clamp(36px, 5vh, 52px);
+}
+
+.commercial-hero-img-wrap,
+.residential-hero-img-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 560px;
+  overflow: hidden;
+  background: #E8E3DA;
+  border-radius: 2px;
+  position: relative;
+}
+
+.commercial-hero-img,
+.residential-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.commercial-hero-img-caption,
+.residential-hero-img-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 14px 20px;
+  background: linear-gradient(180deg, transparent 0%, rgba(20, 19, 18, 0.75) 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #FAF8F5;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* Pillars Section */
+.commercial-pillars-section,
+.residential-pillars-section {
+  padding-bottom: clamp(60px, 8vh, 90px);
+  border-bottom: 1px solid rgba(26, 25, 23, 0.1);
+  margin-bottom: clamp(60px, 8vh, 90px);
+}
+
+.commercial-section-header,
+.residential-section-header {
+  margin-bottom: 44px;
+}
+
+.commercial-section-title,
+.residential-section-title {
+  font-family: var(--font-sans);
+  font-size: clamp(2rem, 3.4vw, 2.8rem);
+  font-weight: 400;
+  color: #1A1917;
+  letter-spacing: -0.015em;
+  margin-top: 8px;
+}
+
+.commercial-pillars-grid,
+.residential-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+}
+
+.commercial-pillar-item,
+.residential-pillar-item {
+  border-top: 1px solid rgba(26, 25, 23, 0.12);
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pillar-num {
+  font-family: 'Cormorant Garamond', var(--font-display), serif;
+  font-size: 2rem;
+  font-style: italic;
+  color: #8C6D3B;
+  line-height: 1;
+  margin-bottom: 14px;
+}
+
+.pillar-heading {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1A1917;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.pillar-text {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: rgba(26, 25, 23, 0.7);
+}
+
+/* Sectors / Residential Suite Grid */
+.commercial-sectors-section,
+.residential-suite-section {
+  padding-bottom: clamp(60px, 8vh, 90px);
+  border-bottom: 1px solid rgba(26, 25, 23, 0.1);
+  margin-bottom: clamp(60px, 8vh, 90px);
+}
+
+.commercial-sectors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.residential-suite-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.commercial-sector-card,
+.residential-domain-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.sector-img-frame,
+.domain-img-frame {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #E8E3DA;
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+.sector-img,
+.domain-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.commercial-sector-card:hover .sector-img,
+.residential-domain-card:hover .domain-img {
+  transform: scale(1.03);
+}
+
+.sector-info,
+.domain-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.domain-top-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+
+.sector-num,
+.domain-num {
+  font-family: 'Cormorant Garamond', var(--font-display), serif;
+  font-size: 1.4rem;
+  font-style: italic;
+  color: #8C6D3B;
+  margin-bottom: 4px;
+}
+
+.domain-zone {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #8C7355;
+}
+
+.sector-title,
+.domain-title {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1A1917;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+
+.sector-desc,
+.domain-desc {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: rgba(26, 25, 23, 0.68);
+}
+
+/* Five Elements Pinned section on residential page */
+.residential-elements-wrapper {
+  margin: 40px 0 80px;
+}
+
+/* Minimal Closing */
+.commercial-closing,
+.residential-closing {
+  padding: 40px 0 120px;
+  text-align: center;
+}
+
+.commercial-closing-inner,
+.residential-closing-inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.commercial-closing-title,
+.residential-closing-title {
+  font-family: var(--font-sans);
+  font-size: clamp(2.4rem, 4.2vw, 3.5rem);
+  font-weight: 400;
+  color: #1A1917;
+  line-height: 1.12;
+  margin: 16px 0 20px;
+  letter-spacing: -0.02em;
+}
+
+.residential-closing-desc {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(26, 25, 23, 0.7);
+  margin-bottom: 36px;
+}
+
+.commercial-btn-wrap,
+.residential-btn-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+.commercial-cta-btn,
+.residential-cta-btn {
+  background: #1B1A18;
+  color: #FAF8F5;
+  padding: 16px 36px;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.25s ease;
+  border: 1px solid transparent;
+}
+
+.commercial-cta-btn:hover,
+.residential-cta-btn:hover {
+  background: #000000;
+  gap: 18px;
+}
+
+.commercial-cta-btn .arrow,
+.residential-cta-btn .arrow {
+  font-size: 1rem;
+  transition: transform 0.25s ease;
+}
+
+.commercial-cta-btn:hover .arrow,
+.residential-cta-btn:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+
+  .commercial-pillars-grid,
+  .residential-pillars-grid,
+  .commercial-sectors-grid,
+  .residential-suite-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* ==========================================================================
+   BESPOKE RESIDENTIAL 9-QUADRANT MANDALA & ROOM SPREAD
+   ========================================================================== */
+
+/* 1. 9-Quadrant Mandala Section */
+.residential-mandala-section {
+  padding-bottom: clamp(60px, 8vh, 90px);
+  border-bottom: 1px solid rgba(26, 25, 23, 0.1);
+  margin-bottom: clamp(60px, 8vh, 90px);
+}
+
+.mandala-header-desc {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: rgba(26, 25, 23, 0.7);
+  max-width: 640px;
+  margin-top: 8px;
+}
+
+.residential-mandala-grid-layout {
+  display: grid;
+  grid-template-columns: 500px 1fr;
+  gap: clamp(40px, 5vw, 64px);
+  align-items: center;
+  margin-top: 36px;
+}
+
+.mandala-3x3-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  background: #EFECE6;
+  padding: 12px;
+  border-radius: 2px;
+}
+
+.mandala-quadrant-cell {
+  background: #FAF8F5;
+  border: 1px solid rgba(26, 25, 23, 0.08);
+  padding: 24px 14px;
+  border-radius: 2px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mandala-quadrant-cell:hover {
+  background: #FFFFFF;
+  border-color: #8C6D3B;
+  transform: translateY(-2px);
+}
+
+.mandala-quadrant-cell.is-selected {
+  background: #1A1917;
+  color: #FAF8F5;
+  border-color: #1A1917;
+  box-shadow: 0 8px 24px rgba(26, 25, 23, 0.15);
+}
+
+.quad-code {
+  font-family: 'Cormorant Garamond', var(--font-display), serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #8C6D3B;
+  line-height: 1;
+}
+
+.mandala-quadrant-cell.is-selected .quad-code {
+  color: #C8A951;
+}
+
+.quad-name {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #1A1917;
+}
+
+.mandala-quadrant-cell.is-selected .quad-name {
+  color: #FAF8F5;
+}
+
+.quad-dir {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(26, 25, 23, 0.5);
+}
+
+.mandala-quadrant-cell.is-selected .quad-dir {
+  color: rgba(250, 248, 245, 0.6);
+}
+
+.mandala-detail-pane {
+  background: #FFFFFF;
+  border: 1px solid rgba(26, 25, 23, 0.1);
+  padding: clamp(32px, 4vw, 48px);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.mandala-detail-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #8C7355;
+}
+
+.mandala-detail-title {
+  font-family: var(--font-sans);
+  font-size: clamp(1.8rem, 2.6vw, 2.4rem);
+  font-weight: 400;
+  color: #1A1917;
+  letter-spacing: -0.01em;
+}
+
+.mandala-detail-function strong {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #8C7355;
+  margin-bottom: 6px;
+}
+
+.mandala-detail-function p {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #1A1917;
+}
+
+.mandala-detail-hint {
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(26, 25, 23, 0.08);
+}
+
+.mandala-detail-hint span {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #8C6D3B;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.mandala-detail-hint p {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: rgba(26, 25, 23, 0.65);
+}
+
+/* 2. Room-by-Room Editorial Rows */
+.residential-rooms-section {
+  padding-bottom: clamp(60px, 8vh, 90px);
+  border-bottom: 1px solid rgba(26, 25, 23, 0.1);
+  margin-bottom: clamp(60px, 8vh, 90px);
+}
+
+.residential-rooms-list {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.residential-room-editorial-row {
+  display: grid;
+  grid-template-columns: 460px 1fr;
+  gap: clamp(40px, 5vw, 64px);
+  align-items: center;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(26, 25, 23, 0.08);
+}
+
+.residential-room-editorial-row:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.room-img-col {
+  width: 100%;
+}
+
+.room-img-frame {
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  background: #E8E3DA;
+  border-radius: 2px;
+}
+
+.room-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.residential-room-editorial-row:hover .room-img {
+  transform: scale(1.03);
+}
+
+.room-content-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.room-meta-top {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.room-num {
+  font-family: 'Cormorant Garamond', var(--font-display), serif;
+  font-size: 1.8rem;
+  font-style: italic;
+  color: #8C6D3B;
+  line-height: 1;
+}
+
+.room-zone {
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #8C7355;
+}
+
+.room-element {
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  color: rgba(26, 25, 23, 0.45);
+}
+
+.room-heading {
+  font-family: var(--font-sans);
+  font-size: clamp(1.6rem, 2.2vw, 2rem);
+  font-weight: 500;
+  color: #1A1917;
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+}
+
+.room-desc {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(26, 25, 23, 0.75);
+  margin-bottom: 24px;
+}
+
+.room-guidelines-box {
+  background: rgba(26, 25, 23, 0.03);
+  padding: 16px 20px;
+  border-left: 2px solid #8C6D3B;
+  border-radius: 0 2px 2px 0;
+}
+
+.guidelines-label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #8C7355;
+  margin-bottom: 8px;
+}
+
+.guidelines-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.guidelines-list li {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: #1A1917;
+}
+
+/* 3. Pre-Purchase Audit Grid */
+.residential-audit-section {
+  padding-bottom: clamp(60px, 8vh, 90px);
+  border-bottom: 1px solid rgba(26, 25, 23, 0.1);
+  margin-bottom: clamp(60px, 8vh, 90px);
+}
+
+.residential-audit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  margin-top: 36px;
+}
+
+.audit-step-card {
+  border-top: 1px solid rgba(26, 25, 23, 0.12);
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.audit-step-num {
+  font-family: 'Cormorant Garamond', var(--font-display), serif;
+  font-size: 1.8rem;
+  font-style: italic;
+  color: #8C6D3B;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.audit-step-title {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1A1917;
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.audit-step-desc {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: rgba(26, 25, 23, 0.68);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .residential-mandala-grid-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .residential-room-editorial-row {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .residential-audit-grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 36px;
+  }
+}
+
+@media (max-width: 640px) {
+  .residential-audit-grid {
+    grid-template-columns: 1fr;
+  }
+}

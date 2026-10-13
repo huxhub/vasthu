@@ -1,0 +1,521 @@
+/* ==========================================================================
+   BESPOKE EDITORIAL PROFILE MONOGRAPH (MUSEUM ARCHITECTURAL DESIGN)
+   ========================================================================== */
+
+.profile-bespoke-page {
+  background-color: #FAF8F5;
+  color: #1A1917;
+  min-height: 100vh;
+  padding-top: clamp(100px, 12vh, 140px);
+}
+
+.profile-bespoke-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 4vw, 56px);
+}
+
+/* 1. Header */
+.profile-bespoke-header {
+  padding-bottom: clamp(48px, 6vh, 72px);
+  border-bottom: 1px solid rgba(26, 25, 23, 0.1);
+  margin-bottom: clamp(48px, 6vh, 80px);
+}
+
+.profile-bespoke-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #8C7355;
+  margin-bottom: 24px;
+}
+
+.profile-bespoke-eyebrow .divider {
+  color: rgba(26, 25, 23, 0.25);
+}
+
+.profile-bespoke-hero-title {
+  font-family: var(--font-sans);
+  font-size: clamp(3.2rem, 6.2vw, 5.8rem);
+  font-weight: 400;
+  line-height: 1.05;
+  color: #1A1917;
+  letter-spacing: -0.025em;
+  margin-bottom: 24px;
+  max-width: 1000px;
+}
+
+.profile-hero-serif-italic {
+  font-family: 'Cormorant Garamond', var(--font-display), serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #8C6D3B;
+  letter-spacing: -0.01em;
+}
+
+.profile-bespoke-hero-lead {
+  font-family: var(--font-sans);
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  line-height: 1.65;
+  color: rgba(26, 25, 23, 0.7);
+  max-width: 720px;
+  font-weight: 400;
+}
+
+/* 2. Split Essay Section */
+.profile-bespoke-essay-section {
+  padding-bottom: clamp(70px, 10vh, 110px);
+  border-bottom: 1px solid rgba(26, 25, 23, 0.1);
+  margin-bottom: clamp(70px, 10vh, 110px);
+}
+
+.profile-bespoke-essay-grid {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: clamp(48px, 6vw, 90px);
+  align-items: flex-start;
+}
+
+/* Left Column: Portrait & Meta */
+.profile-bespoke-portrait-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-bespoke-portrait-frame {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background-color: #E8E3DA;
+  border-radius: 2px;
+}
+
+.profile-bespoke-portrait-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-portrait-caption {
+  margin-top: 16px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(26, 25, 23, 0.1);
+}
+
+.profile-portrait-caption .caption-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #1A1917;
+  letter-spacing: 0.5px;
+}
+
+.profile-portrait-caption .caption-sub {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: #8C7355;
+  margin-top: 2px;
+}
+
+.profile-bespoke-meta-list {
+  display: flex;
+  flex-direction: column;
+  padding-top: 16px;
+}
+
+.meta-line-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(26, 25, 23, 0.06);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+}
+
+.meta-line-item:last-child {
+  border-bottom: none;
+}
+
+.meta-line-label {
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #8C7355;
+  font-size: 0.7rem;
+}
+
+.meta-line-value {
+  color: #1A1917;
+  font-weight: 500;
+  text-align: right;
+}
+
+/* Right Column: Narrative */
+.profile-bespoke-narrative-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-bespoke-standout-quote {
+  font-family: 'Cormorant Garamond', var(--font-display), serif;
+  font-size: clamp(1.8rem, 2.6vw, 2.4rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.35;
+  color: #1A1917;
+  margin-bottom: 36px;
+  padding-left: 28px;
+  border-left: 2px solid #8C6D3B;
+}
+
+.profile-bespoke-paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: rgba(26, 25, 23, 0.78);
+  margin-bottom: 44px;
+}
+
+.profile-bespoke-paragraphs p em {
+  font-style: italic;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15em;
+  color: #1A1917;
+}
+
+.profile-bespoke-metrics-strip {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 24px 0;
+  border-top: 1px solid rgba(26, 25, 23, 0.1);
+  border-bottom: 1px solid rgba(26, 25, 23, 0.1);
+  margin-bottom: 36px;
+}
+
+.metric-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.metric-number {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 500;
+  color: #1A1917;
+  line-height: 1;
+}
+
+.metric-title {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: #8C7355;
+  letter-spacing: 0.5px;
+}
+
+.metric-divider {
+  width: 1px;
+  height: 38px;
+  background-color: rgba(26, 25, 23, 0.12);
+}
+
+.profile-bespoke-cta-wrap {
+  display: flex;
+}
+
+.profile-bespoke-cta-btn {
+  background: #1B1A18;
+  color: #FAF8F5;
+  padding: 16px 36px;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.25s ease;
+  border: 1px solid transparent;
+}
+
+.profile-bespoke-cta-btn:hover {
+  background: #000000;
+  gap: 18px;
+}
+
+.profile-bespoke-cta-btn .arrow {
+  font-size: 1rem;
+  transition: transform 0.25s ease;
+}
+
+.profile-bespoke-cta-btn:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* 3. Disciplines Lined List */
+.profile-bespoke-disciplines-section {
+  padding-bottom: clamp(70px, 10vh, 110px);
+  border-bottom: 1px solid rgba(26, 25, 23, 0.1);
+  margin-bottom: clamp(70px, 10vh, 110px);
+}
+
+.disciplines-header-wrap {
+  margin-bottom: 48px;
+}
+
+.disciplines-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #8C7355;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.disciplines-title {
+  font-family: var(--font-sans);
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-weight: 400;
+  color: #1A1917;
+  letter-spacing: -0.015em;
+}
+
+.disciplines-lined-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.discipline-line-row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  padding: 36px 0;
+  border-top: 1px solid rgba(26, 25, 23, 0.1);
+  align-items: baseline;
+}
+
+.discipline-line-row:last-child {
+  border-bottom: 1px solid rgba(26, 25, 23, 0.1);
+}
+
+.discipline-num {
+  font-family: 'Cormorant Garamond', var(--font-display), serif;
+  font-size: 2.2rem;
+  font-style: italic;
+  color: #8C6D3B;
+  line-height: 1;
+}
+
+.discipline-main {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 32px;
+  align-items: baseline;
+}
+
+.discipline-heading {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1A1917;
+  letter-spacing: -0.01em;
+}
+
+.discipline-description {
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: rgba(26, 25, 23, 0.72);
+}
+
+/* 4. Four Phases Protocol */
+.profile-bespoke-protocol-section {
+  padding-bottom: clamp(70px, 10vh, 110px);
+  border-bottom: 1px solid rgba(26, 25, 23, 0.1);
+  margin-bottom: clamp(70px, 10vh, 110px);
+}
+
+.protocol-header-wrap {
+  margin-bottom: 48px;
+}
+
+.protocol-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #8C7355;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.protocol-title {
+  font-family: var(--font-sans);
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-weight: 400;
+  color: #1A1917;
+  letter-spacing: -0.015em;
+  margin-bottom: 12px;
+}
+
+.protocol-subtext {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  color: rgba(26, 25, 23, 0.65);
+  max-width: 600px;
+}
+
+.protocol-grid-layout {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.protocol-step-item {
+  padding-top: 24px;
+  border-top: 1px solid rgba(26, 25, 23, 0.12);
+  display: flex;
+  flex-direction: column;
+}
+
+.step-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 20px;
+}
+
+.step-index {
+  font-family: 'Cormorant Garamond', var(--font-display), serif;
+  font-size: 1.8rem;
+  font-style: italic;
+  color: #8C6D3B;
+  line-height: 1;
+}
+
+.step-phase-tag {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(26, 25, 23, 0.45);
+}
+
+.step-heading {
+  font-family: var(--font-sans);
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: #1A1917;
+  margin-bottom: 12px;
+  line-height: 1.35;
+}
+
+.step-description {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: rgba(26, 25, 23, 0.65);
+}
+
+/* 5. Closing Monograph */
+.profile-bespoke-closing {
+  padding: 40px 0 120px;
+  text-align: center;
+}
+
+.closing-content-box {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.closing-eyebrow-text {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #8C7355;
+  margin-bottom: 16px;
+}
+
+.closing-title-text {
+  font-family: var(--font-sans);
+  font-size: clamp(2.4rem, 4.4vw, 3.6rem);
+  font-weight: 400;
+  color: #1A1917;
+  line-height: 1.12;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.closing-serif-italic {
+  font-family: 'Cormorant Garamond', var(--font-display), serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #8C6D3B;
+}
+
+.closing-paragraph-text {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(26, 25, 23, 0.7);
+  margin-bottom: 36px;
+}
+
+.closing-action-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .profile-bespoke-essay-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .discipline-main {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .protocol-grid-layout {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .profile-bespoke-metrics-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .metric-divider {
+    display: none;
+  }
+
+  .discipline-line-row {
+    grid-template-columns: 60px 1fr;
+  }
+
+  .protocol-grid-layout {
+    grid-template-columns: 1fr;
+  }
+}

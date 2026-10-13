@@ -1,0 +1,297 @@
+/* ==========================================================================
+   VASTU PAGE ARCHITECTURAL STYLES
+   ========================================================================== */
+
+/* Architectural Floor Plan Grid Visual */
+.vastu-floorplan-section {
+  background: #111613;
+  color: #FAF8F5;
+  border-radius: var(--radius-xl);
+  padding: 60px 48px;
+  margin-top: 40px;
+  border: 1px solid rgba(200, 169, 81, 0.25);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.floorplan-schematic {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(200, 169, 81, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 12px;
+  aspect-ratio: 1 / 1;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.floorplan-zone {
+  background: rgba(200, 169, 81, 0.06);
+  border: 1px dashed rgba(200, 169, 81, 0.35);
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 6px;
+  text-align: center;
+  transition: var(--transition-base);
+}
+
+.floorplan-zone:hover {
+  background: rgba(200, 169, 81, 0.15);
+  border-color: var(--color-gold-light);
+  transform: scale(1.02);
+}
+
+.floorplan-zone.center-brahma {
+  background: rgba(200, 169, 81, 0.12);
+  border: 1px solid var(--color-gold);
+}
+
+.zone-dir {
+  font-size: 0.65rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.zone-name {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.floorplan-compass {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--color-gold-light);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(200, 169, 81, 0.3);
+}
+
+/* Vertical Editorial Examination List */
+.vastu-exam-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 40px;
+  border-top: 1px solid var(--color-border-light);
+}
+
+.vastu-exam-item {
+  display: grid;
+  grid-template-columns: 80px 240px 1fr;
+  align-items: baseline;
+  padding: 24px 12px;
+  border-bottom: 1px solid var(--color-border-light);
+  transition: var(--transition-base);
+}
+
+.vastu-exam-item:hover {
+  background-color: #FAF8F5;
+  padding-left: 20px;
+}
+
+.vastu-exam-num {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-gold-deep);
+}
+
+.vastu-exam-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+.vastu-exam-desc {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* Horizontal Property Rows */
+.property-rows-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.property-row-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: 32px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  text-decoration: none;
+  transition: var(--transition-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.property-row-card:hover {
+  border-color: var(--color-gold-deep);
+  transform: translateX(6px);
+  box-shadow: var(--shadow-md);
+}
+
+.property-row-info h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--color-dark);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.property-row-info p {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.property-row-cta {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-gold-deep);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* Horizontal 5-Step Method */
+.method-5step-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.method-5step-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: 28px 20px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-base);
+  display: flex;
+  flex-direction: column;
+}
+
+.method-5step-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-gold-deep);
+  box-shadow: var(--shadow-md);
+}
+
+/* Profile Editorial Card */
+.profile-editorial-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xl);
+  padding: 56px 48px;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 52px;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+  margin-top: 40px;
+}
+
+.profile-img-frame {
+  width: 100%;
+  height: 380px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border-light);
+}
+
+.profile-img-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Responsive adjustments for Vastu */
+@media (max-width: 900px) {
+
+  .vastu-floorplan-section,
+  .profile-editorial-card {
+    grid-template-columns: 1fr;
+    padding: 36px 24px;
+    gap: 32px;
+  }
+
+  .vastu-exam-item {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 20px 0;
+  }
+
+  .property-row-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 20px;
+    gap: 16px;
+  }
+
+  .method-5step-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+
+  .editorial-split-grid,
+  .editorial-split-grid.reversed {
+    grid-template-columns: 1fr;
+  }
+
+  .num-grid-9,
+  .calc-grid-input,
+  .calc-result-grid {
+    grid-template-columns: 1fr;
+  }
+}

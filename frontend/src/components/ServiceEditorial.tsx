@@ -28,6 +28,15 @@ export type ServiceStory = {
 };
 
 export default function ServiceEditorial({ story }: { story: ServiceStory }) {
+  const feature = {
+    journal: ["Find", "your pattern.", "/images/editorial-study.png"],
+    celestial: ["Read", "the rhythm.", "/images/astro numerology hero.jpg"],
+    landscape: ["Shape", "your space.", "/images/editorial-courtyard.png"],
+    gallery: ["Align", "with intention.", "/images/astro intro.jpg"],
+    residential: ["Feel", "at home.", "/images/editorial-courtyard.png"],
+    commercial: ["Build", "with direction.", "/images/hero-commercial.jpg"],
+    land: ["Know", "the ground.", "/images/editorial-courtyard.png"],
+  }[story.layout ?? "landscape"];
   return (
     <div className={`service-editorial service-editorial--${story.variant ?? "panorama"} service-layout-${story.layout ?? "landscape"}`}>
       <section className="service-cover" aria-labelledby="service-title">
@@ -57,6 +66,11 @@ export default function ServiceEditorial({ story }: { story: ServiceStory }) {
           <div><p className="service-label">Your consultation</p><h2>What we explore.</h2></div>
           <div>{story.points.map(([title, copy], index) => <article className="service-review-row" key={title}><span className="service-number">0{index + 1}</span><div><h3>{title}</h3><p>{copy}</p></div></article>)}</div>
         </div>
+      </section>
+
+      <section className={`service-feature service-feature--${story.layout ?? "landscape"}`}>
+        <div className="service-feature-copy"><p className="service-label">A simple intention</p><h2>{feature[0]}<br /><em>{feature[1]}</em></h2></div>
+        <figure><img src={feature[2]} alt="" aria-hidden="true" loading="lazy" /></figure>
       </section>
 
       {story.banner && (

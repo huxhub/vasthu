@@ -1,0 +1,275 @@
+/* ==========================================================================
+   PAGE 2 BESPOKE SYSTEM: COMMERCIAL VASTU CAPITAL DOSSIER
+   (DARK ARCHITECTURAL TITANIUM, ACCORDION TYPOLOGY, PROCEDURAL PIPELINE)
+   ========================================================================== */
+
+.dossier-hero-section {
+  position: relative;
+  min-height: 94vh;
+  display: flex;
+  align-items: center;
+  padding: 150px 0 100px;
+  background: #0E0D0C;
+  color: #FFFFFF;
+  overflow: hidden;
+}
+
+.dossier-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(200, 169, 81, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200, 169, 81, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+
+.dossier-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+
+.dossier-ticker-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  background: rgba(200, 169, 81, 0.12);
+  border: 1px solid rgba(200, 169, 81, 0.35);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #E2C26E;
+  margin-bottom: 28px;
+}
+
+.dossier-hero-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+  font-weight: 400;
+  line-height: 1.12;
+  color: #F8F6F2;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+.dossier-hero-desc {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 620px;
+  margin-bottom: 40px;
+}
+
+/* Institutional Comparison Section */
+.dossier-contrast-section {
+  padding: 130px 0;
+  background: #141312;
+  color: #FFFFFF;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dossier-contrast-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.contrast-panel-left {
+  padding-right: 20px;
+}
+
+.contrast-tag {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #E2C26E;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.contrast-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #FDFBF7;
+  margin-bottom: 20px;
+}
+
+.contrast-subtext {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.dossier-comparison-table {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.dossier-compare-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 1fr;
+  gap: 20px;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+}
+
+.compare-row-label {
+  font-weight: 600;
+  color: #E2C26E;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+.compare-row-old {
+  color: rgba(255, 255, 255, 0.45);
+  text-decoration: line-through;
+}
+
+.compare-row-sunandha {
+  color: #FDFBF7;
+  font-weight: 500;
+}
+
+/* Interactive Typology Showcase */
+.dossier-typologies-section {
+  padding: 130px 0;
+  background: #FAF8F5;
+  color: #1A1815;
+}
+
+.typology-drawer-list {
+  margin-top: 60px;
+}
+
+.typology-drawer-item {
+  border-top: 1px solid rgba(200, 169, 81, 0.35);
+  padding: 32px 0;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.typology-drawer-item:last-child {
+  border-bottom: 1px solid rgba(200, 169, 81, 0.35);
+}
+
+.typology-drawer-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+
+.typology-drawer-left {
+  display: flex;
+  align-items: baseline;
+  gap: 36px;
+}
+
+.typology-drawer-num {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--color-gold-deep);
+  font-weight: 400;
+}
+
+.typology-drawer-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  font-weight: 400;
+  color: #1A1815;
+}
+
+.typology-drawer-toggle {
+  font-family: var(--font-sans);
+  font-size: 1.4rem;
+  color: var(--color-gold-deep);
+  transition: transform 0.3s ease;
+}
+
+.typology-drawer-body {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px dashed rgba(0, 0, 0, 0.08);
+}
+
+.typology-body-copy {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #555047;
+}
+
+.typology-body-specs {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--color-gold-deep);
+  line-height: 1.8;
+  background: #FFFFFF;
+  padding: 20px 24px;
+  border-left: 2px solid var(--color-gold);
+}
+
+/* Procedural 4-Stage Pipeline */
+.dossier-pipeline-section {
+  padding: 130px 0;
+  background: #FFFFFF;
+}
+
+.pipeline-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  margin-top: 60px;
+}
+
+.pipeline-step-item {
+  position: relative;
+  padding-top: 24px;
+  border-top: 2px solid #1A1815;
+}
+
+.pipeline-step-item.active {
+  border-top-color: var(--color-gold-deep);
+}
+
+.pipeline-step-num {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--color-gold-deep);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.pipeline-step-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: #1A1815;
+  margin-bottom: 12px;
+}
+
+.pipeline-step-desc {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}

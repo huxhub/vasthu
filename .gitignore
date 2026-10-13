@@ -42,3 +42,8 @@ Thumbs.db
 # Cache and temporary files
 .eslintcache
 .tmp/
+
+# Playwright
+.playwright-mcp/
+playwright-report/
+test-results/

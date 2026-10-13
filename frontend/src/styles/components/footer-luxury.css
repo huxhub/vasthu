@@ -1,0 +1,228 @@
+/* ==========================================================================
+   SITE FOOTER (SUNANDHA MINIMALIST DARK LUXURY FOOTER)
+   ========================================================================== */
+.site-footer {
+  background-color: #161513;
+  color: #FAF8F5;
+  padding: 100px 0 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-container {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr 0.85fr 1fr;
+  gap: 64px;
+  margin-bottom: 80px;
+  align-items: flex-start;
+}
+
+.footer-brand-statement {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 460px;
+}
+
+.footer-brand-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+  text-decoration: none;
+}
+
+.footer-brand-insta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.85);
+  transition: var(--transition-base);
+}
+
+.footer-brand-insta svg {
+  width: 22px;
+  height: 22px;
+}
+
+.footer-brand-insta:hover {
+  color: #FFFFFF;
+  transform: scale(1.06);
+}
+
+.footer-brand-names {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-brand-title {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: #FFFFFF;
+  line-height: 1.05;
+}
+
+.footer-brand-sub {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 4px;
+}
+
+.footer-statement-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 3.4vw, 2.75rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #FFFFFF;
+  margin-bottom: 34px;
+  letter-spacing: -0.01em;
+}
+
+.btn-pill-solid {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #FFFFFF;
+  color: #161513;
+  padding: 13px 26px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: var(--transition-base);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.btn-pill-solid .arrow {
+  color: #B58D4B;
+  font-size: 1rem;
+  transition: transform 0.25s ease;
+}
+
+.btn-pill-solid:hover {
+  background-color: #FAF8F5;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.btn-pill-solid:hover .arrow {
+  transform: translateX(4px);
+}
+
+.footer-col-title {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 22px;
+}
+
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-links-list li,
+.footer-links-list li a {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: var(--transition-base);
+  line-height: 1.5;
+}
+
+.footer-links-list li a:hover {
+  color: #FFFFFF;
+  transform: translateX(2px);
+}
+
+.footer-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.5;
+}
+
+.footer-contact-info a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: var(--transition-base);
+}
+
+.footer-contact-info a:hover {
+  color: #FFFFFF;
+}
+
+.footer-bottom-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-bottom-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-bottom-links a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transition: var(--transition-base);
+}
+
+.footer-bottom-links a:hover {
+  color: #FFFFFF;
+}
+
+@media (max-width: 1024px) {
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    padding: 0 24px;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .site-footer {
+    padding: 70px 0 30px;
+  }
+}

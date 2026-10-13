@@ -1,0 +1,156 @@
+/* ==========================================================================
+   SCROLL REVEAL & TRANSITION SYSTEM (WITH STAGGERED DELAYS)
+   ========================================================================== */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* Stagger delay utility classes */
+.reveal-delay-1 {
+  transition-delay: 0.08s;
+}
+
+.reveal-delay-2 {
+  transition-delay: 0.18s;
+}
+
+.reveal-delay-3 {
+  transition-delay: 0.28s;
+}
+
+.reveal-delay-4 {
+  transition-delay: 0.38s;
+}
+
+.reveal-delay-5 {
+  transition-delay: 0.48s;
+}
+
+.reveal-delay-6 {
+  transition-delay: 0.58s;
+}
+
+/* Scale variation for images / cards */
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.97) translateY(20px);
+  transition: opacity 0.95s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.95s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* Directional slide variations */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-28px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(28px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* Active / Revealed State */
+.reveal-on-scroll.is-revealed,
+.reveal-scale.is-revealed,
+.reveal-left.is-revealed,
+.reveal-right.is-revealed {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+/* ==========================================================================
+   SCROLL-TRIGGERED LUXURY IMAGE REVEAL (ALL PAGES)
+   ========================================================================== */
+
+main img.reveal-image {
+  opacity: 0;
+  transform: scale(1.06) translateY(22px);
+  filter: blur(5px) contrast(0.95);
+  transition: opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1.85s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 1.45s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, filter;
+}
+
+main img.reveal-image.is-revealed {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  filter: blur(0px) contrast(1);
+}
+
+/* Exempt carousel images from scroll reveal effects */
+.showcase-slide-card img,
+.showcase-slide-card img.reveal-image,
+.showcase-slide-card img.no-reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+  clip-path: none !important;
+}
+
+/* Global Wipe reveal utility */
+.image-reveal-wipe {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: block;
+  background: #e8e1d4;
+  pointer-events: none;
+  transform: translateX(0);
+  transition: transform 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.image-reveal-wipe.is-revealed {
+  transform: translateX(-101%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .reveal-on-scroll,
+  .reveal-scale,
+  .reveal-left,
+  .reveal-right,
+  main img.reveal-image,
+  .image-reveal-wipe {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
+
+
+/* ==========================================================================
+   LENIS SMOOTH SCROLLING STYLES
+   ========================================================================== */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
