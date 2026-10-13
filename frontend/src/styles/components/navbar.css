@@ -157,8 +157,6 @@
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease, opacity 0.3s ease;
 }
 
-.nav-item.dropdown:hover .dropdown-caret,
-.nav-item.dropdown:focus-within .dropdown-caret,
 .nav-item.dropdown.open .dropdown-caret {
   transform: rotate(180deg) translateY(1px);
   color: var(--color-gold-deep);
@@ -300,8 +298,6 @@
   pointer-events: auto;
 }
 
-.nav-item.dropdown:hover .nav-dropdown-menu,
-.nav-item.dropdown:focus-within .nav-dropdown-menu,
 .nav-item.dropdown.open .nav-dropdown-menu {
   opacity: 1 !important;
   visibility: visible !important;

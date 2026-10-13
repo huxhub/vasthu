@@ -4,6 +4,8 @@ import { ArrowRight, ChevronDown, Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [overHero, setOverHero] = useState(true);
+  const [darkHero, setDarkHero] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [numerologyOpen, setNumerologyOpen] = useState(false);
   const [vastuOpen, setVastuOpen] = useState(false);
@@ -43,11 +45,29 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 30);
+      const hero = document.querySelector<HTMLElement>(
+        "main .home-hero, main .service-cover, main .relocation-new-hero, main .profile-introduction, main .contact-exact-hero"
+      );
+      const headerHeight = document.querySelector(".header-wrapper")?.getBoundingClientRect().height ?? 80;
+      setOverHero(Boolean(hero && hero.getBoundingClientRect().bottom > headerHeight));
+      setDarkHero(Boolean(hero?.matches(".home-hero") || hero?.closest(
+        ".service-layout-residential, .service-layout-celestial, .relocation-uk"
+      )));
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
+    const observer = new ResizeObserver(handleScroll);
+    const main = document.querySelector(".app-shell > main");
+    if (main) observer.observe(main);
     handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    const frame = window.requestAnimationFrame(handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+      window.cancelAnimationFrame(frame);
+      observer.disconnect();
+    };
+  }, [location.pathname]);
 
   const closeAll = () => {
     if (closeTimeoutRef.current) {
@@ -79,7 +99,7 @@ export default function Navbar() {
     location.pathname === "/relocate-uk-to-uae";
 
   return (
-    <div className={`header-wrapper ${scrolled ? "scrolled" : ""}`}>
+    <div className={`header-wrapper ${scrolled ? "scrolled" : ""} ${overHero ? "over-hero" : ""} ${overHero && darkHero ? "over-dark-hero" : ""}`}>
       <header className="nav-bar">
         {/* Brand */}
         <Link to="/" className="brand-sunandha-block" onClick={closeAll}>
@@ -125,7 +145,7 @@ export default function Navbar() {
                 <span>Numerology</span>
                 <ChevronDown size={14} className="dropdown-caret" />
               </button>
-              <div className="nav-dropdown-menu">
+              <div className="nav-dropdown-menu" onClick={closeAll}>
                 <Link
                   to="/numerology"
                   className={`nav-dropdown-card ${isActive("/numerology") ? "active" : ""}`}
@@ -157,7 +177,7 @@ export default function Navbar() {
                 <span>Vastu</span>
                 <ChevronDown size={14} className="dropdown-caret" />
               </button>
-              <div className="nav-dropdown-menu">
+              <div className="nav-dropdown-menu" onClick={closeAll}>
                 <Link
                   to="/residential-vastu"
                   className={`nav-dropdown-card ${isActive("/residential-vastu") ? "active" : ""}`}
@@ -207,7 +227,7 @@ export default function Navbar() {
                 <span>UAE Relocation</span>
                 <ChevronDown size={14} className="dropdown-caret" />
               </button>
-              <div className="nav-dropdown-menu">
+              <div className="nav-dropdown-menu" onClick={closeAll}>
                 <Link
                   to="/relocate-germany-to-uae"
                   className={`nav-dropdown-card ${isActive("/relocate-germany-to-uae") ? "active" : ""}`}
@@ -235,7 +255,7 @@ export default function Navbar() {
 
         {/* Right Action */}
         <div className="nav-header-action-right">
-          <Link to="/contact" className="nav-consult-cta-btn">
+          <Link to="/contact" className="nav-consult-cta-btn" onClick={closeAll}>
             <span>Book Consultation</span>
             <ArrowRight size={14} />
           </Link>

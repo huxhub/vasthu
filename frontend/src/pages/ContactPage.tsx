@@ -34,7 +34,7 @@ export default function ContactPage() {
         <div className="contact-exact-grid">
           {/* Left Column */}
           <div className="contact-exact-left">
-            <figure className="contact-editorial-photo"><img src="/images/hero-contact.jpg" alt="A calm architectural setting for a conversation about your space" loading="lazy" /></figure>
+            <figure className="contact-editorial-photo"><img src="/images/editorial-study.png" alt="A quiet study with natural light and a floor plan prepared for consultation" loading="lazy" /></figure>
 
             <div className="contact-exact-social">
               <a
