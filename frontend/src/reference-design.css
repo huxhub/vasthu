@@ -52,7 +52,7 @@
 .app-shell .home-editorial .home-hero-copy { padding-block: 150px 88px; }
 .app-shell .home-editorial .home-hero h1 { max-width: 19ch; font-size: clamp(2.6rem, 4.8vw, 5.1rem); line-height: 1.2; }
 .app-shell .home-editorial .home-hero-shade { background: linear-gradient(0deg, #141613c9, #14161312 85%), linear-gradient(90deg, #14161345, transparent 75%); }
-.app-shell .home-editorial .home-hero-copy > p:not(.home-kicker) { font-size: 1rem; max-width: 38ch; margin-top: 20px; line-height: 1.7; }
+.app-shell .home-editorial .home-hero-copy > p:not(.home-kicker) { font-size: 1rem; width: 100%; max-width: 584.6375122070312px; margin-top: 20px; line-height: 1.7; }
 .app-shell .home-editorial .home-button { background: transparent; border: 1px solid currentColor; color: inherit; border-radius: 0; padding: 17px 26px; text-transform: uppercase; font-size: .7rem; letter-spacing: .1em; font-weight: 400; box-shadow: none; }
 .app-shell .home-editorial .home-button:hover { background: #b89a58; color: #fff; border-color: #b89a58; }
 .app-shell .home-editorial .home-text-link { text-transform: uppercase; font-size: .7rem; letter-spacing: .1em; font-weight: 400; }
@@ -100,6 +100,44 @@
 .app-shell .reference-footer .footer-minimal-links { justify-content: center; border: 0; gap: 16px 30px; padding: 0 0 28px; text-transform: uppercase; font-size: .66rem; letter-spacing: .1em; }
 .app-shell .reference-footer .footer-bottom-bar { justify-content: center; padding-top: 20px; font-size: .68rem; }
 
+/* Large screens need a proportional hero rather than a fixed-height crop. */
+@media (min-width: 1920px) {
+  .app-shell .home-editorial .home-hero {
+    height: 100svh;
+    min-height: 900px;
+    max-height: none;
+  }
+  .app-shell .home-editorial .home-hero > img { object-position: 65% top; }
+  .app-shell .home-editorial .home-hero-copy {
+    width: min(2400px, 84%);
+    padding-bottom: clamp(100px, 7vh, 180px);
+  }
+  .app-shell .home-editorial .home-hero h1 { font-size: clamp(5.1rem, 3.3vw, 9rem); }
+  .app-shell .home-editorial .home-hero-copy > p:not(.home-kicker) {
+    font-size: clamp(1.1rem, .7vw, 1.75rem);
+    max-width: 42ch;
+    margin-top: 32px;
+  }
+  .app-shell .home-editorial .home-hero .home-button {
+    font-size: clamp(.8rem, .48vw, 1.15rem);
+    padding: 22px 32px;
+  }
+  .app-shell .header-wrapper .nav-bar { max-width: 2400px; gap: 36px; }
+  .app-shell .header-wrapper { padding: 24px 5vw; }
+  .app-shell .header-wrapper.scrolled { padding: 18px 5vw; }
+  .app-shell .brand-sunandha-title { font-size: clamp(1.35rem, 1vw, 2.25rem); }
+  .app-shell .brand-sunandha-sub { font-size: clamp(.62rem, .4vw, .95rem); }
+  .app-shell .brand-logo-img { width: clamp(40px, 2vw, 64px); height: clamp(40px, 2vw, 64px); }
+  .app-shell .nav-bar .nav-menu > .nav-item > a,
+  .app-shell .nav-bar .nav-menu > .nav-item > button { font-size: clamp(.9rem, .55vw, 1.3rem); }
+  .app-shell .header-wrapper .nav-consult-cta-btn {
+    width: auto;
+    min-height: 44px;
+    padding: 14px 24px;
+    font-size: clamp(.85rem, .5vw, 1.15rem);
+  }
+}
+
 /* Keep the enquiry action compact, with breathing room on both sides. */
 .app-shell .nav-header-action-right { margin-inline: clamp(10px, 2vw, 28px); }
 .app-shell .nav-consult-cta-btn,
@@ -115,6 +153,10 @@
 }
 
 @media (max-width: 800px) {
+  .app-shell .home-editorial .home-hero > img { object-position: 90% center; }
+  .app-shell .home-editorial .home-hero-shade {
+    background: linear-gradient(0deg, rgba(20,22,19,.9), rgba(20,22,19,.48) 30%, rgba(20,22,19,.08) 65%, rgba(20,22,19,.22));
+  }
   .app-shell .home-editorial .home-split,
   .app-shell .home-editorial .home-blocks > .home-wrap,
   .app-shell .home-editorial .home-help > .home-wrap,

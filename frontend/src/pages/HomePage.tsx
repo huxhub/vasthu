@@ -57,7 +57,6 @@ export default function HomePage() {
         <img src="/images/home-woman-hero.png" alt="Woman in an ivory saree in a sunlit Indian courtyard" fetchPriority="high" />
         <div className="home-hero-shade" />
         <div className="home-wrap home-hero-copy">
-          <p className="home-kicker">VASTUSHLOKAA · VASTU & NUMEROLOGY</p>
           <h1 id="home-title">Energy in harmony.<br /><em>Life in alignment.</em></h1>
           <p>Vastu and personal guidance for a home, a business, and a life with direction.</p>
           <Link className="home-button" to="/contact">Book a consultation <span aria-hidden="true">↗</span></Link>
