@@ -14,6 +14,8 @@ export default function Navbar() {
   const location = useLocation();
 
   const handleDropdownEnter = (type: "numerology" | "vastu" | "relocation") => {
+    if (!window.matchMedia("(min-width: 1025px) and (hover: hover) and (pointer: fine)").matches) return;
+
     if (closeTimeoutRef.current) {
       clearTimeout(closeTimeoutRef.current);
       closeTimeoutRef.current = null;
@@ -24,6 +26,8 @@ export default function Navbar() {
   };
 
   const handleDropdownLeave = () => {
+    if (!window.matchMedia("(min-width: 1025px) and (hover: hover) and (pointer: fine)").matches) return;
+
     if (closeTimeoutRef.current) {
       clearTimeout(closeTimeoutRef.current);
     }
@@ -32,6 +36,17 @@ export default function Navbar() {
       setVastuOpen(false);
       setRelocationOpen(false);
     }, 280);
+  };
+
+  const toggleDropdown = (type: "numerology" | "vastu" | "relocation") => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+
+    setNumerologyOpen(type === "numerology" ? !numerologyOpen : false);
+    setVastuOpen(type === "vastu" ? !vastuOpen : false);
+    setRelocationOpen(type === "relocation" ? !relocationOpen : false);
   };
 
   useEffect(() => {
@@ -140,7 +155,7 @@ export default function Navbar() {
                 className="dropdown-toggle"
                 aria-expanded={numerologyOpen}
                 aria-haspopup="true"
-                onClick={() => setNumerologyOpen(!numerologyOpen)}
+                onClick={() => toggleDropdown("numerology")}
               >
                 <span>Numerology</span>
                 <ChevronDown size={14} className="dropdown-caret" />
@@ -172,7 +187,7 @@ export default function Navbar() {
                 className="dropdown-toggle"
                 aria-expanded={vastuOpen}
                 aria-haspopup="true"
-                onClick={() => setVastuOpen(!vastuOpen)}
+                onClick={() => toggleDropdown("vastu")}
               >
                 <span>Vastu</span>
                 <ChevronDown size={14} className="dropdown-caret" />
@@ -222,7 +237,7 @@ export default function Navbar() {
                 className="dropdown-toggle"
                 aria-expanded={relocationOpen}
                 aria-haspopup="true"
-                onClick={() => setRelocationOpen(!relocationOpen)}
+                onClick={() => toggleDropdown("relocation")}
               >
                 <span>UAE Relocation</span>
                 <ChevronDown size={14} className="dropdown-caret" />
@@ -263,13 +278,14 @@ export default function Navbar() {
 
         {/* Mobile Hamburger Button */}
         <button
-          className="mobile-menu-btn"
+          className={`mobile-menu-btn ${mobileOpen ? "open" : ""}`}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle navigation menu"
           aria-expanded={mobileOpen}
           aria-controls="primary-navigation"
         >
-          {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+          <Menu size={20} className="mobile-menu-icon mobile-menu-icon--menu" />
+          <X size={20} className="mobile-menu-icon mobile-menu-icon--close" />
         </button>
       </header>
     </div>

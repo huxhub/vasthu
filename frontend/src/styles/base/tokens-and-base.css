@@ -611,19 +611,44 @@ body {
   display: none;
 }
 
-.relocation-new-faq summary span {
+.relocation-new-faq .accordion-caret {
   color: var(--color-gold-deep);
+  flex: 0 0 auto;
+  transition: transform .24s ease;
 }
 
-.relocation-new-faq details[open] summary span {
-  transform: rotate(45deg);
+.relocation-new-faq details[open] .accordion-caret {
+  transform: rotate(180deg);
 }
 
-.relocation-new-faq details p {
+.relocation-new-faq .accordion-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows .38s cubic-bezier(.16, 1, .3, 1);
+}
+
+.relocation-new-faq .accordion-answer p {
+  min-height: 0;
+  overflow: hidden;
+  margin: 0;
   max-width: 620px;
-  padding: 0 30px 24px 0;
+  padding: 0 30px;
   color: var(--color-text-muted);
   line-height: 1.8;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: padding .38s cubic-bezier(.16, 1, .3, 1), opacity .2s ease, transform .38s cubic-bezier(.16, 1, .3, 1);
+}
+
+.relocation-new-faq details[open] .accordion-answer {
+  grid-template-rows: 1fr;
+}
+
+.relocation-new-faq details[open] .accordion-answer p {
+  padding-bottom: 24px;
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: .08s;
 }
 
 .relocation-new-closing {

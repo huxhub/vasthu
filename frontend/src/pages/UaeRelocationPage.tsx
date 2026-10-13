@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ChevronDown } from "lucide-react";
 import PanoramicCtaBanner from "../components/PanoramicCtaBanner";
 
 type Origin = "Germany" | "the UK";
@@ -89,7 +90,7 @@ export default function UaeRelocationPage({ origin }: { origin: Origin }) {
 
       <section className="relocation-new-faq relocation-shell">
         <div><p className="relocation-section-label">COMMON QUESTIONS</p><h2>Before you make the move.</h2></div>
-        <div>{faqs.map(([q, a]) => <details key={q}><summary>{q}<span>+</span></summary><p>{a}</p></details>)}</div>
+        <div>{faqs.map(([q, a]) => <details key={q} name="relocation-faq"><summary>{q}<ChevronDown className="accordion-caret" size={18} aria-hidden="true" /></summary><div className="accordion-answer"><p>{a}</p></div></details>)}</div>
       </section>
 
       <section className="relocation-new-closing relocation-shell">

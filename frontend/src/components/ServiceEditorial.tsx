@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ChevronDown } from "lucide-react";
 import PanoramicCtaBanner from "./PanoramicCtaBanner";
 import "./ServiceEditorial.css";
 import "./ServiceLayouts.css";
@@ -30,7 +31,7 @@ export type ServiceStory = {
 export default function ServiceEditorial({ story }: { story: ServiceStory }) {
   const feature = {
     journal: ["Find", "your pattern.", "/images/editorial-study.png"],
-    celestial: ["Read", "the rhythm.", "/images/astro numerology hero.jpg"],
+    celestial: ["Read", "the rhythm.", "/images/astro-celestial-hero.jpg"],
     landscape: ["Shape", "your space.", "/images/editorial-courtyard.png"],
     gallery: ["Align", "with intention.", "/images/astro intro.jpg"],
     residential: ["Feel", "at home.", "/images/editorial-courtyard.png"],
@@ -87,7 +88,7 @@ export default function ServiceEditorial({ story }: { story: ServiceStory }) {
 
       <section className="service-shell service-questions" aria-labelledby="questions-title">
         <div><p className="service-label">Good to know</p><h2 id="questions-title">Before you begin.</h2></div>
-        <div>{story.faqs.map(([q, a]) => <details key={q}><summary>{q}<span aria-hidden="true">+</span></summary><p>{a}</p></details>)}</div>
+        <div>{story.faqs.map(([q, a]) => <details key={q} name="service-faq"><summary>{q}<ChevronDown className="accordion-caret" size={18} aria-hidden="true" /></summary><div className="accordion-answer"><p>{a}</p></div></details>)}</div>
       </section>
       <section className="service-shell service-closing" id="consultation-booking"><h2>Begin with a conversation.</h2><Link className="service-link" to="/contact">Enquire now <span aria-hidden="true">↗</span></Link></section>
     </div>
