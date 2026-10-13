@@ -11,7 +11,7 @@ export default function ProfilePage() {
           <p>Sunandha offers Vastu and Astro Numerology guidance for homes, workplaces, and personal decisions.</p>
           <Link className="service-link" to="/contact">Start a conversation <span aria-hidden="true">↗</span></Link>
         </div>
-        <figure className="service-story-image"><img src="/images/hero-profile.jpg" alt="The setting for a personal Vastu consultation" fetchPriority="high" /></figure>
+        <figure className="service-story-image"><img src="/images/home-woman-hero.png" alt="Woman in an ivory saree in a sunlit courtyard" fetchPriority="high" /></figure>
       </section>
       <section className="service-review">
         <div className="service-shell service-review-grid">

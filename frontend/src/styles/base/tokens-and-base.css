@@ -699,7 +699,8 @@ body {
 .relocation-germany .relocation-new-hero-copy {
   grid-column: 1;
   grid-row: 1;
-  padding: 190px clamp(28px, 7vw, 110px) 110px max(24px, calc((100vw - 1180px) / 2));
+  /* Keep the copy inset relative to its grid column, not the full viewport. */
+  padding: 190px clamp(28px, 5vw, 110px) 110px clamp(28px, 5vw, 110px);
   order: 1;
 }
 
@@ -760,8 +761,9 @@ body {
 }
 
 .relocation-uk .relocation-new-hero-copy h1 {
-  max-width: 760px;
-  font-size: clamp(4rem, 9vw, 9rem);
+  max-width: 900px;
+  font-size: clamp(2.8rem, 4.5vw, 5rem);
+  line-height: .94;
 }
 
 .relocation-uk .relocation-new-intro {
@@ -826,6 +828,61 @@ body {
 
 .relocation-uk .relocation-new-faq {
   background: var(--color-blue-bg);
+}
+
+/* Keep the Germany route consistent with the immersive relocation hero. */
+.relocation-germany .relocation-new-hero {
+  min-height: 900px;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: end;
+  background: var(--color-dark);
+  color: var(--color-white);
+}
+
+.relocation-germany .relocation-new-hero-image {
+  position: absolute;
+  inset: 0;
+  grid-column: auto;
+  grid-row: auto;
+  min-height: 0;
+}
+
+.relocation-germany .relocation-new-hero-image::after {
+  background: linear-gradient(90deg, rgba(25, 22, 18, .78), rgba(25, 22, 18, .3) 62%, rgba(25, 22, 18, .12));
+}
+
+.relocation-germany .relocation-new-hero-image img {
+  object-position: center;
+}
+
+.relocation-germany .relocation-new-hero-copy {
+  grid-column: auto;
+  grid-row: auto;
+  width: min(1180px, calc(100% - 48px));
+  margin-inline: auto;
+  padding: 230px 0 120px;
+  color: var(--color-white);
+}
+
+.relocation-germany .relocation-new-hero-copy .relocation-eyebrow {
+  color: #f0d68f;
+}
+
+.relocation-germany .relocation-new-hero-copy h1 {
+  max-width: 900px;
+  margin: 22px 0 26px;
+  font-size: clamp(2.8rem, 4.5vw, 5rem);
+  line-height: .94;
+  color: var(--color-white);
+}
+
+.relocation-germany .relocation-new-hero-copy h1 em {
+  color: #e9c873;
+}
+
+.relocation-germany .relocation-new-hero-copy > p:not(.relocation-eyebrow) {
+  color: #eee6d9;
 }
 
 @media (max-width: 760px) {
