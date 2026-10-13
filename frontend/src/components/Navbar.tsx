@@ -66,7 +66,7 @@ export default function Navbar() {
       const headerHeight = document.querySelector(".header-wrapper")?.getBoundingClientRect().height ?? 80;
       setOverHero(Boolean(hero && hero.getBoundingClientRect().bottom > headerHeight));
       setDarkHero(Boolean(hero?.matches(".home-hero") || hero?.closest(
-        ".service-layout-residential, .service-layout-celestial, .relocation-uk"
+        ".service-layout-residential, .service-layout-celestial, .relocation-uk, .relocation-germany"
       )));
     };
     window.addEventListener("scroll", handleScroll, { passive: true });

@@ -50,7 +50,7 @@ export default function UaeRelocationPage({ origin }: { origin: Origin }) {
   return (
     <main className={`relocation-page relocation-${page.slug}`}>
       <section className="relocation-new-hero">
-        <div className="relocation-new-hero-image"><img src={page.image} alt={page.imageAlt} /></div>
+        <div className="relocation-new-hero-image"><img className="no-reveal" src={page.image} alt={page.imageAlt} fetchPriority="high" /></div>
         <div className="relocation-new-hero-copy relocation-shell">
           <p className="relocation-eyebrow">{page.label}</p>
           <h1>{page.title}</h1>

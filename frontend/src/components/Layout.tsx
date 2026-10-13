@@ -37,9 +37,9 @@ export default function Layout() {
         ".reveal-on-scroll:not(.is-revealed):not(.image-reveal-wipe), .reveal-scale:not(.is-revealed), .reveal-left:not(.is-revealed), .reveal-right:not(.is-revealed)"
       );
 
-      // 2. All main content images across every page (excluding carousel and no-reveal)
+      // 2. Content images, excluding priority hero media that must never flash blank.
       const imgEls = document.querySelectorAll<HTMLImageElement>(
-        "main img:not(.no-reveal):not(.navbar img):not(.showcase-slide-card img):not(.is-revealed)"
+        "main img:not(.no-reveal):not([fetchpriority='high']):not(.navbar img):not(.showcase-slide-card img):not(.is-revealed)"
       );
       const wipeEls = document.querySelectorAll<HTMLElement>(
         ".image-reveal-wipe:not(.is-revealed)"

@@ -41,7 +41,7 @@ export default function ServiceEditorial({ story }: { story: ServiceStory }) {
   return (
     <div className={`service-editorial service-editorial--${story.variant ?? "panorama"} service-layout-${story.layout ?? "landscape"}`}>
       <section className="service-cover" aria-labelledby="service-title">
-        <div className="service-cover-image"><img src={story.hero} alt={story.heroAlt} fetchPriority="high" /></div>
+        <div className="service-cover-image"><img className="no-reveal" src={story.hero} alt={story.heroAlt} fetchPriority="high" /></div>
         <div className="service-cover-copy">
           <p className="service-label">{story.label}</p>
           <h1 id="service-title">{story.title}</h1>
