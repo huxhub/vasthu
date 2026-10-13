@@ -30,7 +30,9 @@ export default function Footer() {
             <ul className="footer-links-list">
               <li><Link to="/vastu">Vastu · Astro Vastu</Link></li>
               <li><Link to="/commercial-vastu">Commercial &amp; Plots</Link></li>
-              <li><Link to="/vastu">Geo Vastu — UAE</Link></li>
+              <li><Link to="/geo-vastu">Geo Vastu — UAE</Link></li>
+              <li><Link to="/relocate-germany-to-uae">Germany to UAE</Link></li>
+              <li><Link to="/relocate-uk-to-uae">UK to UAE</Link></li>
               <li><Link to="/numerology">Numerology · Astro Numerology</Link></li>
             </ul>
           </div>

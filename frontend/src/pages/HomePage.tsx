@@ -1,275 +1,88 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
+import "./HomePage.css";
 
-/* ─────────────────────── Showcase Carousel ─────────────────────── */
-const SHOWCASE_SLIDES = [
-  { tag: "Sanctuary", img: "/images/showcase-sanctuary-pool.jpg", alt: "Vedic colonnade sanctuary reflection pool" },
-  { tag: "Interiors", img: "/images/upper image.jpg", alt: "Modern architectural villa with indoor garden" },
-  { tag: "Courtyard", img: "/images/hero image.jpg", alt: "Courtyard swimming pool and warm stone villa" },
-  { tag: "Living", img: "/images/about image.jpg", alt: "Sunlit architectural living room sanctuary" },
-  { tag: "Architecture", img: "/images/hero-home.jpg", alt: "Elevated grand Vedic palace courtyard" },
-  { tag: "Reception", img: "/images/lower image.jpg", alt: "Contemporary travertine double-height reception" },
+const questions = [
+  ["Does a difficult period mean my home has negative energy?", "Not necessarily. A Vastu consultation explores the space and your concerns without assuming that the home explains every challenge."],
+  ["Will I need to break walls or renovate?", "The approach starts with practical changes to placement, room use, and movement. Recommendations depend on your property."],
+  ["Can you review a rented home or a property before purchase?", "Yes. Apartments, villas, rented homes, business spaces, and plots can be discussed before or after you move."],
+  ["What should I share for a consultation?", "Bring your floor plan, property location, and the questions you want to explore. Sunandha can explain which additional details are needed."],
 ];
 
-/* ─────────────────────── FAQ Data ─────────────────────── */
-const ACCORDION_ITEMS = [
-  {
-    title: "Spaces that blend comfort and nature",
-    body: "Our spatial balancing harmonizes natural light, clean airflow, and magnetic compass axes without structural demolition.",
-    link: "/vastu",
-    linkText: "Learn more →",
-    thumb: "/images/hero-home.jpg",
-    thumbAlt: "Courtyard Sanctuary Thumbnail",
-  },
-  {
-    title: "Can corrections be made without structural demolition?",
-    body: "Yes, 100%. We use non-invasive elemental frequency adjustments, energized metals, and sacred geometry without breaking a single brick.",
-  },
-  {
-    title: "How does Astro Numerology sync with Vastu analysis?",
-    body: "Your personal birth chart and name vibrations reveal ruling planetary energies, aligning your property's 16 zones directly with your prosperity.",
-  },
-  {
-    title: "What is included in my consultation assessment?",
-    body: "A comprehensive 16-zone blueprint report, personalized non-demolition cures, and a direct 1-on-1 advisory session.",
-  },
-];
-
-/* ─────────────────────── Cosmos Steps ─────────────────────── */
-const COSMOS_STEPS = [
-  { num: "01", name: "Birth Information", hasArrow: true },
-  { num: "02", name: "Numerological Pattern", hasArrow: true },
-  { num: "03", name: "Astrological Influence", hasArrow: true },
-  { num: "04", name: "Combined Interpretation", hasArrow: true },
-  { num: "05", name: "Personal Guidance", hasArrow: false },
+const SPACE_STORIES = [
+  ["Residential", "/images/upper image.jpg", "A home that supports daily life."],
+  ["Courtyard", "/images/hero image.jpg", "Movement, light, and openness."],
+  ["Interiors", "/images/about image.jpg", "Rooms with a sense of calm."],
+  ["Commercial", "/images/lower image.jpg", "Spaces made for clear decisions."],
+  ["Architecture", "/images/hero-home.jpg", "Form guided by direction."],
 ];
 
 export default function HomePage() {
-  /* ── Showcase carousel state (DOM-based rotation like original) ── */
-  const trackRef = useRef<HTMLDivElement>(null);
-  const isAnimating = useRef(false);
-
-  const rotateShowcase = useCallback((direction: number) => {
-    if (isAnimating.current) return;
-    const track = trackRef.current;
-    if (!track) return;
+  const [paused, setPaused] = useState(false);
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const carouselAnimating = useRef(false);
+  const rotateCarousel = useCallback((direction: number) => {
+    if (carouselAnimating.current || !carouselRef.current) return;
+    const track = carouselRef.current;
     const cards = Array.from(track.children) as HTMLElement[];
     if (cards.length < 3) return;
-    isAnimating.current = true;
-
+    carouselAnimating.current = true;
     if (direction === 1) {
       const [first, second, third, fourth] = cards;
       first.className = "showcase-slide-card card-pos-hidden-left";
       second.className = "showcase-slide-card card-pos-1";
       third.className = "showcase-slide-card card-pos-2";
       if (fourth) fourth.className = "showcase-slide-card card-pos-3";
-      setTimeout(() => {
+      window.setTimeout(() => {
         track.appendChild(first);
         first.className = "showcase-slide-card card-pos-rest";
-        isAnimating.current = false;
-      }, 460);
+        carouselAnimating.current = false;
+      }, 480);
     } else {
       const last = cards[cards.length - 1];
       const [first, second, third] = cards;
       last.className = "showcase-slide-card card-pos-hidden-left";
       track.prepend(last);
-      void track.offsetWidth; // force reflow
+      void track.offsetWidth;
       last.className = "showcase-slide-card card-pos-1";
       first.className = "showcase-slide-card card-pos-2";
       second.className = "showcase-slide-card card-pos-3";
       third.className = "showcase-slide-card card-pos-rest";
-      setTimeout(() => { isAnimating.current = false; }, 460);
+      window.setTimeout(() => { carouselAnimating.current = false; }, 480);
     }
   }, []);
-
-  /* ── Accordion state ── */
-  const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
-  const toggleAccordion = (idx: number) => {
-    setActiveAccordion((prev) => (prev === idx ? null : idx));
-  };
-
-  /* ── Mandala particle canvas ── */
-  const canvasRef = useRef<HTMLCanvasElement>(null);
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    let animId: number;
-    interface Particle { x: number; y: number; radius: number; alpha: number; vy: number; vx: number; maxLife: number; life: number; }
-    const particles: Particle[] = [];
-
-    function resize() {
-      const rect = canvas!.getBoundingClientRect();
-      canvas!.width = rect.width || 500;
-      canvas!.height = rect.height || 500;
-    }
-    window.addEventListener("resize", resize);
-    resize();
-
-    function makeParticle(): Particle {
-      return {
-        x: Math.random() * canvas!.width,
-        y: Math.random() * canvas!.height,
-        radius: Math.random() * 1.8 + 0.5,
-        alpha: Math.random() * 0.6 + 0.15,
-        vy: -(Math.random() * 0.4 + 0.1),
-        vx: (Math.random() - 0.5) * 0.3,
-        maxLife: Math.random() * 300 + 100,
-        life: 0,
-      };
-    }
-
-    for (let i = 0; i < 45; i++) particles.push(makeParticle());
-
-    function animate() {
-      ctx!.clearRect(0, 0, canvas!.width, canvas!.height);
-      particles.forEach((p) => {
-        p.x += p.vx;
-        p.y += p.vy;
-        p.life++;
-        if (p.life > p.maxLife || p.y < 0) {
-          Object.assign(p, makeParticle(), { y: canvas!.height + 10 });
-        }
-        ctx!.beginPath();
-        ctx!.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx!.fillStyle = `rgba(180, 120, 30, ${p.alpha * 0.7})`;
-        ctx!.shadowBlur = 4;
-        ctx!.shadowColor = "rgba(212, 154, 55, 0.4)";
-        ctx!.fill();
-        ctx!.shadowBlur = 0;
-      });
-      animId = requestAnimationFrame(animate);
-    }
-    animate();
-    return () => {
-      cancelAnimationFrame(animId);
-      window.removeEventListener("resize", resize);
-    };
-  }, []);
-
+    if (paused) return undefined;
+    const timer = window.setInterval(() => {
+      rotateCarousel(1);
+    }, 4300);
+    return () => window.clearInterval(timer);
+  }, [paused, rotateCarousel]);
   return (
-    <div className="page-home">
-
-      {/* ══════════════════════════════════════════════════════════════════
-          SECTION 1: HERO (EXACT SUNANDHA EDITORIAL DESIGN)
-          ══════════════════════════════════════════════════════════════════ */}
-      <section id="home" className="hero-section">
-        <img
-          src="/images/hero-ancient-vastu.jpg"
-          alt="Energy in Harmony. Life in Alignment - Sunandha Vastu & Numerology"
-          className="hero-bg-image"
-        />
-        <div className="hero-editorial-overlay"></div>
-        <div className="hero-architectural-wireframe reveal-scale reveal-delay-2">
-          <span className="hero-wireframe-label">MASKING · COMPASS ROTATION</span>
+    <div className={`home-editorial ${paused ? "home-motion-paused" : ""}`}>
+      <section className="home-hero" aria-labelledby="home-title">
+        <img src="/images/home-woman-hero.png" alt="Woman in an ivory saree in a sunlit Indian courtyard" fetchPriority="high" />
+        <div className="home-hero-shade" />
+        <div className="home-wrap home-hero-copy">
+          <p className="home-kicker">VASTUSHLOKAA · VASTU & NUMEROLOGY</p>
+          <h1 id="home-title">Energy in harmony.<br /><em>Life in alignment.</em></h1>
+          <p>Vastu and personal guidance for a home, a business, and a life with direction.</p>
+          <Link className="home-button" to="/contact">Book a consultation <span aria-hidden="true">↗</span></Link>
         </div>
-        <div className="hero-container-editorial">
-          <h1 className="hero-editorial-headline reveal-on-scroll reveal-delay-1">
-            Energy in Harmony.<br />
-            Life in Alignment.
-          </h1>
-          <p className="hero-editorial-desc reveal-on-scroll reveal-delay-2">
-            Vedic Vastu and Astro Numerology designed for peace and growth.
-          </p>
-          <div className="hero-cta-row reveal-on-scroll reveal-delay-3">
-            <Link to="/contact" className="btn-pill-solid">
-              <span>Book Consultation</span>
-              <span className="arrow">→</span>
-            </Link>
-          </div>
-        </div>
-        <div className="hero-bottom-indicator">
-          <span className="hero-indicator-dot"></span>
-        </div>
+        <a className="home-hero-compass" href="#home-energy" aria-label="Explore home energy">
+          <svg viewBox="0 0 160 160" aria-hidden="true">
+            <circle cx="80" cy="80" r="64" fill="none" stroke="currentColor" strokeWidth=".7" />
+            <circle className="home-compass-orbit" cx="80" cy="80" r="52" fill="none" stroke="currentColor" strokeDasharray="1 7" />
+            <g className="home-compass-needle"><path d="M80 35 91 80 80 125 69 80Z" fill="none" stroke="currentColor" /><path d="M80 35 91 80 80 80Z" fill="currentColor" /></g>
+            <circle cx="80" cy="80" r="3" fill="currentColor" />
+            <text x="80" y="10" textAnchor="middle">N</text><text x="151" y="84" textAnchor="middle">E</text><text x="80" y="157" textAnchor="middle">S</text><text x="9" y="84" textAnchor="middle">W</text>
+          </svg>
+          <span>EXPLORE YOUR SPACE ↓</span>
+        </a>
       </section>
 
-      {/* ══════════════════════════════════════════════════════════════════
-          SECTION 2: HOME ENERGY & SPATIAL BALANCE
-          ══════════════════════════════════════════════════════════════════ */}
-      <section id="about" className="section-about">
-        <div className="container">
-          <div className="about-energy-grid">
-            <div className="about-energy-img-col reveal-scale reveal-delay-1">
-              <div className="about-energy-img-frame">
-                <img src="/images/about image.jpg" alt="Your home carries more than memories. It carries energy." />
-              </div>
-            </div>
-            <div className="about-energy-text-col">
-              <h2 className="about-energy-heading reveal-on-scroll reveal-delay-2">
-                Your home carries more than<br />
-                memories. It carries energy.
-              </h2>
-              <p className="about-energy-desc reveal-on-scroll reveal-delay-3">
-                Every entrance, opening and movement creates a relationship between direction, balance and daily life. When
-                a home supports its people, harmony feels natural, decisions become clearer and growth has room to unfold.
-              </p>
-              <div className="about-energy-bottom-row reveal-on-scroll reveal-delay-4">
-                <div className="about-energy-keywords">
-                  HOME ENERGY · DIRECTION · BALANCE<br />
-                  HARMONY · PERSONAL GROWTH · PROSPERITY
-                </div>
-                <div className="about-compass-rose" aria-label="Cardinal Compass Alignment">
-                  <div className="about-compass-crosshairs"></div>
-                  <span className="about-compass-n">N</span>
-                  <div className="about-compass-pointer"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════════════════════
-          SECTION 3: DISCOVER THE MAGIC OF YOUR ESCAPE (SHOWCASE CAROUSEL)
-          ══════════════════════════════════════════════════════════════════ */}
-      <section id="showcase" className="section-showcase">
-        <div className="container">
-          <div className="showcase-layout">
-            <div className="showcase-text-col reveal-left reveal-delay-1">
-              <h2 className="showcase-title">Discover the magic<br />of your escape</h2>
-              <div className="showcase-divider-line"></div>
-              <p className="showcase-desc">
-                From lush landscapes to warm interiors, every corner of our retreat is designed to bring you peace.
-              </p>
-              <div className="showcase-nav-arrows">
-                <button className="nav-arrow-btn" onClick={() => rotateShowcase(-1)} aria-label="Previous image">←</button>
-                <button className="nav-arrow-btn" onClick={() => rotateShowcase(1)} aria-label="Next image">→</button>
-              </div>
-            </div>
-            <div className="showcase-images-wrapper reveal-right reveal-delay-2">
-              <div className="showcase-track" ref={trackRef}>
-                {SHOWCASE_SLIDES.map((slide, i) => {
-                  let posClass = "card-pos-rest";
-                  if (i === 0) posClass = "card-pos-1";
-                  else if (i === 1) posClass = "card-pos-2";
-                  else if (i === 2) posClass = "card-pos-3";
-                  return (
-                    <div key={slide.tag} className={`showcase-slide-card ${posClass}`}>
-                      <span className="showcase-card-tag">{slide.tag}</span>
-                      <img src={slide.img} alt={slide.alt} />
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════════════════════
-          SECTION 4: ASTRO NUMEROLOGY (NUMBERS × COSMOS)
-          ══════════════════════════════════════════════════════════════════ */}
-      <section id="astro-cosmos" className="section-astro-cosmos">
-        <div className="container">
-          <div className="astro-cosmos-layout">
-
-            {/* Left: Sacred Golden Lotus Mandala Visual */}
-            <div className="cosmos-orbital-stage reveal-scale reveal-delay-1">
-              <canvas ref={canvasRef} className="mandala-canvas-bg"></canvas>
-              <div className="mandala-svg-wrapper">
-                <svg viewBox="0 0 600 700" className="filter drop-shadow-[0_4px_20px_rgba(180,120,20,0.25)] transition-all duration-500">
+      <div className="home-symbol-band">
+        <div className="home-mandala"><svg viewBox="0 0 600 700" aria-hidden="true">
                   <defs>
                     <linearGradient id="goldGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
                       <stop offset="0%" stopColor="#b87b1e" />
@@ -463,200 +276,97 @@ export default function HomePage() {
                       <circle cx="0" cy="0" r="2.5" fill="#8c5812" filter="url(#intenseGlow)" />
                     </g>
                   </g>
-                </svg>
-              </div>
-            </div>
+                </svg></div>
+        <p className="home-kicker">DIRECTION · BALANCE · POSSIBILITY</p>
+        <button className="home-motion-button" type="button" onClick={() => setPaused(!paused)} aria-pressed={paused}>
+          {paused ? "Resume animation" : "Pause animation"}
+        </button>
+      </div>
 
-            {/* Right: Editorial Headline & 5-Step Process */}
-            <div className="cosmos-editorial-col">
-              <span className="cosmos-eyebrow reveal-on-scroll reveal-delay-1">ASTRO NUMEROLOGY</span>
-              <h2 className="cosmos-headline reveal-on-scroll reveal-delay-2">
-                When numbers meet the<br />
-                movement of the cosmos.
-              </h2>
-              <div className="cosmos-steps-list">
-                {COSMOS_STEPS.map((step) => (
-                  <Link
-                    key={step.num}
-                    to="/astro-numerology"
-                    className="cosmos-step-row reveal-on-scroll reveal-delay-2"
-                    style={{ textDecoration: "none", color: "inherit" }}
-                  >
-                    <span className="cosmos-step-num">{step.num}</span>
-                    <span className="cosmos-step-name">
-                      {step.name} {step.hasArrow && <span className="cosmos-step-arrow">↓</span>}
-                    </span>
-                  </Link>
-                ))}
-              </div>
-              <Link to="/astro-numerology" className="cosmos-link-cta reveal-on-scroll reveal-delay-6">
-                <span>Explore Astro Numerology</span>
-                <span className="arrow">→</span>
-              </Link>
-            </div>
+      <section id="home-energy" className="home-section home-wrap home-split" aria-labelledby="energy-title">
+        <div className="home-photo"><img src="/images/about image.jpg" loading="lazy" alt="An airy home opening onto a peaceful courtyard" /><span className="image-reveal-wipe reveal-on-scroll" aria-hidden="true" /></div>
+        <div className="home-copy">
+          <p className="home-kicker">01 / HOME ENERGY</p>
+          <h2 id="energy-title">Make room for<br /><em>growth.</em></h2>
+          <p>Your home is where you rest, reconnect, and plan what comes next. Vastu considers direction, light, and placement to bring a sense of balance to everyday living.</p>
+          <Link className="home-text-link" to="/vastu">Understand Vastu <span aria-hidden="true">↗</span></Link>
+        </div>
+      </section>
 
+      <section className="home-section home-blocks" aria-labelledby="blocks-title">
+        <div className="home-wrap">
+          <div className="home-section-head"><p className="home-kicker">02 / WHEN HOME FEELS BLOCKED</p><h2 id="blocks-title">Something feels<br /><em>out of balance?</em></h2><p>In Vastu, negative energy describes an imbalance in a space. Start with the everyday concerns you want to understand.</p></div>
+          <div className="home-three">
+            {[
+              ["01", "Rest feels difficult", "Rooms that feel unsettled or leave little space to unwind."],
+              ["02", "Focus feels scattered", "Work areas that feel cluttered, distracting, or disconnected."],
+              ["03", "The space feels heavy", "Dark corners, awkward movement, or a home that no longer feels comfortable."],
+            ].map(([n, title, copy]) => <article className="home-lined-item" key={n}><span className="home-index">{n}</span><h3>{title}</h3><p>{copy}</p></article>)}
           </div>
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════════════════════
-          SECTION 5: THOUGHTFUL SPACES & ACCORDION
-          ══════════════════════════════════════════════════════════════════ */}
-      <section id="faq" className="section-faq-wisdom">
-        <div className="container">
-          <div className="faq-layout-grid">
-
-            {/* Left: Heading & Preview */}
-            <div className="faq-left-sticky reveal-left reveal-delay-1">
-              <h2 className="faq-main-heading">
-                Thoughtful spaces and experiences for complete relaxation.
-              </h2>
-              <div className="faq-preview-card">
-                <img src="/images/hero-contact.jpg" alt="Peaceful Meditation Courtyard" />
-              </div>
-              <p className="faq-left-caption">
-                A place to disconnect from the noise and reconnect with yourself.
-              </p>
+      <section className="home-section home-wrap" aria-labelledby="importance-title">
+        <div className="home-section-head"><p className="home-kicker">03 / WHY VASTU MATTERS</p><h2 id="importance-title">A space that supports<br /><em>its purpose.</em></h2><p>Traditional spatial principles, considered in the context of how you live and work today.</p></div>
+        <div className="home-services">
+          <Link to="/residential-vastu" className="home-service">
+            <div className="home-service-image"><img src="/images/upper image.jpg" loading="lazy" alt="Warm residential interior with natural light" /><span className="image-reveal-wipe reveal-on-scroll" aria-hidden="true" /></div>
+            <div className="home-service-heading"><h3>For your home</h3><span aria-hidden="true">↗</span></div>
+            <p>Guidance for rest, family life, room placement, and a balanced daily routine.</p>
+          </Link>
+          <Link to="/commercial-vastu" className="home-service">
+            <div className="home-service-image"><img src="/images/lower image.jpg" loading="lazy" alt="Open and welcoming commercial reception" /><span className="image-reveal-wipe reveal-on-scroll" aria-hidden="true" /></div>
+            <div className="home-service-heading"><h3>For your business</h3><span aria-hidden="true">↗</span></div>
+            <p>Considered layouts for offices, shops, commercial properties, and plots.</p>
+          </Link>
+        </div>
+        <div className="showcase-layout home-layered-showcase">
+          <div className="showcase-text-col">
+            <p className="home-kicker">A FEW WAYS SPACE CAN FEEL</p>
+            <h3>See the relationship between space and daily life.</h3>
+            <div className="showcase-nav-arrows">
+              <button className="nav-arrow-btn" type="button" onClick={() => rotateCarousel(-1)} aria-label="Previous space image">←</button>
+              <button className="nav-arrow-btn" type="button" onClick={() => rotateCarousel(1)} aria-label="Next space image">→</button>
             </div>
-
-            {/* Right: Accordion */}
-            <div className="accordion-list reveal-right reveal-delay-2">
-              {ACCORDION_ITEMS.map((item, idx) => (
-                <div key={idx} className={`accordion-item ${activeAccordion === idx ? "active" : ""}`}>
-                  <div className="accordion-header" onClick={() => toggleAccordion(idx)}>
-                    <div className="accordion-header-left">
-                      <span className="accordion-index">{String(idx + 1).padStart(2, "0")}</span>
-                      <span>{item.title}</span>
-                    </div>
-                    <span className="accordion-icon">{activeAccordion === idx ? "−" : "+"}</span>
-                  </div>
-                  <div className="accordion-body">
-                    {item.thumb ? (
-                      <div style={{ display: "flex", gap: "20px", alignItems: "center", justifyContent: "space-between" }}>
-                        <div>
-                          <p style={{ marginBottom: "10px" }}>{item.body}</p>
-                          {item.link && (
-                            <Link
-                              to={item.link}
-                              style={{ fontSize: "0.85rem", fontWeight: 600, color: "var(--color-gold-deep)", textDecoration: "underline" }}
-                            >
-                              {item.linkText}
-                            </Link>
-                          )}
-                        </div>
-                        <div style={{ width: "100px", height: "65px", flexShrink: 0, borderRadius: "var(--radius-sm)", overflow: "hidden" }}>
-                          <img src={item.thumb} alt={item.thumbAlt} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                        </div>
-                      </div>
-                    ) : (
-                      item.body
-                    )}
-                  </div>
+          </div>
+          <div className="showcase-images-wrapper">
+            <div className="showcase-track" ref={carouselRef}>
+              {SPACE_STORIES.map(([tag, image, caption], index) => (
+                <div key={tag} className={`showcase-slide-card ${index === 0 ? "card-pos-1" : index === 1 ? "card-pos-2" : index === 2 ? "card-pos-3" : "card-pos-rest"}`}>
+                  <span className="showcase-card-tag">{tag}</span>
+                  <img src={image} loading="lazy" alt={caption} className="no-reveal" />
                 </div>
               ))}
             </div>
-
           </div>
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════════════════════
-          SECTION 6: SPACE WITH INTENTION (RESIDENTIAL & COMMERCIAL)
-          ══════════════════════════════════════════════════════════════════ */}
-      <section id="intentions" className="section-spaces-intention">
-        {/* Upper Banner: Residential Vastu */}
-        <div className="space-intention-banner banner-residential reveal-scale reveal-delay-1">
-          <img
-            src="/images/upper image.jpg"
-            alt="A home should support the life you want to build - Sunandha Residential Vastu"
-            className="space-intention-bg"
-          />
-          <div className="space-intention-overlay"></div>
-          <div className="space-intention-content">
-            <div className="space-intention-left">
-              <span className="space-intention-eyebrow">SPACE WITH INTENTION</span>
-              <h2 className="space-intention-title">
-                A home should support<br />the life you want to build.
-              </h2>
-              <div className="space-intention-tags">
-                <span>— Existing houses</span>
-                <span>— Apartments</span>
-                <span>— Villas</span>
-                <span>— New construction</span>
-                <span>— Renovation</span>
-                <span>— Floor-plan analysis</span>
-                <span>— Directional analysis</span>
-                <span>— Room placement</span>
-                <span>— Energy balancing</span>
-              </div>
-            </div>
-            <div className="space-intention-right">
-              <Link to="/vastu" className="space-intention-link">
-                <span>Explore Residential Vastu</span>
-                <span className="arrow">→</span>
-              </Link>
-            </div>
+      <section className="home-section home-help" aria-labelledby="help-title">
+        <div className="home-wrap">
+          <div className="home-section-head"><p className="home-kicker">04 / HOW SUNANDHA HELPS</p><h2 id="help-title">Clear guidance.<br /><em>A personal approach.</em></h2></div>
+          <div className="home-three">
+            {[
+              ["01", "Share your concerns", "Tell Sunandha about your space, your plans, and what feels unresolved."],
+              ["02", "Understand your space", "Review direction, entrances, room use, and the layout together."],
+              ["03", "Take practical steps", "Receive recommendations suited to your property and daily life."],
+            ].map(([n, title, copy]) => <article className="home-lined-item" key={n}><span className="home-index">{n}</span><h3>{title}</h3><p>{copy}</p></article>)}
           </div>
-        </div>
-
-        {/* Lower Banner: Commercial Vastu */}
-        <div className="space-intention-banner banner-commercial reveal-scale reveal-delay-2">
-          <img
-            src="/images/lower image.jpg"
-            alt="Spaces designed for business momentum - Sunandha Commercial Vastu"
-            className="space-intention-bg"
-          />
-          <div className="space-intention-overlay"></div>
-          <div className="space-intention-content">
-            <div className="space-intention-left">
-              <span className="space-intention-eyebrow">SPACE WITH INTENTION</span>
-              <h2 className="space-intention-title">
-                Spaces designed for<br />business momentum.
-              </h2>
-              <div className="space-intention-tags">
-                <span>— Corporate Offices</span>
-                <span>— Retail</span>
-                <span>— Factories</span>
-                <span>— Hospitality</span>
-                <span>— Commercial Buildings</span>
-                <span>— Clinics</span>
-                <span>— Institutions</span>
-                <span>— Plots</span>
-              </div>
-            </div>
-            <div className="space-intention-right">
-              <Link to="/commercial-vastu" className="space-intention-link">
-                <span>Explore Commercial Vastu</span>
-                <span className="arrow">→</span>
-              </Link>
-            </div>
-          </div>
+          <div className="home-help-bottom"><Link className="home-text-link" to="/contact">Discuss your space <span aria-hidden="true">↗</span></Link><Link className="home-subtle-link" to="/astro-numerology">Explore Astro Numerology →</Link></div>
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════════════════════
-          SECTION 7: CLOSING CALL TO ACTION
-          ══════════════════════════════════════════════════════════════════ */}
-      <section id="contact" className="section-quiet-cta">
-        <div className="container">
-          <div className="quiet-cta-content reveal-on-scroll reveal-delay-1">
-            <h2 className="quiet-cta-heading">
-              Your space may already<br />
-              be telling you something.
-            </h2>
-            <p className="quiet-cta-subheading">
-              Let's understand it together.
-            </p>
-            <div className="quiet-cta-btn-wrap">
-              <Link to="/vastu" className="btn-quiet-pill">
-                <span>Book Consultation</span>
-                <span className="arrow">→</span>
-              </Link>
-            </div>
-          </div>
-        </div>
+      <section className="home-section home-wrap home-faq" aria-labelledby="faq-title">
+        <div className="home-copy"><p className="home-kicker">05 / COMMON QUESTIONS</p><h2 id="faq-title">A little clarity,<br /><em>before you begin.</em></h2><p>Answers to the questions clients often bring to their first conversation.</p></div>
+        <div className="home-questions">{questions.map(([q, a]) => <details key={q}><summary>{q}<span aria-hidden="true">+</span></summary><p>{a}</p></details>)}</div>
       </section>
 
+      <section className="home-section home-profile" aria-labelledby="profile-title">
+        <div className="home-wrap home-profile-grid">
+          <div><p className="home-kicker">06 / MEET SUNANDHA</p><h2 id="profile-title">The person behind<br /><em>the guidance.</em></h2></div>
+          <div className="home-copy"><p>Sunandha brings Vastu and Astro Numerology into a personal conversation about your space and your goals. Explore her story, approach, and areas of practice.</p><Link className="home-text-link" to="/profile">Read Sunandha’s profile <span aria-hidden="true">↗</span></Link><Link className="home-button" to="/contact">Book a consultation <span aria-hidden="true">↗</span></Link></div>
+        </div>
+      </section>
     </div>
   );
 }

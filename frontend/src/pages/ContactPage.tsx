@@ -72,7 +72,7 @@ export default function ContactPage() {
             </div>
 
             <p className="contact-exact-note">
-              Verified phone, email, location, and Instagram profile to be added.
+              Consultations are available across India, the UAE, and worldwide.
             </p>
           </div>
 
@@ -120,10 +120,11 @@ export default function ContactPage() {
                     >
                       <option value="" disabled>Please select</option>
                       <option value="Residential Vastu">Residential Vastu</option>
-                      <option value="Commercial and Workspace">Commercial and Workspace Spheres</option>
+                      <option value="Commercial and Workspace">Commercial Vastu &amp; Plots</option>
                       <option value="Astro Numerology">Astro Numerology</option>
                       <option value="Astro Vastu Synthesis">Astro Vastu Synthesis</option>
                       <option value="Pre-Purchase Land Audit">Pre-Purchase Land Audit</option>
+                      <option value="Geo Vastu UAE">Geo Vastu — UAE</option>
                     </select>
                     <span className="select-chevron">⌄</span>
                   </div>

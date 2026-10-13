@@ -81,7 +81,7 @@ export default function CommercialVastuPage() {
         <section className="commercial-pillars-section">
           <div className="commercial-section-header">
             <span className="commercial-eyebrow">PRACTICE STANDARDS</span>
-            <h2 className="commercial-section-title">Engineered for Enterprise Continuity</h2>
+            <h2 className="commercial-section-title">Designed for clarity and growth</h2>
           </div>
 
           <div className="commercial-pillars-grid">
@@ -99,7 +99,7 @@ export default function CommercialVastuPage() {
         <section className="commercial-sectors-section">
           <div className="commercial-section-header">
             <span className="commercial-eyebrow">SECTORS</span>
-            <h2 className="commercial-section-title">Institutional Deployments</h2>
+            <h2 className="commercial-section-title">Spaces we support</h2>
           </div>
 
           <div className="commercial-sectors-grid">

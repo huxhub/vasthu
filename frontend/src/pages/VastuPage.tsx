@@ -6,7 +6,7 @@ const TYPOLOGY_SLIDES = [
   { img: "/images/upper image.jpg", alt: "Private Residences and Villas", tag: "01 · Residences", title: "Private Residences and Villas", cat: "Living and Rest" },
   { img: "/images/lower image.jpg", alt: "Commercial and Workspaces", tag: "02 · Commercial", title: "Commercial and Workspace Spheres", cat: "Focus and Momentum" },
   { img: "/images/hero image.jpg", alt: "Plot Selection and Land Diagnostics", tag: "03 · Land and Site", title: "Plot Selection and Land Evaluation", cat: "Foundational Energy" },
-  { img: "/images/showcase-sanctuary-pool.jpg", alt: "Sanctuary and Retreat Architecture", tag: "04 · Retreats", title: "Sanctuary and Retreat Architecture", cat: "Deep Healing" },
+  { img: "/images/showcase-sanctuary-pool.jpg", alt: "Balanced architectural space", tag: "04 · Special Spaces", title: "Spaces for rest and renewal", cat: "Well-being" },
   { img: "/images/about image.jpg", alt: "Penthouses and High-Rise Apartments", tag: "05 · High-Rise", title: "Penthouses and High-Rise Living", cat: "Sky Living" },
 ];
 
@@ -121,7 +121,7 @@ export default function VastuPage() {
               </h2>
             </div>
             <div className="typologies-header-right reveal-right reveal-delay-2">
-              <p className="typologies-header-desc">Harmonizing the internal geometry of residential, commercial, and retreat spaces.</p>
+              <p className="typologies-header-desc">Understanding the internal geometry of homes, businesses, and special spaces.</p>
               <div className="typologies-nav-arrows">
                 <button className="typologies-nav-btn" onClick={() => rotateTypologies(-1)} aria-label="Previous image">←</button>
                 <button className="typologies-nav-btn" onClick={() => rotateTypologies(1)} aria-label="Next image">→</button>
@@ -163,7 +163,7 @@ export default function VastuPage() {
               <div className="bridge-eyebrow reveal-on-scroll reveal-delay-1">SPECIALIZED SYNTHESIS</div>
               <h2 className="bridge-title reveal-on-scroll reveal-delay-2">When Architectural Geometry<br />Meets Personal Destiny.</h2>
               <p className="bridge-desc reveal-on-scroll reveal-delay-3">
-                Standard Vastu examines the building. Astro Vastu examines who is living inside it. By synchronizing the 16 Vastu directional zones with the individual planetary degrees of the primary occupants, the physical structure becomes an active catalyst for clarity, health, and prosperity.
+                Standard Vastu examines the building. Astro Vastu also considers the people living or working within it, creating a more personal approach to spatial guidance.
               </p>
             </div>
             <div className="bridge-cta-wrap reveal-on-scroll reveal-delay-3">

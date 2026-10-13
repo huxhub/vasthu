@@ -97,7 +97,7 @@ export default function AstroVastuPage() {
             </div>
             <div className="astro-realm-card reveal-on-scroll reveal-delay-3">
               <div className="astro-realm-img-frame">
-                <img src="/images/showcase-sanctuary-pool.jpg" alt="Land, Villa & Directional Helixes" />
+                <img src="/images/showcase-sanctuary-pool.jpg" alt="Land, villa, and directional alignment" />
               </div>
               <span className="astro-realm-num">03</span>
               <h3 className="astro-realm-heading">Land, Villa & Directional Helixes</h3>

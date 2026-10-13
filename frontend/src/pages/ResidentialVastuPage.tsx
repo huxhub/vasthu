@@ -158,7 +158,7 @@ export default function ResidentialVastuPage() {
           </div>
           <h1 className="hero-editorial-headline">
             Spatial wisdom for<br />
-            <span>the living sanctuary.</span>
+            <span>a balanced home.</span>
           </h1>
           <p className="hero-editorial-desc">
             Harmonizing private villas, family estates, and luxury penthouses with classical solar axes and five-element balance.
@@ -246,7 +246,7 @@ export default function ResidentialVastuPage() {
         <section className="residential-rooms-section">
           <div className="residential-section-header">
             <span className="residential-eyebrow">ROOM BY ROOM</span>
-            <h2 className="residential-section-title">The Sanctuary Suite in Practice</h2>
+            <h2 className="residential-section-title">Guidance, room by room</h2>
           </div>
 
           <div className="residential-rooms-list">
