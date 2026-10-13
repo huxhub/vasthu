@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import ScrollToTop from "./ScrollToTop";
 import Lenis from "lenis";
+import "../reference-design.css";
 
 export default function Layout() {
   // Lenis smooth scroll — init once

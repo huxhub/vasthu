@@ -34,17 +34,7 @@ export default function ContactPage() {
         <div className="contact-exact-grid">
           {/* Left Column */}
           <div className="contact-exact-left">
-            <h2 className="contact-exact-left-title">A personal connection.</h2>
-            <p className="contact-exact-left-desc">
-              For property questions, personal guidance, or simply to understand the right consultation for you.
-            </p>
-
-            <div className="contact-exact-book-wrap">
-              <a href="#consultation-form" className="contact-exact-book-link">
-                <span>Book a Consultation</span>
-                <span className="arrow">→</span>
-              </a>
-            </div>
+            <figure className="contact-editorial-photo"><img src="/images/hero-contact.jpg" alt="A calm architectural setting for a conversation about your space" loading="lazy" /></figure>
 
             <div className="contact-exact-social">
               <a
@@ -72,7 +62,7 @@ export default function ContactPage() {
             </div>
 
             <p className="contact-exact-note">
-              Consultations are available across India, the UAE, and worldwide.
+              India · UAE consultations.
             </p>
           </div>
 

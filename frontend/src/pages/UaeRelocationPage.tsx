@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PanoramicCtaBanner from "../components/PanoramicCtaBanner";
 
 type Origin = "Germany" | "the UK";
 
@@ -7,12 +8,12 @@ const pages = {
     slug: "germany",
     label: "GERMANY → UAE",
     title: <>From one way of living<br /><em>to another.</em></>,
-    intro: "Moving from Germany to the UAE changes more than your address. It changes the light, climate, scale, and rhythm of the home you return to each day.",
+    intro: "Moving from Germany to the UAE? Review your next home before you make the move.",
     image: "/images/hero-geo-vastu.jpg",
     imageAlt: "Warm UAE courtyard with natural light and geometric pathways",
     caption: "A home in the UAE should feel considered from the moment you enter it.",
     detailTitle: "A new home, read with familiar care.",
-    detail: "Whether you are choosing an apartment in Dubai, a villa in Abu Dhabi, or a property elsewhere in the UAE, Sunandha helps you look at the space before the move becomes permanent.",
+    detail: "Compare UAE apartments and villas through their orientation, floor plan, and the routines you want to bring with you.",
     moments: [
       ["Before the search", "Compare orientation, entrances, surroundings, and floor plans while you still have choices."],
       ["Before the move", "Understand where rest, work, family time, and everyday movement may sit within the home."],
@@ -23,12 +24,12 @@ const pages = {
     slug: "uk",
     label: "UK → UAE",
     title: <>A new address.<br /><em>A different rhythm.</em></>,
-    intro: "Moving from the UK to the UAE often means more sunlight, larger spaces, different property types, and a new daily routine. Your home should help you make that transition well.",
+    intro: "From the UK to the UAE: choose a home that fits your new daily rhythm.",
     image: "/images/hero-residential.jpg",
     imageAlt: "Light filled UAE residence with a calm, welcoming interior",
     caption: "The right home can make a new country feel familiar sooner.",
     detailTitle: "Choose a space that meets you where you are.",
-    detail: "Sunandha brings a residential Vastu perspective to your search, helping you consider the entrance, layout, natural light, and room relationships before you settle in.",
+    detail: "Consider natural light, entrances, and room use as you move from familiar UK routines to life in the UAE.",
     moments: [
       ["While viewing", "Read the property as a whole: its direction, shape, entry, light, and relationship to the surroundings."],
       ["While planning", "Think through how the rooms will support work, rest, children, guests, and the routines of your new life."],
@@ -58,7 +59,7 @@ export default function UaeRelocationPage({ origin }: { origin: Origin }) {
       </section>
 
       <section className="relocation-new-intro relocation-shell">
-        <div className="relocation-new-intro-number">01</div>
+        <figure className="relocation-intro-photo"><img src={origin === "Germany" ? "/images/upper image.jpg" : "/images/about image.jpg"} alt="Residential interior with natural light and space for daily living" loading="lazy" /></figure>
         <div><p className="relocation-section-label">A UAE HOME, CONSIDERED IN CONTEXT</p><h2>{page.detailTitle}</h2><p>{page.detail}</p></div>
       </section>
 
@@ -71,9 +72,19 @@ export default function UaeRelocationPage({ origin }: { origin: Origin }) {
         </div>
       </section>
 
-      <section className="relocation-new-image-band">
-        <img src={page.image} alt="" aria-hidden="true" />
-        <div><p className="relocation-section-label">THE QUESTION TO CARRY WITH YOU</p><h2>{page.caption}</h2></div>
+      <section className="relocation-shell">
+        <PanoramicCtaBanner
+          title={
+            <>
+              Live where a new<br />
+              chapter begins
+            </>
+          }
+          buttonText="ENQUIRE NOW"
+          buttonLink="/contact"
+          image="/images/uae-vastu-banner.jpg"
+          imageAlt="Luxury UAE residence with tranquil courtyard pool"
+        />
       </section>
 
       <section className="relocation-new-faq relocation-shell">

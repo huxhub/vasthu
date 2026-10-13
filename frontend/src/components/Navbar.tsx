@@ -125,57 +125,19 @@ export default function Navbar() {
                 <span>Numerology</span>
                 <ChevronDown size={14} className="dropdown-caret" />
               </button>
-              <div className="nav-dropdown-menu nav-mega-fullwidth">
-                <div className="nav-mega-container">
-                  {/* Left Side: Dropdown Text & Items */}
-                  <div className="nav-mega-left">
-                    <div className="nav-mega-header">
-                      <span className="nav-mega-badge">Sacred Numbers</span>
-                      <h3 className="nav-mega-title">Numerology Science</h3>
-                    </div>
-                    <div className="nav-mega-links-list">
-                      <Link
-                        to="/numerology"
-                        className={`nav-dropdown-card mega-link-item ${isActive("/numerology") ? "active" : ""}`}
-                      >
-                        <div className="mega-link-content">
-                          <span className="nav-dropdown-title">Numerology</span>
-                          <p className="mega-link-desc">Name analysis & life destiny alignment.</p>
-                        </div>
-                        <ArrowRight size={14} className="mega-link-arrow" />
-                      </Link>
-                      <Link
-                        to="/astro-numerology"
-                        className={`nav-dropdown-card mega-link-item ${isActive("/astro-numerology") ? "active" : ""}`}
-                      >
-                        <div className="mega-link-content">
-                          <span className="nav-dropdown-title">Astro Numerology</span>
-                          <p className="mega-link-desc">Planetary dashas & timing synergy.</p>
-                        </div>
-                        <ArrowRight size={14} className="mega-link-arrow" />
-                      </Link>
-                    </div>
-                  </div>
-
-                  {/* Right Side: Section Hero Banner Image */}
-                  <div className="nav-mega-right">
-                    <div className="nav-mega-banner-card">
-                      <img
-                        src="/images/hero-numerology.jpg"
-                        alt="Numerology Science Banner"
-                        className="nav-mega-banner-img"
-                      />
-                      <div className="nav-mega-banner-content">
-                        <span className="nav-mega-banner-tag">Advisory</span>
-                        <h4 className="nav-mega-banner-heading">Vibrational Alignment</h4>
-                        <Link to="/contact" className="nav-mega-banner-btn">
-                          <span>Explore Reading</span>
-                          <ArrowRight size={12} />
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div className="nav-dropdown-menu">
+                <Link
+                  to="/numerology"
+                  className={`nav-dropdown-card ${isActive("/numerology") ? "active" : ""}`}
+                >
+                  <span className="nav-dropdown-title">Numerology</span>
+                </Link>
+                <Link
+                  to="/astro-numerology"
+                  className={`nav-dropdown-card ${isActive("/astro-numerology") ? "active" : ""}`}
+                >
+                  <span className="nav-dropdown-title">Astro Numerology</span>
+                </Link>
               </div>
             </li>
 
@@ -195,67 +157,37 @@ export default function Navbar() {
                 <span>Vastu</span>
                 <ChevronDown size={14} className="dropdown-caret" />
               </button>
-              <div className="nav-dropdown-menu nav-mega-fullwidth">
-                <div className="nav-mega-container">
-                  {/* Left Side: Dropdown Text & Items */}
-                  <div className="nav-mega-left">
-                    <div className="nav-mega-header">
-                      <span className="nav-mega-badge">Spatial Harmony</span>
-                      <h3 className="nav-mega-title">Vastu Shastra Services</h3>
-                    </div>
-                    <div className="nav-mega-links-list">
-                      <Link
-                        to="/vastu"
-                        className={`nav-dropdown-card mega-link-item ${isActive("/vastu") ? "active" : ""}`}
-                      >
-                        <div className="mega-link-content">
-                          <span className="nav-dropdown-title">Vastu Shastra</span>
-                          <p className="mega-link-desc">Directional energy balancing.</p>
-                        </div>
-                        <ArrowRight size={14} className="mega-link-arrow" />
-                      </Link>
-                      <Link
-                        to="/astro-vastu"
-                        className={`nav-dropdown-card mega-link-item ${isActive("/astro-vastu") ? "active" : ""}`}
-                      >
-                        <div className="mega-link-content">
-                          <span className="nav-dropdown-title">Astro Vastu</span>
-                          <p className="mega-link-desc">Sync property with natal chart.</p>
-                        </div>
-                        <ArrowRight size={14} className="mega-link-arrow" />
-                      </Link>
-                      <Link
-                        to="/geo-vastu"
-                        className={`nav-dropdown-card mega-link-item ${isActive("/geo-vastu") ? "active" : ""}`}
-                      >
-                        <div className="mega-link-content">
-                          <span className="nav-dropdown-title">Geo Vastu · UAE</span>
-                          <p className="mega-link-desc">Geopathic stress neutralization.</p>
-                        </div>
-                        <ArrowRight size={14} className="mega-link-arrow" />
-                      </Link>
-                    </div>
-                  </div>
-
-                  {/* Right Side: Section Hero Banner Image */}
-                  <div className="nav-mega-right">
-                    <div className="nav-mega-banner-card">
-                      <img
-                        src="/images/hero-vastu.jpg"
-                        alt="Vastu Shastra Banner"
-                        className="nav-mega-banner-img"
-                      />
-                      <div className="nav-mega-banner-content">
-                        <span className="nav-mega-banner-tag">Sanctuary Vastu</span>
-                        <h4 className="nav-mega-banner-heading">Harmonious Living</h4>
-                        <Link to="/contact" className="nav-mega-banner-btn">
-                          <span>Request Audit</span>
-                          <ArrowRight size={12} />
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div className="nav-dropdown-menu">
+                <Link
+                  to="/residential-vastu"
+                  className={`nav-dropdown-card ${isActive("/residential-vastu") ? "active" : ""}`}
+                >
+                  <span className="nav-dropdown-title">Residential Vastu</span>
+                </Link>
+                <Link
+                  to="/commercial-vastu"
+                  className={`nav-dropdown-card ${isActive("/commercial-vastu") ? "active" : ""}`}
+                >
+                  <span className="nav-dropdown-title">Commercial Vastu</span>
+                </Link>
+                <Link
+                  to="/vastu"
+                  className={`nav-dropdown-card ${isActive("/vastu") ? "active" : ""}`}
+                >
+                  <span className="nav-dropdown-title">Vastu Shastra</span>
+                </Link>
+                <Link
+                  to="/astro-vastu"
+                  className={`nav-dropdown-card ${isActive("/astro-vastu") ? "active" : ""}`}
+                >
+                  <span className="nav-dropdown-title">Astro Vastu</span>
+                </Link>
+                <Link
+                  to="/geo-vastu"
+                  className={`nav-dropdown-card ${isActive("/geo-vastu") ? "active" : ""}`}
+                >
+                  <span className="nav-dropdown-title">Geo Vastu · UAE</span>
+                </Link>
               </div>
             </li>
 
@@ -275,66 +207,20 @@ export default function Navbar() {
                 <span>UAE Relocation</span>
                 <ChevronDown size={14} className="dropdown-caret" />
               </button>
-              <div className="nav-dropdown-menu nav-mega-fullwidth">
-                <div className="nav-mega-container">
-                  {/* Left Side: Dropdown Text & Items */}
-                  <div className="nav-mega-left">
-                    <div className="nav-mega-header">
-                      <span className="nav-mega-badge">Global Transitions</span>
-                      <h3 className="nav-mega-title">UAE Relocation Advisory</h3>
-                    </div>
-                    <div className="nav-mega-links-list">
-                      <Link
-                        to="/relocate-germany-to-uae"
-                        className={`nav-dropdown-card mega-link-item ${isActive("/relocate-germany-to-uae") ? "active" : ""}`}
-                      >
-                        <div className="mega-link-content">
-                          <span className="nav-dropdown-title">Germany to UAE</span>
-                          <p className="mega-link-desc">Expat property vetting & transition guidance.</p>
-                        </div>
-                        <ArrowRight size={14} className="mega-link-arrow" />
-                      </Link>
-                      <Link
-                        to="/relocate-uk-to-uae"
-                        className={`nav-dropdown-card mega-link-item ${isActive("/relocate-uk-to-uae") ? "active" : ""}`}
-                      >
-                        <div className="mega-link-content">
-                          <span className="nav-dropdown-title">UK to UAE</span>
-                          <p className="mega-link-desc">Dubai spatial selection & business alignment.</p>
-                        </div>
-                        <ArrowRight size={14} className="mega-link-arrow" />
-                      </Link>
-                    </div>
-                  </div>
-
-                  {/* Right Side: Section Hero Banner Image */}
-                  <div className="nav-mega-right">
-                    <div className="nav-mega-banner-card">
-                      <img
-                        src="/images/hero-geo-vastu.jpg"
-                        alt="UAE Relocation Advisory Banner"
-                        className="nav-mega-banner-img"
-                      />
-                      <div className="nav-mega-banner-content">
-                        <span className="nav-mega-banner-tag">Expat Gateway</span>
-                        <h4 className="nav-mega-banner-heading">Dubai & UAE Living</h4>
-                        <Link to="/contact" className="nav-mega-banner-btn">
-                          <span>Start Relocation</span>
-                          <ArrowRight size={12} />
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div className="nav-dropdown-menu">
+                <Link
+                  to="/relocate-germany-to-uae"
+                  className={`nav-dropdown-card ${isActive("/relocate-germany-to-uae") ? "active" : ""}`}
+                >
+                  <span className="nav-dropdown-title">Germany to UAE</span>
+                </Link>
+                <Link
+                  to="/relocate-uk-to-uae"
+                  className={`nav-dropdown-card ${isActive("/relocate-uk-to-uae") ? "active" : ""}`}
+                >
+                  <span className="nav-dropdown-title">UK to UAE</span>
+                </Link>
               </div>
-            </li>
-
-            <li className={`nav-item ${isActive("/residential-vastu") ? "active" : ""}`}>
-              <Link to="/residential-vastu">Residential Vastu</Link>
-            </li>
-
-            <li className={`nav-item ${isActive("/commercial-vastu") ? "active" : ""}`}>
-              <Link to="/commercial-vastu">Commercial Vastu</Link>
             </li>
 
             <li className={`nav-item ${isActive("/contact") ? "active" : ""}`}>

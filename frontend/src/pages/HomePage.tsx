@@ -2,13 +2,6 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import "./HomePage.css";
 
-const questions = [
-  ["Does a difficult period mean my home has negative energy?", "Not necessarily. A Vastu consultation explores the space and your concerns without assuming that the home explains every challenge."],
-  ["Will I need to break walls or renovate?", "The approach starts with practical changes to placement, room use, and movement. Recommendations depend on your property."],
-  ["Can you review a rented home or a property before purchase?", "Yes. Apartments, villas, rented homes, business spaces, and plots can be discussed before or after you move."],
-  ["What should I share for a consultation?", "Bring your floor plan, property location, and the questions you want to explore. Sunandha can explain which additional details are needed."],
-];
-
 const SPACE_STORIES = [
   ["Residential", "/images/upper image.jpg", "A home that supports daily life."],
   ["Courtyard", "/images/hero image.jpg", "Movement, light, and openness."],
@@ -288,14 +281,14 @@ export default function HomePage() {
         <div className="home-copy">
           <p className="home-kicker">01 / HOME ENERGY</p>
           <h2 id="energy-title">Make room for<br /><em>growth.</em></h2>
-          <p>Your home is where you rest, reconnect, and plan what comes next. Vastu considers direction, light, and placement to bring a sense of balance to everyday living.</p>
+          <p>Bring balance to everyday living through direction, natural light, and thoughtful placement.</p>
           <Link className="home-text-link" to="/vastu">Understand Vastu <span aria-hidden="true">↗</span></Link>
         </div>
       </section>
 
       <section className="home-section home-blocks" aria-labelledby="blocks-title">
         <div className="home-wrap">
-          <div className="home-section-head"><p className="home-kicker">02 / WHEN HOME FEELS BLOCKED</p><h2 id="blocks-title">Something feels<br /><em>out of balance?</em></h2><p>In Vastu, negative energy describes an imbalance in a space. Start with the everyday concerns you want to understand.</p></div>
+          <div className="home-section-head"><p className="home-kicker">02 / WHEN HOME FEELS BLOCKED</p><h2 id="blocks-title">Something feels<br /><em>out of balance?</em></h2><p>Start with the everyday concerns you want to understand.</p></div>
           <div className="home-three">
             {[
               ["01", "Rest feels difficult", "Rooms that feel unsettled or leave little space to unwind."],
@@ -307,7 +300,7 @@ export default function HomePage() {
       </section>
 
       <section className="home-section home-wrap" aria-labelledby="importance-title">
-        <div className="home-section-head"><p className="home-kicker">03 / WHY VASTU MATTERS</p><h2 id="importance-title">A space that supports<br /><em>its purpose.</em></h2><p>Traditional spatial principles, considered in the context of how you live and work today.</p></div>
+        <div className="home-section-head"><p className="home-kicker">03 / WHY VASTU MATTERS</p><h2 id="importance-title">A space that supports<br /><em>its purpose.</em></h2></div>
         <div className="home-services">
           <Link to="/residential-vastu" className="home-service">
             <div className="home-service-image"><img src="/images/upper image.jpg" loading="lazy" alt="Warm residential interior with natural light" /><span className="image-reveal-wipe reveal-on-scroll" aria-hidden="true" /></div>
@@ -323,7 +316,7 @@ export default function HomePage() {
         <div className="showcase-layout home-layered-showcase">
           <div className="showcase-text-col">
             <p className="home-kicker">A FEW WAYS SPACE CAN FEEL</p>
-            <h3>See the relationship between space and daily life.</h3>
+            <h3>Space. Light. Balance.</h3>
             <div className="showcase-nav-arrows">
               <button className="nav-arrow-btn" type="button" onClick={() => rotateCarousel(-1)} aria-label="Previous space image">←</button>
               <button className="nav-arrow-btn" type="button" onClick={() => rotateCarousel(1)} aria-label="Next space image">→</button>
@@ -356,15 +349,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="home-section home-wrap home-faq" aria-labelledby="faq-title">
-        <div className="home-copy"><p className="home-kicker">05 / COMMON QUESTIONS</p><h2 id="faq-title">A little clarity,<br /><em>before you begin.</em></h2><p>Answers to the questions clients often bring to their first conversation.</p></div>
-        <div className="home-questions">{questions.map(([q, a]) => <details key={q}><summary>{q}<span aria-hidden="true">+</span></summary><p>{a}</p></details>)}</div>
-      </section>
-
       <section className="home-section home-profile" aria-labelledby="profile-title">
         <div className="home-wrap home-profile-grid">
-          <div><p className="home-kicker">06 / MEET SUNANDHA</p><h2 id="profile-title">The person behind<br /><em>the guidance.</em></h2></div>
-          <div className="home-copy"><p>Sunandha brings Vastu and Astro Numerology into a personal conversation about your space and your goals. Explore her story, approach, and areas of practice.</p><Link className="home-text-link" to="/profile">Read Sunandha’s profile <span aria-hidden="true">↗</span></Link><Link className="home-button" to="/contact">Book a consultation <span aria-hidden="true">↗</span></Link></div>
+          <div><p className="home-kicker">05 / MEET SUNANDHA</p><h2 id="profile-title">The person behind<br /><em>the guidance.</em></h2></div>
+          <div className="home-copy"><p>Personal Vastu and Astro Numerology guidance, shaped around your space and your goals.</p><Link className="home-text-link" to="/profile">Meet Sunandha <span aria-hidden="true">↗</span></Link><Link className="home-button" to="/contact">Book a consultation <span aria-hidden="true">↗</span></Link></div>
         </div>
       </section>
     </div>
