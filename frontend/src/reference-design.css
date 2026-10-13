@@ -88,6 +88,20 @@
   .app-shell .home-editorial .home-hero { min-height: 650px; max-height: 850px; }
 }
 @media (max-width: 540px) {
+  .app-shell .header-wrapper { padding: 9px 10px; }
+  .app-shell .header-wrapper.scrolled { padding: 8px 10px; }
+  .app-shell .nav-bar { gap: 8px; min-height: 42px; }
+  .app-shell .brand-sunandha-block { gap: 8px; min-width: 0; }
+  .app-shell .brand-logo-img { width: 32px; height: 32px; }
+  .app-shell .brand-sunandha-title { font-size: 1.08rem; letter-spacing: .2px; }
+  .app-shell .brand-sunandha-sub { font-size: .48rem; letter-spacing: 1.3px; }
+  .app-shell .nav-header-action-right { gap: 6px; margin-left: auto; }
+  .app-shell .nav-consult-cta-btn,
+  .app-shell .header-wrapper.scrolled .nav-consult-cta-btn { width: 112px; height: 32px; min-height: 32px; padding: 5px 9px; gap: 5px; font-size: .68rem; letter-spacing: 0; }
+  .app-shell .nav-consult-cta-btn::before { font-size: .68rem; }
+  .app-shell .nav-consult-cta-btn svg { width: 12px; height: 12px; }
+  .app-shell .mobile-menu-btn { width: 34px; height: 34px; min-width: 34px; padding: 0; border-radius: 50%; margin: 0; display: inline-flex; align-items: center; justify-content: center; }
+  .app-shell .mobile-menu-btn svg { width: 18px; height: 18px; stroke-width: 1.5; }
   .app-shell .home-editorial .home-services { grid-template-columns: 1fr; gap: 40px; }
   .app-shell .home-editorial .home-service:nth-child(2) { margin-top: 0; }
   .app-shell .home-editorial .home-hero-copy { padding-block: 190px 60px; }
