@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ReviewCarousel from "../components/ReviewCarousel";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -26,7 +27,7 @@ export default function ContactPage() {
             <span className="contact-exact-hero-italic">your space.</span>
           </h1>
           <p className="contact-exact-hero-desc">
-            Share what is on your mind. A thoughtful conversation is the first step.
+            Every meaningful conversation begins with a question. Tell us about your property, your plans, or the guidance you are looking for. We will help you identify the consultation that best fits your needs.
           </p>
         </div>
 
@@ -70,6 +71,7 @@ export default function ContactPage() {
           <div className="contact-exact-right" id="consultation-form">
             <div className="contact-exact-form-eyebrow">YOUR DETAILS</div>
             <h2 className="contact-exact-form-title">Request a consultation.</h2>
+            <p className="contact-exact-form-intro">Tell us what you would like to explore.</p>
 
             {submitted ? (
               <div className="contact-exact-success">
@@ -123,7 +125,7 @@ export default function ContactPage() {
                 {/* Name & Phone 2-Col */}
                 <div className="contact-line-row-2">
                   <div className="contact-line-field">
-                    <label className="contact-line-label">Name *</label>
+                    <label className="contact-line-label">Full name *</label>
                     <input
                       type="text"
                       required
@@ -133,7 +135,7 @@ export default function ContactPage() {
                     />
                   </div>
                   <div className="contact-line-field">
-                    <label className="contact-line-label">Phone *</label>
+                    <label className="contact-line-label">Phone number *</label>
                     <input
                       type="tel"
                       required
@@ -147,7 +149,7 @@ export default function ContactPage() {
                 {/* Email & Location 2-Col */}
                 <div className="contact-line-row-2">
                   <div className="contact-line-field">
-                    <label className="contact-line-label">Email *</label>
+                    <label className="contact-line-label">Email address *</label>
                     <input
                       type="email"
                       required
@@ -157,7 +159,7 @@ export default function ContactPage() {
                     />
                   </div>
                   <div className="contact-line-field">
-                    <label className="contact-line-label">Location *</label>
+                    <label className="contact-line-label">Property location *</label>
                     <input
                       type="text"
                       required
@@ -173,7 +175,7 @@ export default function ContactPage() {
                   <label className="contact-line-label">Message</label>
                   <textarea
                     rows={2}
-                    placeholder="Tell us a little about your questions or your space."
+                    placeholder="Share your questions, planning stage, or particular concerns. A short description is enough to begin."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="contact-line-textarea"
@@ -197,6 +199,13 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
+      <ReviewCarousel />
+      <section className="contact-content-notes container">
+        <div><p className="contact-section-label">A conversation shaped around you.</p><p>Whether you are planning a new home, reviewing a commercial property, considering land before purchase, or exploring Astro Numerology, your enquiry is the starting point for a more personal conversation.</p><p>Share a few details about what brings you here. There is no need to have every answer ready.</p></div>
+        <div><p className="contact-section-label">What happens next?</p><p><strong>01 — We understand your enquiry</strong><br />Your selected consultation and message help establish what you are looking for.</p><p><strong>02 — We discuss the next steps</strong><br />We can clarify relevant details and explain the consultation process.</p><p><strong>03 — Your consultation begins</strong><br />Once arrangements are confirmed, you can prepare the information relevant to your chosen service.</p></div>
+        <div><p className="contact-section-label">A few things to know.</p><p><strong>What information should I share?</strong><br />Start with your contact details, consultation type, and a brief description of your enquiry.</p><p><strong>Can I enquire from the UAE?</strong><br />Yes. Geo Vastu is offered specifically for UAE clients.</p><p><strong>Is my information private?</strong><br />Your details should be handled securely and used only for appropriate enquiry and consultation-related purposes.</p></div>
+        <div><h2>Begin with a conversation.</h2><p>You do not need to have everything figured out before reaching out. Start with what matters to you, and take the next step from there.</p></div>
+      </section>
     </div>
   );
 }

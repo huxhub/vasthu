@@ -16,7 +16,7 @@ export default function Footer() {
         <Link to="/" className="footer-brand-names"><span className="footer-brand-title">Sunandha</span><span className="footer-brand-sub">VASTU · NUMEROLOGY</span></Link>
 
         <nav className="footer-minimal-links" aria-label="Footer navigation">
-          <Link to="/">Home</Link><Link to="/vastu">Vastu</Link><Link to="/numerology">Numerology</Link><Link to="/profile">Profile</Link><Link to="/contact">Contact</Link><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <Link to="/">Home</Link><Link to="/vastu">Vastu</Link><Link to="/numerology">Numerology</Link><Link to="/blog">Journal</Link><Link to="/profile">Profile</Link><Link to="/contact">Contact</Link><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
         </nav>
 
         <div className="footer-bottom-bar">&copy; {copyrightYear} Sunandha. All rights reserved.</div>

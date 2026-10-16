@@ -66,10 +66,15 @@
 .service-layout-celestial .service-cover-copy .service-label { color: #d7bc7c; }
 .service-layout-celestial .service-cover-image { min-height: 0; aspect-ratio: 1; align-self: center; border-radius: 50%; }
 .service-layout-celestial .service-story { display: flex; flex-direction: column; }
-.service-layout-celestial .service-story-copy { text-align: center; max-width: 680px; }
+.service-layout-celestial .service-story-copy { text-align: center; max-width: 900px; }
 .service-layout-celestial .service-story-copy h2,
 .service-layout-celestial .service-story-copy > p { margin-inline: auto; }
+.service-layout-celestial .service-story-copy > p { width: 100%; max-width: 1049.59094px; }
 .service-layout-celestial .service-story-image { width: 100%; aspect-ratio: 2.8; }
+.service-layout-celestial .celestial-expand-image { --expand-progress: 0; --initial-image-height: 426.4px; position: relative; z-index: 2; width: calc(100% + (100dvw - 100%) * var(--expand-progress)); max-width: none; height: calc(var(--initial-image-height) + (426.4px - var(--initial-image-height)) * var(--expand-progress)); margin-left: calc((100% - 100dvw) * var(--expand-progress) / 2); margin-right: calc((100% - 100dvw) * var(--expand-progress) / 2); aspect-ratio: auto; overflow: hidden; }
+.service-layout-celestial .celestial-expand-image img { width: 100%; height: 100%; object-fit: cover; object-position: center center; }
+.celestial-image-caption { position: absolute; left: 50%; top: 50%; width: min(80%, 560px); color: #fff; font-size: clamp(.72rem, 1vw, .9rem); letter-spacing: .16em; line-height: 1.6; text-align: center; text-transform: uppercase; opacity: 0; transform: translate(-50%, calc(-50% + 12px)); text-shadow: 0 2px 18px rgba(0,0,0,.3); transition: opacity .6s ease .35s, transform .6s ease .35s; }
+.celestial-expand-image.is-expanded .celestial-image-caption { opacity: 1; transform: translate(-50%, -50%); }
 .service-layout-celestial .service-review { background: #e9eff1; }
 
 /* Astro Vastu: a reversed cover followed by an offset two-image gallery. */
@@ -88,7 +93,7 @@
 .service-layout-residential .service-cover { height: 78svh; }
 .service-layout-residential .service-story { grid-template-columns: 1.5fr 1fr; gap: 32px; }
 .service-layout-residential .service-story-copy { grid-column: 1 / -1; max-width: 760px; margin-bottom: 12px; }
-.service-layout-residential .service-story-copy > p { max-width: 60ch; }
+.service-layout-residential .service-story-copy > p { max-width: 70ch; }
 .service-layout-residential .service-story-image { aspect-ratio: 1.4; }
 .service-layout-residential .service-companion-image { aspect-ratio: .94; }
 .service-layout-residential .service-review { background: #f4eddf; }
@@ -146,7 +151,13 @@
   .service-layout-journal .service-review-grid > div:last-child { grid-template-columns: 1fr; gap: 0; }
   .service-layout-commercial .service-review-row > div { display: block; }
   .service-layout-celestial .service-story-image { aspect-ratio: 1.5; }
+  .service-layout-celestial .celestial-expand-image { --initial-image-height: 58vh; height: calc(var(--initial-image-height) + (82vh - var(--initial-image-height)) * var(--expand-progress)); }
   .service-layout-gallery .service-story, .service-layout-residential .service-story { gap: 20px; }
+  .service-layout-residential .service-story { grid-template-columns: 1fr; }
+  .service-layout-residential .service-story-copy { grid-column: auto; max-width: none; margin-bottom: 0; }
+  .service-layout-residential .service-story-image,
+  .service-layout-residential .service-companion-image { grid-column: auto; width: 100%; margin-top: 0; }
+  .service-layout-residential .service-story-copy .service-text-link { display: flex; width: fit-content; margin: 56px 0 18px; }
   .service-layout-gallery .service-companion-image { margin-top: 35px; }
   .service-layout-land .service-story-image { width: 100%; aspect-ratio: 1.4; }
   .profile-editorial .profile-introduction .service-story-image { aspect-ratio: 1.3; }
@@ -155,4 +166,29 @@
   .service-feature figure, .service-feature--land figure { width: 100%; height: 240px; }
   .service-feature--celestial, .service-feature--gallery, .service-feature--commercial, .service-feature--land { padding-inline: 20px; }
   .service-feature--gallery figure { width: 100%; }
+}
+
+/* Numerology consultation: fixed left heading with a vertical right-hand list. */
+.service-layout-journal .service-review-grid { grid-template-columns: 1fr 1.15fr; align-items: start; }
+.service-layout-journal .service-review-grid > div:first-child { position: sticky; top: 110px; align-self: start; }
+.service-layout-journal .service-review-grid > div:last-child { display: block; margin-top: 0; }
+@media (max-width: 760px) {
+  .service-layout-journal .service-review-grid { grid-template-columns: 1fr; }
+  .service-layout-journal .service-review-grid > div:first-child { position: static; }
+}
+
+@media (min-width: 761px) {
+  .service-editorial .service-cover { min-height: 900px; height: 100svh; max-height: none; }
+  .service-layout-residential .service-cover-copy { position: relative; top: -273px; left: 0.0000152px; }
+  .service-layout-residential .service-story { height: 895.64777px; }
+  .service-layout-residential .service-story-copy .service-text-link { margin-top: 56px; }
+  .service-layout-residential .service-story-copy > p:not(.service-label) { width: 100%; max-width: 915.59094px; }
+  .service-layout-residential .service-story-image,
+  .service-layout-residential .service-companion-image { margin-top: 36px; }
+  .service-layout-residential .service-story-image img { position: relative; left: -23px; top: 55px; }
+  .service-layout-residential .service-companion-image img { position: relative; left: -0.0000305px; top: -14.2px; }
+}
+
+@media (max-width: 760px) {
+  .service-editorial .service-cover { min-height: 430px; height: 430px; }
 }

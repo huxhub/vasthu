@@ -291,6 +291,16 @@
   letter-spacing: -0.02em;
   margin-bottom: 40px;
 }
+.contact-exact-form-intro { color: #6e685f; margin: -16px 0 30px; line-height: 1.7; }
+.contact-content-notes { display: grid; grid-template-columns: 1fr 1fr; gap: 72px 10vw; padding-block: 90px 120px; border-top: 1px solid rgba(36,34,31,.16); }
+.contact-content-notes > div { max-width: 560px; }
+.contact-content-notes p { color: #6e685f; line-height: 1.8; margin: 0 0 18px; }
+.contact-content-notes strong { color: #272a26; font-weight: 500; }
+.contact-section-label { color: #927136 !important; font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 22px !important; }
+.contact-content-notes h2 { font: 400 clamp(2rem, 3.5vw, 3.3rem)/1.1 var(--font-display); text-transform: uppercase; margin: 0 0 24px; }
+@media (max-width: 760px) {
+  .contact-content-notes { grid-template-columns: 1fr; gap: 48px; padding-block: 64px 80px; }
+}
 
 .contact-exact-form {
   display: flex;

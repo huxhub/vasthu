@@ -1075,3 +1075,13 @@ button {
   padding-left: 24px;
   padding-right: 24px;
 }
+
+@media (min-width: 761px) {
+  .relocation-new-hero { min-height: 900px; height: 100svh; }
+  .relocation-uk .relocation-new-hero-copy { position: relative; top: -150.716px; left: -7.99973px; }
+  .relocation-germany .relocation-new-hero-copy { position: relative; top: -194.676px; }
+}
+
+@media (max-width: 760px) {
+  .relocation-new-hero { min-height: 430px; height: 430px; }
+}

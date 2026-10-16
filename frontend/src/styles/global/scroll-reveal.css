@@ -5,11 +5,11 @@
 
 main img.reveal-image {
   opacity: 0 !important;
-  transform: scale(1.05) translateY(20px) !important;
-  filter: blur(5px) contrast(0.95) !important;
-  transition: opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 1.75s cubic-bezier(0.16, 1, 0.3, 1),
-              filter 1.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transform: scale(1.025) translateY(12px) !important;
+  filter: blur(2px) contrast(0.98) !important;
+  transition: opacity 1.25s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1.45s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 1.15s cubic-bezier(0.16, 1, 0.3, 1) !important;
   will-change: opacity, transform, filter;
 }
 
@@ -17,6 +17,26 @@ main img.reveal-image.is-revealed {
   opacity: 1 !important;
   transform: scale(1) translateY(0) !important;
   filter: blur(0px) contrast(1) !important;
+}
+
+/* Quiet editorial section entrances inspired by luxury real-estate scroll pacing. */
+main section.service-review:not(.is-revealed),
+main section.service-extra:not(.is-revealed),
+main section.service-feature:not(.is-revealed),
+main section.service-questions:not(.is-revealed),
+main section.service-closing:not(.is-revealed) {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .9s cubic-bezier(.16, 1, .3, 1), transform 1s cubic-bezier(.16, 1, .3, 1);
+}
+
+main section.service-review.is-revealed,
+main section.service-extra.is-revealed,
+main section.service-feature.is-revealed,
+main section.service-questions.is-revealed,
+main section.service-closing.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Exemptions for carousel images and manual no-reveal tags */
@@ -37,5 +57,14 @@ main img.no-reveal.reveal-image,
     transform: none !important;
     filter: none !important;
     transition: none !important;
+  }
+  main section.service-review:not(.is-revealed),
+  main section.service-extra:not(.is-revealed),
+  main section.service-feature:not(.is-revealed),
+  main section.service-questions:not(.is-revealed),
+  main section.service-closing:not(.is-revealed) {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }

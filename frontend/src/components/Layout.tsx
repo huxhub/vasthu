@@ -34,7 +34,7 @@ export default function Layout() {
     const setupObserver = () => {
       // 1. Text elements
       const textEls = document.querySelectorAll(
-        ".reveal-on-scroll:not(.is-revealed):not(.image-reveal-wipe), .reveal-scale:not(.is-revealed), .reveal-left:not(.is-revealed), .reveal-right:not(.is-revealed)"
+        ".reveal-on-scroll:not(.is-revealed):not(.image-reveal-wipe), .reveal-scale:not(.is-revealed), .reveal-left:not(.is-revealed), .reveal-right:not(.is-revealed), main section.service-review:not(.is-revealed), main section.service-extra:not(.is-revealed), main section.service-feature:not(.is-revealed), main section.service-questions:not(.is-revealed), main section.service-closing:not(.is-revealed)"
       );
 
       // 2. Content images, excluding priority hero media that must never flash blank.
@@ -142,6 +142,39 @@ export default function Layout() {
     };
   }, [location.pathname]);
 
+  useEffect(() => {
+    const image = document.querySelector<HTMLElement>(".celestial-expand-image");
+    if (!image) return;
+
+    let frame = 0;
+    let start = 0;
+    let initialHeight = 0;
+    const measure = () => {
+      image.classList.remove("is-expanded");
+      image.style.setProperty("--expand-progress", "0");
+      initialHeight = image.getBoundingClientRect().height;
+      start = image.getBoundingClientRect().top + window.scrollY;
+      image.style.setProperty("--initial-image-height", `${initialHeight}px`);
+    };
+    const update = () => {
+      const travel = Math.max(window.innerHeight * 0.7, 420);
+      const progress = Math.max(0, Math.min(1, (window.scrollY - start + window.innerHeight * 0.55) / travel));
+      image.style.setProperty("--expand-progress", progress.toFixed(4));
+    };
+    const requestUpdate = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(() => { frame = 0; update(); });
+    };
+    measure();
+    update();
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", () => { measure(); requestUpdate(); }, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", requestUpdate);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, [location.pathname]);
+
   // Global editorial parallax. Uses the independent CSS `translate` property,
   // so existing transform-based reveals, hover states, and carousel motion compose safely.
   useEffect(() => {
@@ -183,8 +216,8 @@ export default function Layout() {
         if (!positions.has(element)) positions.set(element, shift);
       };
 
-      media.forEach((element, index) => move(element, isCompact ? 15 : 38 + (index % 3) * 6));
-      content.forEach((element, index) => move(element, isCompact ? 5 : 12 + (index % 3) * 2));
+      media.forEach((element, index) => move(element, isCompact ? 8 : 24 + (index % 3) * 4));
+      content.forEach((element, index) => move(element, isCompact ? 3 : 7 + (index % 3) * 1.5));
     };
 
     const animate = () => {
@@ -204,8 +237,8 @@ export default function Layout() {
       };
 
       // Images lead; typography follows with a softer, slower response.
-      media.forEach((element) => render(element, 0.14));
-      content.forEach((element) => render(element, 0.075));
+      media.forEach((element) => render(element, 0.11));
+      content.forEach((element) => render(element, 0.06));
 
       frame = unsettled || needsMeasure ? window.requestAnimationFrame(animate) : 0;
     };

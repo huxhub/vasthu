@@ -11,6 +11,8 @@ import ResidentialVastuPage from "./pages/ResidentialVastuPage";
 import AstroVastuPage from "./pages/AstroVastuPage";
 import GeoVastuPage from "./pages/GeoVastuPage";
 import UaeRelocationPage from "./pages/UaeRelocationPage";
+import BlogPage from "./pages/BlogPage";
+import BlogDetailPage from "./pages/BlogDetailPage";
 
 export default function App() {
   return (
@@ -19,6 +21,8 @@ export default function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="profile" element={<ProfilePage />} />
+          <Route path="blog" element={<BlogPage />} />
+          <Route path="blog/:slug" element={<BlogDetailPage />} />
           <Route path="commercial-vastu" element={<CommercialVastuPage />} />
           <Route path="residential-vastu" element={<ResidentialVastuPage />} />
           <Route path="geo-vastu" element={<GeoVastuPage />} />

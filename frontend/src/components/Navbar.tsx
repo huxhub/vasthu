@@ -262,6 +262,10 @@ export default function Navbar() {
               <Link to="/contact">Contact</Link>
             </li>
 
+            <li className={`nav-item ${isActive("/blog") ? "active" : ""}`}>
+              <Link to="/blog">Journal</Link>
+            </li>
+
             <li className={`nav-item ${isActive("/profile") ? "active" : ""}`}>
               <Link to="/profile">Profile</Link>
             </li>

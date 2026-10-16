@@ -275,31 +275,52 @@ export default function HomePage() {
         </button>
       </div>
 
+      <div className="home-content-refresh">
       <section id="home-energy" className="home-section home-wrap home-split" aria-labelledby="energy-title">
         <div className="home-photo"><img src="/images/about image.jpg" loading="lazy" alt="An airy home opening onto a peaceful courtyard" /><span className="image-reveal-wipe reveal-on-scroll" aria-hidden="true" /></div>
         <div className="home-copy">
-          <p className="home-kicker">01 / HOME ENERGY</p>
-          <h2 id="energy-title">Make room for<br /><em>growth.</em></h2>
-          <p>Bring balance to everyday living through direction, natural light, and thoughtful placement.</p>
-          <Link className="home-text-link" to="/vastu">Understand Vastu <span aria-hidden="true">↗</span></Link>
+          <p className="home-kicker">01 / UNDERSTANDING VASTU</p>
+          <h2 id="energy-title">Ancient knowledge.<br /><em>Everyday living.</em></h2>
+          <p>Vastu Shastra is an Indian architectural tradition that explores the relationship between architecture, nature, directions, and the spaces we inhabit.</p>
+          <p>Our Vastu Shastra Knowledge Hub makes these ideas simple and accessible for homeowners, architects, and anyone planning a home. Explore traditional principles through clear explanations and practical examples, alongside modern needs for comfort, light, and ventilation.</p>
+          <Link className="home-text-link" to="/vastu">What is Vastu Shastra? <span aria-hidden="true">↗</span></Link>
         </div>
       </section>
 
-      <section className="home-section home-blocks" aria-labelledby="blocks-title">
-        <div className="home-wrap">
-          <div className="home-section-head"><p className="home-kicker">02 / WHEN HOME FEELS BLOCKED</p><h2 id="blocks-title">Something feels<br /><em>out of balance?</em></h2><p>Start with the everyday concerns you want to understand.</p></div>
-          <div className="home-three">
-            {[
-              ["01", "Rest feels difficult", "Rooms that feel unsettled or leave little space to unwind."],
-              ["02", "Focus feels scattered", "Work areas that feel cluttered, distracting, or disconnected."],
-              ["03", "The space feels heavy", "Dark corners, awkward movement, or a home that no longer feels comfortable."],
-            ].map(([n, title, copy]) => <article className="home-lined-item" key={n}><span className="home-index">{n}</span><h3>{title}</h3><p>{copy}</p></article>)}
-          </div>
+      <section className="home-foundations home-wrap" aria-labelledby="foundations-title">
+        <div><p className="home-kicker">THE FOUNDATIONS</p><h3 id="foundations-title">Direction, nature,<br />and thoughtful planning.</h3></div>
+        <div><h3>The five elements</h3><p>Earth, Water, Fire, Air, and Space form part of the traditional language of Vastu. Our resources explain these concepts in the context of contemporary living.</p><ul className="home-element-names">{['Earth', 'Water', 'Fire', 'Air', 'Space'].map(element => <li key={element}>{element}</li>)}</ul></div>
+        <div><h3>Vastu Purusha Mandala</h3><p>Explore the traditional planning framework and the significance of directional zones, including the 16 directions. Understand how these ideas relate to a home's layout and daily use.</p><Link className="home-text-link" to="/vastu">Explore the principles <span aria-hidden="true">↗</span></Link></div>
+      </section>
+
+      <section className="home-image-story home-story-rooms" aria-labelledby="rooms-title">
+        <div className="home-story-copy"><p className="home-kicker">02 / ROOM-BY-ROOM VASTU</p><h2 id="rooms-title">A place for<br /><em>every part of life.</em></h2><p>Understand how traditional Vastu considers the arrangement of each room, from the first step through your entrance to the places where you rest, cook, and gather.</p>
+          <div className="home-room-list">{[
+            ['Main entrance', 'Orientation, arrival, and movement into the home.'],
+            ['Kitchen', 'Layout, work areas, and everyday cooking routines.'],
+            ['Bedroom & master bedroom', 'Room arrangement and space for rest.'],
+            ['Pooja room', 'A considered setting for prayer and reflection.'],
+            ['Bathroom & toilet', 'Wet areas in the context of the overall floor plan.'],
+            ['Living room', 'Shared space, natural light, and circulation.'],
+          ].map(([title,copy]) => <div key={title}><h3>{title}</h3><p>{copy}</p></div>)}</div>
+          <p>Explore suitable layouts for new homes, renovations, and existing properties with guidance tailored to modern lifestyle needs.</p>
+          <Link className="home-text-link" to="/residential-vastu">Explore Residential Vastu <span aria-hidden="true">↗</span></Link>
+        </div>
+        <div className="home-story-image"><img src="/images/hero-residential.jpg" loading="lazy" alt="A warm residential interior" /><span>Spaces for everyday living</span></div>
+      </section>
+
+      <section className="home-image-story home-story-direction" aria-labelledby="direction-title">
+        <div className="home-story-image"><img src="/images/hero-geo-vastu-site.png" loading="lazy" alt="A site plan and compass overlooking a residential plot" /><span>Orientation / layout / surroundings</span></div>
+        <div className="home-story-copy"><p className="home-kicker">03 / DIRECTION-BASED VASTU</p><h2 id="direction-title">Understand your<br /><em>home's direction.</em></h2><p>Purchasing a property, choosing a plot, or planning construction? Direction-based consultation considers your property's orientation, directional placements, and land characteristics.</p>
+          <ul className="home-direction-topics">{['North-facing homes', 'East-facing homes', 'South-facing homes', 'West-facing homes', 'North-East corner', 'Plot selection & land shape'].map(title => <li key={title}>{title}</li>)}</ul>
+          <p>We explain the traditional considerations for your property and identify aspects of the layout that may benefit from closer evaluation.</p>
+          <Link className="home-text-link" to="/vastu">Explore Vastu consultation <span aria-hidden="true">↗</span></Link>
+          <Link className="home-subtle-link home-secondary-link" to="/geo-vastu">Residential Geo Vastu · UAE only →</Link>
         </div>
       </section>
 
       <section className="home-section home-wrap" aria-labelledby="importance-title">
-        <div className="home-section-head"><p className="home-kicker">03 / WHY VASTU MATTERS</p><h2 id="importance-title">A space that supports<br /><em>its purpose.</em></h2></div>
+        <div className="home-section-head"><p className="home-kicker">04 / CONSULTATIONS</p><h2 id="importance-title">Guidance for the spaces<br /><em>that matter.</em></h2></div>
         <div className="home-services">
           <Link to="/residential-vastu" className="home-service">
             <div className="home-service-image"><img src="/images/upper image.jpg" loading="lazy" alt="Warm residential interior with natural light" /><span className="image-reveal-wipe reveal-on-scroll" aria-hidden="true" /></div>
@@ -334,26 +355,32 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="home-section home-help" aria-labelledby="help-title">
-        <div className="home-wrap">
-          <div className="home-section-head"><p className="home-kicker">04 / HOW SUNANDHA HELPS</p><h2 id="help-title">Clear guidance.<br /><em>A personal approach.</em></h2></div>
-          <div className="home-three">
-            {[
-              ["01", "Share your concerns", "Tell Sunandha about your space, your plans, and what feels unresolved."],
-              ["02", "Understand your space", "Review direction, entrances, room use, and the layout together."],
-              ["03", "Take practical steps", "Receive recommendations suited to your property and daily life."],
-            ].map(([n, title, copy]) => <article className="home-lined-item" key={n}><span className="home-index">{n}</span><h3>{title}</h3><p>{copy}</p></article>)}
-          </div>
-          <div className="home-help-bottom"><Link className="home-text-link" to="/contact">Discuss your space <span aria-hidden="true">↗</span></Link><Link className="home-subtle-link" to="/astro-numerology">Explore Astro Numerology →</Link></div>
-        </div>
+
+      <section className="home-image-story home-story-numerology" aria-labelledby="numerology-title">
+        <div className="home-story-copy"><p className="home-kicker">05 / ASTRO NUMEROLOGY</p><h2 id="numerology-title">Your numbers.<br /><em>Your questions.</em></h2><p>Explore the traditional significance of numbers associated with your name and date of birth. Our consultations cover name numerology, birth numbers, destiny numbers, and the relationship between Vastu and numerology.</p><p>Whether you are learning the basics or seeking a personal conversation, we explain the concepts clearly and shape the session around your interests and questions.</p><Link className="home-text-link" to="/astro-numerology">Explore Astro Numerology <span aria-hidden="true">↗</span></Link><Link className="home-subtle-link home-secondary-link" to="/numerology">Start with numerology basics →</Link></div>
+        <div className="home-story-image"><img src="/images/numerology about.jpg" loading="lazy" alt="A symbolic numerology composition" /><span>A personal perspective</span></div>
       </section>
 
-      <section className="home-section home-profile" aria-labelledby="profile-title">
-        <div className="home-wrap home-profile-grid">
-          <div><p className="home-kicker">05 / MEET SUNANDHA</p><h2 id="profile-title">The person behind<br /><em>the guidance.</em></h2></div>
-          <div className="home-copy"><p>Personal Vastu and Astro Numerology guidance, shaped around your space and your goals.</p><Link className="home-text-link" to="/profile">Meet Sunandha <span aria-hidden="true">↗</span></Link><Link className="home-button" to="/contact">Book a consultation <span aria-hidden="true">↗</span></Link></div>
+      <section className="home-section home-preparation" aria-labelledby="prepare-title"><div className="home-wrap home-split">
+        <div className="home-photo"><img src="/images/editorial-study.png" loading="lazy" alt="Sunlit study with a desk prepared for a conversation" /></div>
+        <div className="home-copy"><p className="home-kicker">06 / YOUR CONSULTATION</p><h2 id="prepare-title">Bring your space.<br /><em>We’ll start there.</em></h2><p>Planning a new home or reviewing an existing property? A few details help us understand your layout and the guidance you need.</p>
+          <ol className="home-preparation-list"><li><strong>Share your plans</strong><span>Tell us about your property, its location, and what you would like to explore.</span></li><li><strong>Prepare your layout</strong><span>Bring a floor plan, the facing direction, entrance location, and room placements.</span></li><li><strong>Discuss your next steps</strong><span>Explore traditional considerations alongside your property's practical needs.</span></li></ol>
+          <Link className="home-text-link" to="/contact">Discuss your property <span aria-hidden="true">↗</span></Link>
         </div>
-      </section>
+      </div></section>
+
+      <section className="home-section home-wrap home-faq" aria-labelledby="faq-title"><div className="home-section-head"><p className="home-kicker">07 / FREQUENTLY ASKED QUESTIONS</p><h2 id="faq-title">A little clarity,<br /><em>before you begin.</em></h2><p>Useful starting points for homeowners, buyers, and anyone exploring Vastu.</p><Link className="home-text-link" to="/contact">Ask about your space <span aria-hidden="true">↗</span></Link></div><div className="home-questions">{[
+        ['How do I check Vastu for an existing house?', 'Review your home’s facing direction, entrance, room placements, and floor plan against traditional Vastu principles. A consultation can help you understand the layout in context.'],
+        ['What should I consider when buying a new home?', 'Consider the house direction, entrance, room placements, and overall floor plan alongside practical needs such as natural light, ventilation, and how you will use the space.'],
+        ['What are common Vastu mistakes in home planning?', 'Common concerns include room placements or entrances considered unsuitable within traditional Vastu, unclear directional measurements, and overlooking natural light and ventilation.'],
+        ['Can Vastu principles be considered in modern apartments?', 'Yes. A review can consider room placement, directions, natural light, and ventilation while taking account of the apartment’s existing layout and constraints.'],
+        ['How do I identify the facing direction of a house?', 'Use a compass to identify the direction you face when standing at the main entrance and looking outward from inside the house.'],
+        ['When should I consult a Vastu expert?', 'You can enquire when buying, building, renovating, or evaluating your home’s layout and directions.'],
+        ['What information is needed for a consultation?', 'A floor plan, house direction, room placements, entrance location, and the questions you would like to explore are useful starting points.'],
+      ].map(([q,a]) => <details key={q}><summary>{q}<span aria-hidden="true">+</span></summary><p>{a}</p></details>)}</div></section>
+
+      <section className="home-section home-profile" aria-labelledby="profile-title"><div className="home-wrap home-profile-grid"><div><p className="home-kicker">MEET SUNANDHA</p><h2 id="profile-title">Personal guidance.<br /><em>A thoughtful beginning.</em></h2></div><div className="home-copy"><p>Sunandha’s approach begins with listening: understanding your space, your priorities, and the questions you bring. Explore a consultation shaped around your individual needs.</p><Link className="home-text-link" to="/profile">Meet Sunandha <span aria-hidden="true">↗</span></Link><Link className="home-button" to="/contact">Book a consultation <span aria-hidden="true">↗</span></Link></div></div></section>
+      </div>
     </div>
   );
 }

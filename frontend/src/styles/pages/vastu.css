@@ -295,3 +295,9 @@
     grid-template-columns: 1fr;
   }
 }
+.service-layout-landscape .service-extra--paper .service-extra-image img { height: 726.35px; min-height: 726.35px; }
+.service-layout-landscape .service-feature--landscape figure img { width: min(863.06px, 100%); max-width: 863.06px; }
+@media (max-width: 760px) {
+  .service-layout-landscape .service-extra--paper .service-extra-image img { height: 430px; min-height: 340px; }
+  .service-layout-landscape .service-feature--landscape figure img { width: 100%; max-width: 100%; }
+}
