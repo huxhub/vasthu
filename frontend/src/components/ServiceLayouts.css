@@ -109,6 +109,7 @@
 .service-layout-commercial .service-story { grid-template-columns: 1.4fr 1fr; }
 .service-layout-commercial .service-story-image { aspect-ratio: 1.6; }
 .service-layout-commercial .service-review-grid { grid-template-columns: 1fr; gap: 32px; }
+.service-layout-commercial .service-review-grid > div:first-child { position: static; top: auto; }
 .service-layout-commercial .service-review-row > div { display: grid; grid-template-columns: 1fr 1.5fr; width: 100%; gap: 28px; }
 .service-layout-commercial .service-review { background: #e9edef; }
 
