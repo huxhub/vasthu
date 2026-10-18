@@ -299,7 +299,6 @@ export default function HomePage() {
             ['Main entrance', 'Orientation, arrival, and movement into the home.'],
             ['Kitchen', 'Layout, work areas, and everyday cooking routines.'],
             ['Bedroom & master bedroom', 'Room arrangement and space for rest.'],
-            ['Pooja room', 'A considered setting for prayer and reflection.'],
             ['Bathroom & toilet', 'Wet areas in the context of the overall floor plan.'],
             ['Living room', 'Shared space, natural light, and circulation.'],
           ].map(([title,copy]) => <div key={title}><h3>{title}</h3><p>{copy}</p></div>)}</div>
